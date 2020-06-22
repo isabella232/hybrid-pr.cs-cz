@@ -1,0 +1,74 @@
+- name: Dokumentace k hybridnímu využití Azure
+  href: index.yml
+- name: Přehled
+  items:
+    - name: Příklady hybridních vzorů a řešení
+      href: overview-patterns-solution-examples.md
+- name: Vzory
+  items:
+    - name: Jeden
+      items:
+        - name: Škálování napříč cloudy
+          href: pattern-cross-cloud-scale.md
+        - name: Hybridní CI/CD v rámci DevOps
+          href: pattern-cicd-pipeline.md
+        - name: Geograficky distribuovaná aplikace
+          href: pattern-geo-distributed.md
+        - name: Hybridní přenos
+          href: pattern-hybrid-relay.md
+        - name: Vrstvená data
+          href: pattern-tiered-data-analytics.md
+        - name: Trénování modelu ML na hraničních zařízeních
+          href: pattern-train-ml-model-at-edge.md
+    - name: Několik
+      items:
+        - name: Škálování napříč cloudy (místní data)
+          href: pattern-cross-cloud-scale-onprem-data.md
+        - name: Detekce provozu návštěvníků (maloobchod)
+          href: pattern-retail-footfall-detection.md
+        - name: Detekce vyčerpání zásob na hraničních zařízeních
+          href: pattern-out-of-stock-at-edge.md
+- name: Průvodci nasazením řešení
+  items:
+    - name: Škálování napříč cloudy
+      href: solution-deployment-guide-cross-cloud-scaling.md
+    - name: Škálování napříč cloudy (místní data)
+      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+    - name: Hybridní CI/CD v rámci DevOps
+      href: 'https://aka.ms/hybriddevopsdeploy'
+    - name: Detekce provozu návštěvníků (maloobchod)
+      href: solution-deployment-guide-retail-footfall-detection.md
+    - name: Geograficky distribuovaná aplikace
+      href: solution-deployment-guide-geo-distributed.md
+    - name: Hybridní připojení
+      href: solution-deployment-guide-connectivity.md
+    - name: Hybridní identita
+      href: solution-deployment-guide-identity.md
+    - name: Hybridní přenos
+      href: 'https://aka.ms/hybridrelaydeployment'
+    - name: Vrstvená data
+      href: 'https://aka.ms/tiereddatadeploy'
+    - name: MongoDB s vysokou dostupností
+      href: solution-deployment-guide-mongodb-ha.md
+    - name: SQL Server 2016 s vysokou dostupností
+      href: solution-deployment-guide-sql-ha.md
+    - name: Vyčerpání zásob na hraničních zařízeních
+      href: 'https://aka.ms/edgeinferencingdeploy'
+    - name: Trénování modelů ML na hraničních zařízeních
+      href: 'https://aka.ms/edgetrainingdeploy'
+- name: Koncepty
+  items:
+    - name: Aspekty návrhu hybridních aplikací
+      href: overview-app-design-considerations.md
+- name: Související
+  items:
+    - name: Dokumentace k Azure
+      href: /azure
+    - name: Dokumentace k Azure Stacku
+      href: /azure-stack
+- name: Zdroje a prostředky
+  items:
+    - name: Microsoft Learn
+      href: /learn
+    - name: Microsoft Q&A
+      href: /answers/products/

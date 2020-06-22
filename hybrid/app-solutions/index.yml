@@ -1,0 +1,72 @@
+### YamlMime:Landing
+title: Dokumentace k hybridním vzorům a řešením Azure
+summary: Naučte se při vývoji vašich aplikací využívat příklady hybridních vzorů a řešení. Azure a Azure Stack umožňují vývoj hybridních aplikací postavených na sadě inteligentních cloudových služeb a služeb inteligentních hraničních zařízení.
+metadata:
+  title: Dokumentace k hybridním vzorům a řešením Azure
+  description: Naučte se při vývoji vašich aplikací využívat příklady hybridních vzorů a řešení. Azure a Azure Stack umožňují vývoj hybridních aplikací postavených na sadě inteligentních cloudových služeb a služeb inteligentních hraničních zařízení.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 10/31/2019
+  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909659"
+landingContent:
+- title: Informace o hybridních vzorech a řešeních
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Co jsou příklady hybridních vzorů a řešení?
+      url: overview-patterns-solution-examples.md
+  - linkListType: concept
+    links:
+    - text: Aspekty návrhu hybridních aplikací
+      url: overview-app-design-considerations.md
+- title: Zkoumání hybridních vzorů
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Škálování napříč cloudy
+      url: pattern-cross-cloud-scale.md
+    - text: Hybridní CI/CD v rámci DevOps
+      url: pattern-cicd-pipeline.md
+    - text: Detekce provozu návštěvníků (maloobchod)
+      url: pattern-retail-footfall-detection.md
+    - text: Geograficky distribuovaná aplikace
+      url: pattern-geo-distributed.md
+- title: Nasazení příkladů hybridních řešení
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Škálování napříč cloudy
+      url: solution-deployment-guide-cross-cloud-scaling.md
+    - text: Hybridní CI/CD v rámci DevOps
+      url: https://aka.ms/hybriddevopsdeploy
+    - text: Detekce provozu návštěvníků (maloobchod)
+      url: solution-deployment-guide-retail-footfall-detection.md
+    - text: Geograficky distribuovaná aplikace
+      url: solution-deployment-guide-geo-distributed.md
+- title: Scénář detekce provozu návštěvníků v maloobchodě
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Vzor
+      url: pattern-retail-footfall-detection.md
+  - linkListType: tutorial
+    links:
+    - text: Průvodce nasazením řešení
+      url: solution-deployment-guide-retail-footfall-detection.md
+- title: Scénář škálování napříč cloudy s využitím místních dat
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Vzor
+      url: pattern-cross-cloud-scale-onprem-data.md
+  - linkListType: tutorial
+    links:
+    - text: Průvodce nasazením řešení
+      url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
