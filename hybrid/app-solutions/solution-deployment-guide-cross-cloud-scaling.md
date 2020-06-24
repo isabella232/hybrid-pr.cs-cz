@@ -64,7 +64,7 @@ Zajistěte, aby lokálně nasazené aplikace byly nakonfigurované pro vysokou d
 
 Řešení mezi cloudy zajišťuje bezproblémové řízení a známé rozhraní mezi prostředími. PowerShell se doporučuje pro správu různých platforem.
 
-## <a name="cross-cloud-scaling"></a>Škálování mezi různými cloudy
+## <a name="cross-cloud-scaling"></a>Škálování napříč cloudy
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Získat vlastní doménu a nakonfigurovat DNS
 

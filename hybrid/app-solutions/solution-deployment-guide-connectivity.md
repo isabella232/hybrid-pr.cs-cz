@@ -39,7 +39,7 @@ K vytvoření hybridního nasazení připojení je potřeba pár součástí. U 
 - Pokud ještě nemáte předplatné Azure, [vytvořte si bezplatný účet](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), ještě než začnete.
 - Vytvořte [webovou aplikaci](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) v Azure. Poznamenejte si adresu URL webové aplikace, protože ji budete potřebovat v řešení.
 
-### <a name="azure-stack-hub"></a>Centrum Azure Stack
+### <a name="azure-stack-hub"></a>Azure Stack Hub
 
 Partner Azure pro výrobce OEM/hardware může nasadit produkční Azure Stack centrum a všichni uživatelé můžou nasadit Azure Stack Development Kit (ASDK).
 
