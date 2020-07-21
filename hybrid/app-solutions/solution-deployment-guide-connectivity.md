@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 0e1a0fc4fb4110fdb406d4b4b2e72abb8f5412c9
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910048"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477282"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Konfigurace hybridního cloudového připojení pomocí Azure a centra Azure Stack
 
@@ -37,7 +37,7 @@ K vytvoření hybridního nasazení připojení je potřeba pár součástí. U 
 ### <a name="azure"></a>Azure
 
 - Pokud ještě nemáte předplatné Azure, [vytvořte si bezplatný účet](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), ještě než začnete.
-- Vytvořte [webovou aplikaci](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) v Azure. Poznamenejte si adresu URL webové aplikace, protože ji budete potřebovat v řešení.
+- Vytvořte [webovou aplikaci](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) v Azure. Poznamenejte si adresu URL webové aplikace, protože ji budete potřebovat v řešení.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -69,7 +69,7 @@ Před zahájením konfigurace připojení hybridního cloudu ověřte, že splň
 
 #### <a name="solution-example-values"></a>Příklady hodnot řešení
 
-Příklady v tomto řešení používají následující hodnoty. Tyto hodnoty můžete použít k vytvoření testovacího prostředí nebo k lepšímu porozumění příkladům, které se na ně vztahují. Další informace o nastavení služby VPN Gateway najdete v tématu [informace o nastaveních VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
+Příklady v tomto řešení používají následující hodnoty. Tyto hodnoty můžete použít k vytvoření testovacího prostředí nebo k lepšímu porozumění příkladům, které se na ně vztahují. Další informace o nastavení služby VPN Gateway najdete v tématu [informace o nastaveních VPN Gateway](/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
 
 Specifikace připojení:
 
@@ -99,7 +99,7 @@ IP adresa sítě a podsítě:
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack-hub"></a>Vytvoření virtuální sítě v globálním centru Azure a Azure Stack
 
-Pomocí následujících kroků můžete vytvořit virtuální síť pomocí portálu. Tyto [příklady hodnot](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) můžete použít, pokud používáte tento článek jenom jako řešení. Pokud používáte tento článek ke konfiguraci produkčního prostředí, nahraďte vzorová nastavení vlastními hodnotami.
+Pomocí následujících kroků můžete vytvořit virtuální síť pomocí portálu. Tyto [příklady hodnot](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) můžete použít, pokud používáte tento článek jenom jako řešení. Pokud používáte tento článek ke konfiguraci produkčního prostředí, nahraďte vzorová nastavení vlastními hodnotami.
 
 > [!IMPORTANT]
 > Musíte zajistit, aby se v Azure překrývaly IP adresy ani adresní prostory virtuální sítě ve službě Azure Stack hub.
@@ -212,4 +212,4 @@ Připojení můžete zobrazit na stránce **připojení** brány virtuální sí
 
 ## <a name="next-steps"></a>Další kroky
 
-- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](https://docs.microsoft.com/azure/architecture/patterns).
+- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](/azure/architecture/patterns).

@@ -7,16 +7,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ff6d5b9667e63a6b8d232b6dd93db2d8b12fd46d
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910097"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477078"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Nasazení skupiny dostupnosti SQL Server 2016 do Azure a centra Azure Stack
 
-Tento článek vás provede automatizovaným nasazením základního vysoce dostupného clusteru s vysokou dostupností (HA) SQL Server 2016 Enterprise s asynchronním serverem pro zotavení po havárii ve dvou Azure Stack hub prostředích. Další informace o SQL Server 2016 a vysoké dostupnosti najdete v tématu [skupiny dostupnosti Always On: řešení zotavení po havárii s vysokou dostupností](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
+Tento článek vás provede automatizovaným nasazením základního vysoce dostupného clusteru s vysokou dostupností (HA) SQL Server 2016 Enterprise s asynchronním serverem pro zotavení po havárii ve dvou Azure Stack hub prostředích. Další informace o SQL Server 2016 a vysoké dostupnosti najdete v tématu [skupiny dostupnosti Always On: řešení zotavení po havárii s vysokou dostupností](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016).
 
 V tomto řešení sestavíte ukázkové prostředí pro:
 
@@ -40,9 +40,9 @@ V tomto řešení sestavíte ukázkové prostředí pro:
 - Dva připojené systémy integrovaných Azure Stack hub (centrum Azure Stack). Toto nasazení nefunguje na Azure Stack Development Kit (ASDK). Další informace o centru Azure Stack najdete v tématu [přehled Azure Stack](https://azure.microsoft.com/overview/azure-stack/).
 - Předplatné tenanta v každém centru Azure Stack.
   - **Poznamenejte si každé ID předplatného a Azure Resource Manager koncový bod pro každé centrum Azure Stack.**
-- Instanční objekt služby Azure Active Directory (Azure AD), který má oprávnění k předplatnému tenanta pro každé centrum Azure Stack. Pokud jsou centra Azure Stack nasazená v různých klientech služby Azure AD, možná budete muset vytvořit dva instanční objekty. Informace o tom, jak vytvořit instanční objekt pro centrum Azure Stack, najdete v tématu [Vytvoření instančních objektů a udělení přístupu aplikacím k prostředkům služby Azure Stack hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+- Instanční objekt služby Azure Active Directory (Azure AD), který má oprávnění k předplatnému tenanta pro každé centrum Azure Stack. Pokud jsou centra Azure Stack nasazená v různých klientech služby Azure AD, možná budete muset vytvořit dva instanční objekty. Informace o tom, jak vytvořit instanční objekt pro centrum Azure Stack, najdete v tématu [Vytvoření instančních objektů a udělení přístupu aplikacím k prostředkům služby Azure Stack hub](/azure-stack/user/azure-stack-create-service-principals).
   - **Poznamenejte si ID aplikace, tajný klíč klienta a název tenanta (xxxxx.onmicrosoft.com) daného instančního objektu.**
-- SQL Server 2016 Enterprise se do každého tržiště centra Azure Stack zasyndikátoval. Další informace o syndikaci na webu Marketplace najdete v tématu [stažení položek Marketplace do centra Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- SQL Server 2016 Enterprise se do každého tržiště centra Azure Stack zasyndikátoval. Další informace o syndikaci na webu Marketplace najdete v tématu [stažení položek Marketplace do centra Azure Stack](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
     **Ujistěte se, že má vaše organizace odpovídající licence SQL.**
 - [Docker for Windows](https://docs.docker.com/docker-for-windows/) nainstalované na místním počítači.
 
@@ -105,6 +105,6 @@ Image Docker pro každé nasazení eliminují problémy závislosti mezi různý
 
 ## <a name="next-steps"></a>Další kroky
 
-- Použijte SQL Server Management Studio k ručnímu převzetí služeb při selhání clusteru. Viz [provedení vynuceného ručního převzetí služeb při selhání skupiny dostupnosti Always On (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017) .
+- Použijte SQL Server Management Studio k ručnímu převzetí služeb při selhání clusteru. Viz [provedení vynuceného ručního převzetí služeb při selhání skupiny dostupnosti Always On (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017) .
 - Přečtěte si další informace o hybridních cloudových aplikacích. Podívejte se na [hybridní cloudová řešení.](https://aka.ms/azsdevtutorials)
 - Použijte vlastní data nebo upravte kód v této ukázce na [GitHubu](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

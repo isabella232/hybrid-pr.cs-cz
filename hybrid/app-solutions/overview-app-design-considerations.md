@@ -7,20 +7,20 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4fd52f76baad8059e130adfc01cdd0152b40a510
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910117"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477214"
 ---
-# <a name="hybrid-app-design-considerations"></a>Požadavky na návrh hybridní aplikace
+# <a name="hybrid-app-design-considerations"></a>Aspekty návrhu hybridních aplikací
 
 Microsoft Azure je jediným konzistentním hybridním cloudem. Umožňuje znovu použít své investice do vývoje a povolit aplikace, které můžou zahrnovat globální Azure, cloudové cloudy Azure a Azure Stack, což je rozšíření Azure ve vašem datovém centru. Aplikace, které zahrnují cloudy, se také označují jako *hybridní aplikace*.
 
-[*Průvodce architekturou aplikací Azure*](https://docs.microsoft.com/azure/architecture/guide) popisuje strukturovaný přístup k návrhu aplikací, které jsou škálovatelné, odolné a vysoce dostupné. Požadavky popsané v [*příručce aplikační architektura Azure*](https://docs.microsoft.com/azure/architecture/guide) se vztahují i na aplikace, které jsou navržené pro jeden Cloud a pro aplikace, které využívají cloudy.
+[*Průvodce architekturou aplikací Azure*](/azure/architecture/guide) popisuje strukturovaný přístup k návrhu aplikací, které jsou škálovatelné, odolné a vysoce dostupné. Požadavky popsané v [*příručce aplikační architektura Azure*](/azure/architecture/guide) se vztahují i na aplikace, které jsou navržené pro jeden Cloud a pro aplikace, které využívají cloudy.
 
-Tento článek rozšiřuje [*pilíře kvality softwaru*](https://docs.microsoft.com/azure/architecture/guide/pillars) popsané v [ *Průvodci architekturou*](https://docs.microsoft.com/azure/architecture/guide/) [*aplikací Azure*](https://docs.microsoft.com/azure/architecture/guide/) a zaměřuje se konkrétně na návrh hybridních aplikací. Kromě toho přidáme pilíře *umístění* , protože hybridní aplikace nejsou výhradně v jednom cloudu nebo v jednom místním datovém centru.
+Tento článek rozšiřuje [*pilíře kvality softwaru*](/azure/architecture/guide/pillars) popsané v [ *Průvodci architekturou*](/azure/architecture/guide/) [*aplikací Azure*](/azure/architecture/guide/) a zaměřuje se konkrétně na návrh hybridních aplikací. Kromě toho přidáme pilíře *umístění* , protože hybridní aplikace nejsou výhradně v jednom cloudu nebo v jednom místním datovém centru.
 
 Hybridní scénáře se značně liší u prostředků, které jsou k dispozici pro vývoj, a zahrnují okolnosti, jako je zeměpisná, zabezpečení, přístup k Internetu a další požadavky. I když v této příručce nejde vytvořit výčet konkrétních důležitých informací, může vám poskytnout několik klíčových pokynů a osvědčených postupů, které můžete sledovat. Úspěšné navrhování, konfigurace, nasazení a údržba architektury hybridních aplikací zahrnuje mnoho hledisek návrhu, které vám nemusí být pro vás podstatou známo.
 
@@ -93,7 +93,7 @@ Umístění je důležitým úkolem umístění komponent, aby mohli nejlépe vy
 
 **Ověřte požadovaná umístění.** Ujistěte se, že aplikace nebo některá její součást je nutná k provozu v nebo vyžadovat certifikaci pro konkrétní Cloud. To může zahrnovat požadavky na svrchovanost z vaší společnosti nebo podle zákona. Také určete, zda jsou některé místní operace požadovány pro konkrétní umístění nebo národní prostředí.
 
-**Zjišťuje závislosti připojení.** Požadovaná umístění a další faktory mohou určovat závislosti připojení mezi vašimi komponentami. Když umístíte komponenty, určete optimální konektivitu a zabezpečení pro komunikaci mezi nimi. Mezi možnosti patří [ *VPN*,](https://docs.microsoft.com/azure/vpn-gateway/) [ *ExpressRoute*](https://docs.microsoft.com/azure/expressroute/) a [ *Hybrid Connections*.](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
+**Zjišťuje závislosti připojení.** Požadovaná umístění a další faktory mohou určovat závislosti připojení mezi vašimi komponentami. Když umístíte komponenty, určete optimální konektivitu a zabezpečení pro komunikaci mezi nimi. Mezi možnosti patří [ *VPN*,](/azure/vpn-gateway/) [ *ExpressRoute*](/azure/expressroute/) a [ *Hybrid Connections*.](/azure/app-service/app-service-hybrid-connections)
 
 **Vyhodnoťte možnosti platformy.** U každé součásti aplikace Zjistěte, jestli je požadovaný poskytovatel prostředků pro součást aplikace dostupný v cloudu a jestli šířka pásma může vyhovovat očekávané propustnosti a požadavkům na latenci.
 
@@ -109,7 +109,7 @@ Umístění je důležitým úkolem umístění komponent, aby mohli nejlépe vy
 
 Škálovatelnost je schopnost systému zvládnout zvýšené zatížení aplikace, které se může v průběhu času měnit, protože jiné faktory a síly ovlivňují velikost cílové skupiny, a to i podle velikosti a rozsahu aplikace.
 
-Základní diskusi k tomuto pilíři najdete v tématu [*škálovatelnost*](https://docs.microsoft.com/azure/architecture/guide/pillars#scalability) v pěti pilířích kvality architektury.
+Základní diskusi k tomuto pilíři najdete v tématu [*škálovatelnost*](/azure/architecture/guide/pillars#scalability) v pěti pilířích kvality architektury.
 
 Horizontální přístup k škálování pro hybridní aplikace umožňuje přidat další instance pro splnění požadavků a pak je v tichých intervalech zakázat.
 
@@ -155,7 +155,7 @@ Základní diskusi k tomuto pilíři najdete v tématu [*dostupnost*](/azure/arc
 
 Odolnost proti chybám je schopnost hybridní aplikace a systému obnovit selhání a nadále fungovat. Cílem odolnosti proti chybám je vrácení aplikace do plně funkčního stavu po selhání. Strategie odolnosti proti chybám zahrnují řešení, jako je zálohování, replikace a zotavení po havárii.
 
-Základní diskusi k tomuto pilíři najdete v tématu [*odolnost*](https://docs.microsoft.com/azure/architecture/guide/pillars#resiliency) proti chybám v pěti pilířích vynikající architektury.
+Základní diskusi k tomuto pilíři najdete v tématu [*odolnost*](/azure/architecture/guide/pillars#resiliency) proti chybám v pěti pilířích vynikající architektury.
 
 ### <a name="resiliency-checklist"></a>Kontrolní seznam k odolnosti
 
@@ -201,7 +201,7 @@ Určete části aplikace, které vyžadují monitorování.
 
 Zabezpečení je jedním z hlavních předpokladů pro jakoukoli cloudovou aplikaci a je ještě důležitější pro hybridní cloudové aplikace.
 
-Základní diskusi k tomuto pilíři najdete v tématu [*zabezpečení*](https://docs.microsoft.com/azure/architecture/guide/pillars#security) v pěti pilířích kvality architektury.
+Základní diskusi k tomuto pilíři najdete v tématu [*zabezpečení*](/azure/architecture/guide/pillars#security) v pěti pilířích kvality architektury.
 
 ### <a name="security-checklist"></a>Kontrolní seznam zabezpečení
 
@@ -219,7 +219,7 @@ Základní diskusi k tomuto pilíři najdete v tématu [*zabezpečení*](https:/
 
 **Auditovat systém.** Sledování systému může protokolovat a agregovat data z komponent aplikace i souvisejících operací cloudové platformy.
 
-## <a name="summary"></a>Souhrn
+## <a name="summary"></a>Shrnutí
 
 Tento článek poskytuje kontrolní seznam položek, které je důležité zvážit během vytváření a navrhování hybridních aplikací. Před tím, než aplikaci nasadíte, si Projděte tyto pilíře, abyste se nemuseli spouštět na tyto otázky v produkčních výpadkech a případně vyžadovali, abyste přenavštívili návrh.
 
@@ -227,7 +227,7 @@ Může se zdát jako časově náročný úkol předem, ale pokud navrhujete svo
 
 ## <a name="next-steps"></a>Další kroky
 
-Další informace najdete v následujících materiálech:
+Další informace naleznete v následujících zdrojích:
 
 - [Hybridní cloud](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [Hybridní cloudové aplikace](https://azure.microsoft.com/solutions/hybrid-cloud-app/)

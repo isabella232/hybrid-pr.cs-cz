@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 740a8c0ec904fe8eb3f9744626bc9dd6655bdb52
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910638"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477333"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Nasazení aplikace, která škáluje více cloudů pomocí Azure a centra Azure Stack
 
@@ -68,7 +68,7 @@ Zajistěte, aby lokálně nasazené aplikace byly nakonfigurované pro vysokou d
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Získat vlastní doménu a nakonfigurovat DNS
 
-Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Zaregistrujte vlastní doménu s veřejným registrátorem.
 2. Přihlaste se k registrátorovi názvu domény. K provedení aktualizací DNS může být nutný schválený správce.
@@ -97,7 +97,7 @@ Azure Repos
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Vytvoření samoobslužného nasazení webové aplikace pro App Services v obou cloudech
 
-1. Upravte soubor **WebApplication. csproj** . Vyberte `Runtimeidentifier` a přidejte `win10-x64` . (Viz dokumentace k [samoobslužnému nasazení](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
+1. Upravte soubor **WebApplication. csproj** . Vyberte `Runtimeidentifier` a přidejte `win10-x64` . (Viz dokumentace k [samoobslužnému nasazení](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
 
     ![Upravit soubor projektu webové aplikace](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -113,7 +113,7 @@ Azure Repos
 
     ![Přidání kódu do webové aplikace](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Spusťte sestavení. Proces [sestavení samostatného nasazení](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) bude publikovat artefakty, které běží v Azure a centra Azure Stack.
+3. Spusťte sestavení. Proces [sestavení samostatného nasazení](/dotnet/core/deploying/deploy-with-vs#simpleSelf) bude publikovat artefakty, které běží v Azure a centra Azure Stack.
 
 ## <a name="use-an-azure-hosted-agent"></a>Použití hostovaného agenta Azure
 
@@ -211,7 +211,7 @@ Azure Pipelines a Azure DevOps Services poskytují vysoce konfigurovatelný a sp
 21. Uložte všechny změny.
 
 > [!Note]  
-> Některá nastavení pro úlohy mohla být při vytváření definice verze ze šablony automaticky definována jako [proměnné prostředí](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) . Tato nastavení se nedají upravit v nastavení úlohy. místo toho je nutné vybrat nadřazenou položku prostředí pro úpravu těchto nastavení.
+> Některá nastavení pro úlohy mohla být při vytváření definice verze ze šablony automaticky definována jako [proměnné prostředí](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) . Tato nastavení se nedají upravit v nastavení úlohy. místo toho je nutné vybrat nadřazenou položku prostředí pro úpravu těchto nastavení.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publikování do centra Azure Stack pomocí sady Visual Studio
 
@@ -254,7 +254,7 @@ K nasazení do obou cloudů použijte [Azure Resource Manager šablony](https://
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Vytvoření samoobslužného nasazení webové aplikace pro App Services v obou cloudech
 
-1. Upravte soubor **WebApplication. csproj** : vyberte `Runtimeidentifier` a pak přidejte `win10-x64` . Další informace najdete v dokumentaci k [samoobslužnému nasazení](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .
+1. Upravte soubor **WebApplication. csproj** : vyberte `Runtimeidentifier` a pak přidejte `win10-x64` . Další informace najdete v dokumentaci k [samoobslužnému nasazení](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .
 
 2. Použijte Team Explorer ke kontrole kódu do Azure Repos.
 
@@ -268,7 +268,7 @@ K nasazení do obou cloudů použijte [Azure Resource Manager šablony](https://
 
 3. V **argumentech**přidejte kód **-r Win10-x64** . Tento dodatek je nutný k aktivaci samostatného nasazení pomocí .NET Core.
 
-4. Spusťte sestavení. Proces [sestavení samostatného nasazení](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) bude publikovat artefakty, které se dají spouštět v Azure a centra Azure Stack.
+4. Spusťte sestavení. Proces [sestavení samostatného nasazení](/dotnet/core/deploying/deploy-with-vs#simpleSelf) bude publikovat artefakty, které se dají spouštět v Azure a centra Azure Stack.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Použití hostovaného agenta sestavení Azure
 
@@ -329,7 +329,7 @@ Vytvoření definice verze je posledním krokem v procesu sestavování aplikace
 23. Uložte všechny změny.
 
 > [!Note]  
-> Některá nastavení pro úlohy vydaných verzí se při vytváření definice verze ze šablony automaticky definují jako [proměnné prostředí](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) . Tato nastavení nelze upravovat v nastavení úlohy, ale lze je upravit v položkách nadřazeného prostředí.
+> Některá nastavení pro úlohy vydaných verzí se při vytváření definice verze ze šablony automaticky definují jako [proměnné prostředí](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) . Tato nastavení nelze upravovat v nastavení úlohy, ale lze je upravit v položkách nadřazeného prostředí.
 
 ## <a name="create-a-release"></a>Vytvoření vydané verze
 
@@ -361,4 +361,4 @@ Flexibilní a robustní cloudová služba poskytuje zabezpečení dat, zálohov�
 
 ## <a name="next-steps"></a>Další kroky
 
-- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](https://docs.microsoft.com/azure/architecture/patterns).
+- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](/azure/architecture/patterns).

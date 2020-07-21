@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6913cc522da447092dad0af24e148a3b2576495c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910056"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477163"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Nasazení řešení pro detekci Footfall založené na AI pomocí Azure a centra Azure Stack
 
@@ -44,7 +44,7 @@ Než začnete s tímto průvodcem nasazením, nezapomeňte:
 - Vytvořte ve svém adresáři dva instanční objekty:
   - Jedna nastavená pro použití s prostředky Azure s přístupem v oboru předplatného Azure.
   - Jedna je nastavená pro použití s prostředky centra Azure Stack s přístupem v oboru předplatného centra Azure Stack.
-  - Další informace o vytváření instančních objektů a autorizaci přístupu najdete v tématu [použití identity aplikace pro přístup k prostředkům](/azure-stack/operator/azure-stack-create-service-principals.md). Pokud dáváte přednost použití rozhraní příkazového řádku Azure, přečtěte si téma [Vytvoření instančního objektu Azure pomocí Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Další informace o vytváření instančních objektů a autorizaci přístupu najdete v tématu [použití identity aplikace pro přístup k prostředkům](/azure-stack/operator/azure-stack-create-service-principals.md). Pokud dáváte přednost použití rozhraní příkazového řádku Azure, přečtěte si téma [Vytvoření instančního objektu Azure pomocí Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 - Nasaďte Azure Cognitive Services v Azure nebo v centru Azure Stack.
   - Nejprve [si přečtěte další informace o Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
   - Potom navštivte [nasazení služby Azure Cognitive Services, abyste Azure Stack centrum](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) nasadili Cognitive Services v Azure Stackovém centru. Nejprve se musíte zaregistrovat pro přístup k verzi Preview.

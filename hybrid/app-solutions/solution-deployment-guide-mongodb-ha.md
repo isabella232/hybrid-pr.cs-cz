@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910593"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477265"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Nasazení vysoce dostupného řešení MongoDB do Azure a centra Azure Stack
 
@@ -40,9 +40,9 @@ V tomto řešení vytvoříte ukázkové prostředí pro:
 - Dva připojené systémy integrovaných Azure Stack hub (centrum Azure Stack). Toto nasazení nefunguje na Azure Stack Development Kit (ASDK). Další informace o centru Azure Stack najdete v tématu [co je Azure Stack hub?](https://azure.microsoft.com/products/azure-stack/hub/)
   - Předplatné tenanta v každém centru Azure Stack. 
   - **Poznamenejte si každé ID předplatného a Azure Resource Manager koncový bod pro každé centrum Azure Stack.**
-- Instanční objekt služby Azure Active Directory (Azure AD), který má oprávnění k předplatnému tenanta pro každé centrum Azure Stack. Pokud jsou centra Azure Stack nasazená v různých klientech služby Azure AD, možná budete muset vytvořit dva instanční objekty. Informace o tom, jak vytvořit instanční objekt pro centrum Azure Stack, najdete v tématu [použití identity aplikace pro přístup k prostředkům Azure Stack hub](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals).
+- Instanční objekt služby Azure Active Directory (Azure AD), který má oprávnění k předplatnému tenanta pro každé centrum Azure Stack. Pokud jsou centra Azure Stack nasazená v různých klientech služby Azure AD, možná budete muset vytvořit dva instanční objekty. Informace o tom, jak vytvořit instanční objekt pro centrum Azure Stack, najdete v tématu [použití identity aplikace pro přístup k prostředkům Azure Stack hub](/azure-stack/user/azure-stack-create-service-principals).
   - **Poznamenejte si ID aplikace, tajný klíč klienta a název tenanta (xxxxx.onmicrosoft.com) daného instančního objektu.**
-- Ubuntu 16,04 se zaAzure Stack do každého tržiště centra. Další informace o syndikaci na webu Marketplace najdete v tématu [stažení položek Marketplace do centra Azure Stack](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item).
+- Ubuntu 16,04 se zaAzure Stack do každého tržiště centra. Další informace o syndikaci na webu Marketplace najdete v tématu [stažení položek Marketplace do centra Azure Stack](/azure-stack/operator/azure-stack-download-azure-marketplace-item).
 - [Docker for Windows](https://docs.docker.com/docker-for-windows/) nainstalované na místním počítači.
 
 ## <a name="get-the-docker-image"></a>Získat image Docker

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 8f2b7e48a62896acfce7293dcd4f18d5a43add01
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910521"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477350"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Přímý provoz s geograficky distribuovanou aplikací pomocí Azure a centra Azure Stack
 
@@ -52,7 +52,7 @@ Před vytvořením kapacity distribuovaných aplikací vám pomůže tyto věci:
 
 - **Vlastní doména pro aplikaci:** Jaký je vlastní název domény, který budou zákazníci používat pro přístup k aplikaci? Pro ukázkovou aplikaci je vlastní název domény *www \. scalableasedemo.com.*
 
-- **Doména Traffic Manager:** Při vytváření [profilu Traffic Manager Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles)se vybere název domény. Tento název se používá v kombinaci s příponou *trafficmanager.NET* k registraci položky domény spravované pomocí Traffic Manager. Pro ukázkovou aplikaci je zvolený název *škálovatelný-pomocný-demo*. Výsledkem je, že úplný název domény, který je spravovaný nástrojem Traffic Manager, je *Scalable-ASE-demo.trafficmanager.NET*.
+- **Doména Traffic Manager:** Při vytváření [profilu Traffic Manager Azure](/azure/traffic-manager/traffic-manager-manage-profiles)se vybere název domény. Tento název se používá v kombinaci s příponou *trafficmanager.NET* k registraci položky domény spravované pomocí Traffic Manager. Pro ukázkovou aplikaci je zvolený název *škálovatelný-pomocný-demo*. Výsledkem je, že úplný název domény, který je spravovaný nástrojem Traffic Manager, je *Scalable-ASE-demo.trafficmanager.NET*.
 
 - **Strategie škálování aplikace:** Rozhodněte se, jestli budou nároky na aplikace distribuované napříč několika App Service prostředími v jedné oblasti, několika oblastech nebo kombinací obou přístupů. Rozhodnutí by mělo být založené na očekáváních, kde se bude nacházet na provozu zákazníků, a na tom, jak se může dál škálovat i zbytek podpory back-endové infrastruktury aplikace. Například s bezstavovou aplikací 100% se dá aplikace hromadně škálovat s využitím kombinace více App Service prostředí na oblast Azure vynásobená App Service prostředími nasazenými napříč několika oblastmi Azure. Díky více než 15 globálním oblastem Azure, ze kterých si můžete vybrat, můžou zákazníci skutečně vytvořit vysoce škálovatelné nároky na aplikace na úrovni Hyper. Pro ukázkovou aplikaci, která se tady používá, se v jedné oblasti Azure (Střed USA – jih) vytvořila tři App Service prostředí.
 
@@ -84,7 +84,7 @@ Vyžaduje se instalace předplatného Azure a centra Azure Stack.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Získání vlastní domény a konfigurace DNS
 
-Aktualizujte soubor zóny DNS pro doménu. Azure AD pak může ověřit vlastnictví vlastního názvu domény. Použijte [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Aktualizujte soubor zóny DNS pro doménu. Azure AD pak může ověřit vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Zaregistrujte vlastní doménu s veřejným registrátorem.
 
@@ -113,7 +113,7 @@ Nastavte hybridní průběžnou integraci/průběžné doručování (CI/CD), ab
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Vytvoření nasazení webové aplikace v obou cloudech
 
-1. Upravte soubor **WebApplication. csproj** : vyberte `Runtimeidentifier` a přidejte `win10-x64` . (Viz dokumentace k [samoobslužnému nasazení](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
+1. Upravte soubor **WebApplication. csproj** : vyberte `Runtimeidentifier` a přidejte `win10-x64` . (Viz dokumentace k [samoobslužnému nasazení](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .)
 
     ![Upravit soubor projektu webové aplikace v aplikaci Visual Studio](media/solution-deployment-guide-geo-distributed/image3.png)
 
@@ -129,7 +129,7 @@ Nastavte hybridní průběžnou integraci/průběžné doručování (CI/CD), ab
 
     ![Přidejte kód do definice sestavení v Azure Pipelines](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **Spusťte sestavení**. Proces [sestavení samostatného nasazení](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) bude publikovat artefakty, které se dají spouštět v Azure a centra Azure Stack.
+3. **Spusťte sestavení**. Proces [sestavení samostatného nasazení](/dotnet/core/deploying/deploy-with-vs#simpleSelf) bude publikovat artefakty, které se dají spouštět v Azure a centra Azure Stack.
 
 #### <a name="using-an-azure-hosted-agent"></a>Použití hostovaného agenta Azure
 
@@ -229,11 +229,11 @@ Azure DevOps Services poskytují vysoce konfigurovatelný a spravovatelný kaná
 21. Uložte všechny změny.
 
 > [!Note]  
-> Některá nastavení pro úlohy mohla být při vytváření definice verze ze šablony automaticky definována jako [proměnné prostředí](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) . Tato nastavení se nedají upravit v nastavení úlohy. místo toho je nutné vybrat nadřazenou položku prostředí pro úpravu těchto nastavení.
+> Některá nastavení pro úlohy mohla být při vytváření definice verze ze šablony automaticky definována jako [proměnné prostředí](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) . Tato nastavení se nedají upravit v nastavení úlohy. místo toho je nutné vybrat nadřazenou položku prostředí pro úpravu těchto nastavení.
 
 ## <a name="part-2-update-web-app-options"></a>Část 2: aktualizace možností webové aplikace
 
-[Azure App Service ](https://docs.microsoft.com/azure/app-service/overview) je vysoce škálovatelná služba s automatickými opravami pro hostování webů.
+[Azure App Service ](/azure/app-service/overview) je vysoce škálovatelná služba s automatickými opravami pro hostování webů.
 
 ![Azure App Service](media/solution-deployment-guide-geo-distributed/image27.png)
 
@@ -246,17 +246,17 @@ Azure DevOps Services poskytují vysoce konfigurovatelný a spravovatelný kaná
 > [!Note]  
 > Použijte záznam CNAME pro všechny vlastní názvy DNS kromě kořenové domény (například northwind.com).
 
-Pokud chcete do služby App Service migrovat živý web a jeho název domény DNS, přečtěte si téma [Migrace aktivního názvu DNS do služby Azure App Service](https://docs.microsoft.com/azure/app-service/manage-custom-dns-migrate-domain).
+Pokud chcete do služby App Service migrovat živý web a jeho název domény DNS, přečtěte si téma [Migrace aktivního názvu DNS do služby Azure App Service](/azure/app-service/manage-custom-dns-migrate-domain).
 
 ### <a name="prerequisites"></a>Požadavky
 
 Dokončení tohoto řešení:
 
-- [Vytvořte aplikaci App Service](https://docs.microsoft.com/azure/app-service/)nebo použijte aplikaci vytvořenou pro jiné řešení.
+- [Vytvořte aplikaci App Service](/azure/app-service/)nebo použijte aplikaci vytvořenou pro jiné řešení.
 
 - Zakupte název domény a zajistěte přístup k registru DNS pro poskytovatele domény.
 
-Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 - Zaregistrujte vlastní doménu s veřejným registrátorem.
 
@@ -267,14 +267,14 @@ Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastn
 Pokud například chcete přidat položky DNS pro northwindcloud.com a webové \. northwindcloud.com, nakonfigurujte nastavení DNS pro kořenovou doménu northwindcloud.com.
 
 > [!Note]  
-> Název domény může být zakoupen pomocí [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). Abyste mohli mapovat vlastní název DNS na webovou aplikaci, [plán služby App Service](https://azure.microsoft.com/pricing/details/app-service/) příslušné webové aplikace musí být na placené úrovni (**Shared**, **Basic**, **Standard** nebo **Premium**).
+> Název domény může být zakoupen pomocí [Azure Portal](/azure/app-service/manage-custom-dns-buy-domain). Abyste mohli mapovat vlastní název DNS na webovou aplikaci, [plán služby App Service](https://azure.microsoft.com/pricing/details/app-service/) příslušné webové aplikace musí být na placené úrovni (**Shared**, **Basic**, **Standard** nebo **Premium**).
 
 ### <a name="create-and-map-cname-and-a-records"></a>Vytvoření a mapování záznamů CNAME a a
 
 #### <a name="access-dns-records-with-domain-provider"></a>Přístup k záznamům DNS u poskytovatele domény
 
 > [!Note]  
->  Pomocí Azure DNS můžete nakonfigurovat vlastní název DNS pro Azure Web Apps. Další informace najdete v tématu popisujícím [použití Azure DNS k určení nastavení vlastní domény pro službu Azure](https://docs.microsoft.com/azure/dns/dns-custom-domain).
+>  Pomocí Azure DNS můžete nakonfigurovat vlastní název DNS pro Azure Web Apps. Další informace najdete v tématu popisujícím [použití Azure DNS k určení nastavení vlastní domény pro službu Azure](/azure/dns/dns-custom-domain).
 
 1. Přihlaste se na web hlavního poskytovatele.
 
@@ -355,14 +355,14 @@ V této části budeme:
 > - Automatizujte vazbu certifikátu SSL pomocí skriptů.
 
 > [!Note]  
-> V případě potřeby Získejte certifikát SSL zákazníka v Azure Portal a navažte ho k webové aplikaci. Další informace najdete v [kurzu App Servicech certifikátů](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site).
+> V případě potřeby Získejte certifikát SSL zákazníka v Azure Portal a navažte ho k webové aplikaci. Další informace najdete v [kurzu App Servicech certifikátů](/azure/app-service/web-sites-purchase-ssl-web-site).
 
 ### <a name="prerequisites"></a>Požadavky
 
 Dokončení tohoto řešení:
 
-- [Vytvořte aplikaci App Service.](https://docs.microsoft.com/azure/app-service/)
-- [Namapujte vlastní název DNS na webovou aplikaci.](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+- [Vytvořte aplikaci App Service.](/azure/app-service/)
+- [Namapujte vlastní název DNS na webovou aplikaci.](/azure/app-service/app-service-web-tutorial-custom-domain)
 - Získejte certifikát SSL od důvěryhodné certifikační autority a použijte klíč k podepsání žádosti.
 
 ### <a name="requirements-for-your-ssl-certificate"></a>Požadavky na certifikát SSL
@@ -402,7 +402,7 @@ Aby bylo možné vytvořit navázání vlastního certifikátu SSL k webové apl
 
     ![Kontrolovat cenovou úroveň ve webové aplikaci](media/solution-deployment-guide-geo-distributed/image35.png)
 
-Vlastní protokol SSL není podporován na úrovni **Free** nebo **Shared** . Pokud chcete provést škálování, postupujte podle kroků v následující části nebo na stránce **vyberte cenovou úroveň** a přejděte k části [odeslání a vytvoření vazby certifikátu SSL](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Vlastní protokol SSL není podporován na úrovni **Free** nebo **Shared** . Pokud chcete provést škálování, postupujte podle kroků v následující části nebo na stránce **vyberte cenovou úroveň** a přejděte k části [odeslání a vytvoření vazby certifikátu SSL](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 #### <a name="scale-up-your-app-service-plan"></a>Vertikální navýšení kapacity plánu služby App Service
 
@@ -463,7 +463,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 Po zobrazení výzvy definujte heslo pro export pro nahrání certifikátu SSL pro App Service později.
 
-Když se k vygenerování žádosti o certifikát používá služba IIS nebo **Certreq.exe** , nainstalujte certifikát do místního počítače a pak [certifikát EXPORTUJTE do souboru PFX](https://technet.microsoft.com/library/cc754329(v=ws.11).aspx).
+Když se k vygenerování žádosti o certifikát používá služba IIS nebo **Certreq.exe** , nainstalujte certifikát do místního počítače a pak [certifikát EXPORTUJTE do souboru PFX](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754329(v=ws.11)).
 
 #### <a name="upload-the-ssl-certificate"></a>Nahrajte certifikát SSL.
 
@@ -508,13 +508,13 @@ Až App Service dokončí nahrávání certifikátu, zobrazí se v oddílech **v
 
 #### <a name="remap-the-a-record-for-ip-ssl"></a>Přemapování záznamu A pro IP SSL
 
-Pokud se ve webové aplikaci nepoužívá protokol SSL založený na protokolu IP, přeskočte na [test HTTPS pro vaši vlastní doménu](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Pokud se ve webové aplikaci nepoužívá protokol SSL založený na protokolu IP, přeskočte na [test HTTPS pro vaši vlastní doménu](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 Ve výchozím nastavení webová aplikace používá sdílenou veřejnou IP adresu. Pokud je certifikát vázán pomocí protokolu SSL založeného na protokolu IP, App Service vytvoří novou a vyhrazenou IP adresu pro webovou aplikaci.
 
 Pokud je záznam A mapován na webovou aplikaci, je nutné aktualizovat registr domény pomocí vyhrazené IP adresy.
 
-Stránka **vlastní doména** je aktualizována novou vyhrazenou IP adresou. Zkopírujte tuto [IP adresu](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)a pak přemapujte [záznam a](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) na tuto novou IP adresu.
+Stránka **vlastní doména** je aktualizována novou vyhrazenou IP adresou. Zkopírujte tuto [IP adresu](/azure/app-service/app-service-web-tutorial-custom-domain)a pak přemapujte [záznam a](/azure/app-service/app-service-web-tutorial-custom-domain) na tuto novou IP adresu.
 
 #### <a name="test-https"></a>Test HTTPS
 
@@ -577,7 +577,7 @@ Aplikace ve výchozím nastavení povolí protokol [TLS](https://wikipedia.org/w
 
 2. V **Traffic Manager profil**v části **Nastavení** vyberte **koncové body**.
 
-3. Vyberte možnost **Přidat**.
+3. Vyberte **Přidat**.
 
 4. Přidává se koncový bod centra Azure Stack.
 
@@ -626,4 +626,4 @@ Přímý přenos dat prostřednictvím Azure Traffic Manager a koncových bodů 
 
 ## <a name="next-steps"></a>Další kroky
 
-- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](https://docs.microsoft.com/azure/architecture/patterns).
+- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](/azure/architecture/patterns).

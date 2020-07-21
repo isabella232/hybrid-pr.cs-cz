@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 75289eae902c5363862e345bdedb97cbcee0476e
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910053"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477316"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Nasazení hybridní aplikace s místními daty, která škálují mezi cloudy
 
@@ -131,7 +131,7 @@ Azure App Service zjednodušuje spouštění a správu webové aplikace. Vzhlede
 
 ### <a name="create-web-apps"></a>Vytváření webových aplikací
 
-1. Pomocí pokynů v tématu [Správa plánu App Service v Azure](https://docs.microsoft.com/azure/app-service/app-service-plan-manage#create-an-app-service-plan)vytvořte webovou aplikaci v Azure. Nezapomeňte umístit webovou aplikaci do stejného předplatného a skupiny prostředků, jako je vaše hybridní síť.
+1. Pomocí pokynů v tématu [Správa plánu App Service v Azure](/azure/app-service/app-service-plan-manage#create-an-app-service-plan)vytvořte webovou aplikaci v Azure. Nezapomeňte umístit webovou aplikaci do stejného předplatného a skupiny prostředků, jako je vaše hybridní síť.
 
 2. V Azure Stackovém centru opakujte předchozí krok (1).
 
@@ -172,7 +172,7 @@ Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat p�
 
 ### <a name="integrate-the-azure-app-service-app-with-the-hybrid-network"></a>Integrace aplikace Azure App Service s hybridní sítí
 
-1. Pokud chcete připojit aplikaci k virtuální síti Azure, postupujte podle pokynů v části [Brána požadovaná integrace virtuální](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration)sítě.
+1. Pokud chcete připojit aplikaci k virtuální síti Azure, postupujte podle pokynů v části [Brána požadovaná integrace virtuální](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration)sítě.
 
 2. Přejít na **Nastavení** pro App Service plán hostování webové aplikace. V **Nastavení**vyberte **sítě**.
 
@@ -186,7 +186,7 @@ Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat p�
 
     ![Rozsahy IP adres, které se mají směrovat v Virtual Network Integration](media/solution-deployment-guide-hybrid/image13.png)
 
-Další informace o tom, jak se App Service integruje s Azure virtuální sítě, najdete v tématu [integrace aplikace s využitím azure Virtual Network](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet).
+Další informace o tom, jak se App Service integruje s Azure virtuální sítě, najdete v tématu [integrace aplikace s využitím azure Virtual Network](/azure/app-service/web-sites-integrate-with-vnet).
 
 ### <a name="configure-the-azure-stack-hub-virtual-network"></a>Konfigurace virtuální sítě centra Azure Stack
 
@@ -210,7 +210,7 @@ Tento kurz používá Azure DNS ke správě DNS, protože App Service domény ne
 
 ### <a name="create-subdomains"></a>Vytvořit subdomény
 
-Vzhledem k tomu, že Traffic Manager spoléhá na záznamy CNAME DNS, je pro správné směrování provozu do koncových bodů nutná subdoména. Další informace o záznamech DNS a mapování domén najdete v tématu [mapování domén pomocí Traffic Manager](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager-custom-domain-name).
+Vzhledem k tomu, že Traffic Manager spoléhá na záznamy CNAME DNS, je pro správné směrování provozu do koncových bodů nutná subdoména. Další informace o záznamech DNS a mapování domén najdete v tématu [mapování domén pomocí Traffic Manager](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
 Pro koncový bod Azure vytvoříte subdoménu, kterou můžou uživatelé používat pro přístup k vaší webové aplikaci. Pro tento kurz můžete použít **App.Northwind.com**, ale tuto hodnotu byste měli přizpůsobit na základě vaší vlastní domény.
 
@@ -218,13 +218,13 @@ Také budete muset vytvořit subdoménu se záznamem A pro koncový bod centra A
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Konfigurace vlastní domény v Azure
 
-1. Přidejte název hostitele **App.Northwind.com** do webové aplikace Azure tak, že [namapujete CNAME na Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
+1. Přidejte název hostitele **App.Northwind.com** do webové aplikace Azure tak, že [namapujete CNAME na Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
 
 ### <a name="configure-custom-domains-in-azure-stack-hub"></a>Konfigurace vlastních domén v centru Azure Stack
 
-1. Přidejte název hostitele **azurestack.Northwind.com** do webové aplikace centra Azure Stack tak, že [namapujete záznam a na Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Pro aplikaci App Service použijte IP adresu, kterou lze směrovat na Internet.
+1. Přidejte název hostitele **azurestack.Northwind.com** do webové aplikace centra Azure Stack tak, že [namapujete záznam a na Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Pro aplikaci App Service použijte IP adresu, kterou lze směrovat na Internet.
 
-2. Přidejte název hostitele **App.Northwind.com** do webové aplikace centra Azure Stack tak, že [namapujete CNAME na Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Jako cíl pro záznam CNAME použijte název hostitele, který jste nakonfigurovali v předchozím kroku (1).
+2. Přidejte název hostitele **App.Northwind.com** do webové aplikace centra Azure Stack tak, že [namapujete CNAME na Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Jako cíl pro záznam CNAME použijte název hostitele, který jste nakonfigurovali v předchozím kroku (1).
 
 ## <a name="configure-ssl-certificates-for-cross-cloud-scaling"></a>Konfigurace certifikátů SSL pro škálování mezi cloudy
 
@@ -238,23 +238,23 @@ Přidání protokolu SSL do Azure:
 
 1. Ujistěte se, že certifikát SSL, který získáte, je platný pro subdoménu, kterou jste vytvořili. (Používání certifikátů se zástupnými znaky je v pořádku.)
 
-2. V Azure postupujte podle pokynů v části **Příprava vaší webové aplikace** a **vytvoření vazby certifikátu SSL** ve [vazbě existujícího vlastního certifikátu SSL k Azure Web Apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) článku. Jako **typ SSL**vyberte **SSL založené na sni** .
+2. V Azure postupujte podle pokynů v části **Příprava vaší webové aplikace** a **vytvoření vazby certifikátu SSL** ve [vazbě existujícího vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) článku. Jako **typ SSL**vyberte **SSL založené na sni** .
 
-3. Přesměrujte veškerý provoz na port HTTPS. Postupujte podle pokynů v části **vyhovět protokolu HTTPS** v tématu [vytvoření vazby EXISTUJÍCÍHO vlastního certifikátu SSL k Azure Web Apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) článku.
+3. Přesměrujte veškerý provoz na port HTTPS. Postupujte podle pokynů v části **vyhovět protokolu HTTPS** v tématu [vytvoření vazby EXISTUJÍCÍHO vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) článku.
 
 Postup přidání protokolu SSL do centra Azure Stack:
 
 1. Opakujte kroky 1-3, které jste použili pro Azure.
 
-## <a name="configure-and-deploy-the-web-app"></a>Konfigurace a nasazení webové aplikace
+## <a name="configure-and-deploy-the-web-app"></a>Konfigurace a nasazení webové aplikace
 
-Nakonfigurujete kód aplikace pro hlášení telemetrie na správnou instanci Application Insights a nakonfigurujete webové aplikace pomocí správných připojovacích řetězců. Další informace o Application Insights najdete v tématu [co je Application Insights?](https://docs.microsoft.com/azure/application-insights/app-insights-overview)
+Nakonfigurujete kód aplikace pro hlášení telemetrie na správnou instanci Application Insights a nakonfigurujete webové aplikace pomocí správných připojovacích řetězců. Další informace o Application Insights najdete v tématu [co je Application Insights?](/azure/application-insights/app-insights-overview)
 
 ### <a name="add-application-insights"></a>Přidat Application Insights
 
 1. Otevřete webovou aplikaci v Microsoft Visual Studio.
 
-2. [Přidejte Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) do projektu pro přenos telemetrie, kterou Application Insights používá k vytvoření výstrah při zvyšování nebo snižování webového provozu.
+2. [Přidejte Application Insights](/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) do projektu pro přenos telemetrie, kterou Application Insights používá k vytvoření výstrah při zvyšování nebo snižování webového provozu.
 
 ### <a name="configure-dynamic-connection-strings"></a>Konfigurace dynamických připojovacích řetězců
 
@@ -287,7 +287,7 @@ Proměnné prostředí App Service můžete použít k předání jiného připo
 
 1. Vytvořte připojovací řetězce pro Azure a centrum Azure Stack. Řetězce by měly být stejné, s výjimkou používaných IP adres.
 
-2. V Azure a centra Azure Stack přidejte příslušný připojovací řetězec [jako nastavení aplikace](https://docs.microsoft.com/azure/app-service/web-sites-configure) ve webové aplikaci, a to pomocí `SQLCONNSTR\_` předpony v názvu.
+2. V Azure a centra Azure Stack přidejte příslušný připojovací řetězec [jako nastavení aplikace](/azure/app-service/web-sites-configure) ve webové aplikaci, a to pomocí `SQLCONNSTR\_` předpony v názvu.
 
 3. **Uložte** nastavení webové aplikace a restartujte aplikaci.
 
@@ -335,7 +335,7 @@ Při vytváření webové aplikace v prostředí App Service se spustí s jednou
 
 3. Nastavte **vychladnutí dolů** na **5**.
 
-4. Vyberte možnost **Přidat**.
+4. Vyberte **Přidat**.
 
 5. Vyberte **+ Přidat pravidlo**.
 
@@ -368,7 +368,7 @@ Při snížení provozu může webová aplikace Azure automaticky snížit poče
    - Nastavte **počet instancí** na **1**.
    - Nastavte **vychladnutí dolů** na **5**.
 
-2. Vyberte možnost **Přidat**.
+2. Vyberte **Přidat**.
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Vytvoření profilu Traffic Manager a konfigurace škálování mezi cloudy
 
@@ -398,7 +398,7 @@ Vytvořte v Azure profil Traffic Manager a pak nakonfigurujte koncové body, aby
 
 2. V části **profil Traffic Manager**v části **Nastavení**vyberte **koncové body**.
 
-3. Vyberte možnost **Přidat**.
+3. Vyberte **Přidat**.
 
 4. V části **přidat koncový bod**použijte pro Azure Stack centrum následující nastavení:
 
@@ -543,4 +543,4 @@ Pomocí následujících kroků můžete nakonfigurovat automatické přepínán
 
 ## <a name="next-steps"></a>Další kroky
 
-- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](https://docs.microsoft.com/azure/architecture/patterns).
+- Další informace o vzorech cloudu Azure najdete v tématu [vzory návrhu cloudu](/azure/architecture/patterns).
