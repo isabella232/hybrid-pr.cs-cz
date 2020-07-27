@@ -10,17 +10,20 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: 9793f34db13e324de65b719613c0f4dbf4bdf127
-  ms.sourcegitcommit: 8d75007af6ad574e0629208464bbadb97a5c438e
+  ms.openlocfilehash: 5e47f05293640339329914a3183fae51649ded4c
+  ms.sourcegitcommit: ad41cc782094d57b506a3a1d98209f6cf94f0f3b
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/22/2020
-  ms.locfileid: "86949657"
+  ms.lasthandoff: 07/24/2020
+  ms.locfileid: "87121803"
 highlightedContent:
   items:
   - title: Seznamte se s novým řešením Azure Stack HCI
     itemType: video
     url: https://azure.microsoft.com/resources/videos/discover-the-new-azure-stack-hci/
+  - title: 'Inspire 2020: Novinky v Azure Stack HCI'
+    itemType: video
+    url: https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030
   - title: Virtuální akce Azure Hybrid
     itemType: video
     url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
@@ -241,7 +244,7 @@ conceptualContent:
       text: Azure Backup
     - url: /azure/storage/files/storage-files-introduction
       itemType: overview
-      text: Azure Files
+      text: Soubory Azure
     - url: /azure/site-recovery/
       itemType: overview
       text: Azure Site Recovery
@@ -258,7 +261,7 @@ additionalContent:
         text: Co jsou příklady vzorů a řešení?
       - url: ./app-solutions/overview-app-design-considerations.md
         text: Aspekty návrhu hybridních aplikací
-    - title: Zkoumání hybridních vzorů
+    - title: Zkoumání vzorů hybridních aplikací
       links:
       - url: ./app-solutions/pattern-cross-cloud-scale.md
         text: Škálování napříč cloudy
@@ -268,7 +271,7 @@ additionalContent:
         text: Detekce provozu návštěvníků (maloobchod)
       - url: ./app-solutions/pattern-geo-distributed.md
         text: Geograficky distribuovaná aplikace
-    - title: Nasazení příkladů hybridních řešení
+    - title: Nasazení příkladů řešení hybridních aplikací
       links:
       - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
         text: Škálování napříč cloudy
@@ -298,6 +301,8 @@ additionalContent:
         text: Vývoj v .NET pro Azure
       - url: https://github.com/likamrat/azure_arc
         text: Průvodci rychlým zprovozněním služby Azure Arc
+      - url: https://github.com/Azure/AzureStackHCI-EvalGuide
+        text: Příručka pro vyhodnocení Azure Stack HCI
       - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
         text: Certifikace pro zařízení Azure IoT Edge
       - url: /samples/browse/
