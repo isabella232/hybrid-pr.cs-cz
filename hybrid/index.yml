@@ -9,13 +9,13 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 06/30/2020
-  ms.openlocfilehash: b888756accc1e538d358e91aec6740b392dafea0
-  ms.sourcegitcommit: 72dbbc933220a4e7273abf46ad3fc6032d122ca7
+  ms.date: 08/05/2020
+  ms.openlocfilehash: 09eca5be0d1b638b1ca5122c12f362ddde8559e8
+  ms.sourcegitcommit: e1bdde91a92840fe1da420148329fee36addc03e
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 07/31/2020
-  ms.locfileid: "87473784"
+  ms.lasthandoff: 08/06/2020
+  ms.locfileid: "87838511"
 highlightedContent:
   items:
   - title: Seznamte se s novým řešením Azure Stack HCI
@@ -105,7 +105,7 @@ conceptualContent:
     - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
       itemType: overview
       text: IoT Edge na platformě Kubernetes
-  - title: Databáze
+  - title: databáze
     links:
     - url: https://azure.microsoft.com/services/azure-arc/hybrid-data-services/
       itemType: overview
@@ -195,7 +195,7 @@ conceptualContent:
       text: Azure Automation
     - url: /azure/storage/files/
       itemType: overview
-      text: Azure Files
+      text: Soubory Azure
     - url: /azure-monitor
       itemType: overview
       text: Azure Monitor
