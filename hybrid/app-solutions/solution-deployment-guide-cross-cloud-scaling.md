@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477333"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886811"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Nasazení aplikace, která škáluje více cloudů pomocí Azure a centra Azure Stack
 
@@ -35,12 +35,12 @@ V tomto řešení sestavíte ukázkové prostředí pro:
 > 
 > Články [týkající se návrhu hybridní aplikace](overview-app-design-considerations.md) prověří pilíře kvality softwaru (umístění, škálovatelnost, dostupnost, odolnost, možnosti správy a zabezpečení) pro navrhování, nasazování a provozování hybridních aplikací. Pokyny k návrhu pomáhají při optimalizaci návrhu hybridní aplikace a minimalizaci výzev v produkčních prostředích.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 - Předplatné Azure. V případě potřeby vytvořte si [bezplatný účet](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) před tím, než začnete.
 - Integrovaný systém Azure Stack nebo nasazení Azure Stack Development Kit (ASDK) hub.
   - Pokyny k instalaci centra Azure Stack najdete v tématu [instalace ASDK](/azure-stack/asdk/asdk-install.md).
-  - ASDK skript pro automatizaci po nasazení najdete tady:[https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
+  - ASDK skript pro automatizaci po nasazení najdete tady: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Dokončení této instalace může trvat několik hodin.
 - Nasaďte [App Service](/azure-stack/operator/azure-stack-app-service-deploy.md) služby PaaS do centra Azure Stack.
 - [Vytvářejte plány/nabídky](/azure-stack/operator/service-plan-offer-subscription-overview.md) v prostředí Azure Stack hub.
@@ -68,7 +68,7 @@ Zajistěte, aby lokálně nasazené aplikace byly nakonfigurované pro vysokou d
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Získat vlastní doménu a nakonfigurovat DNS
 
-Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro azure/Microsoft 365/externí záznamy DNS v rámci Azure nebo přidejte položku DNS v [jiném registrátoru DNS](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Zaregistrujte vlastní doménu s veřejným registrátorem.
 2. Přihlaste se k registrátorovi názvu domény. K provedení aktualizací DNS může být nutný schválený správce.

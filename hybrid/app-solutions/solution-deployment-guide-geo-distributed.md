@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477350"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886828"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Přímý provoz s geograficky distribuovanou aplikací pomocí Azure a centra Azure Stack
 
@@ -76,7 +76,7 @@ V této části vytvoříte webovou aplikaci.
 > - Najeďte na sestavení aplikace na více cloudových cílů.
 > - Správa a konfigurace procesu CD
 
-### <a name="prerequisites"></a>Požadavky
+### <a name="prerequisites"></a>Předpoklady
 
 Vyžaduje se instalace předplatného Azure a centra Azure Stack.
 
@@ -84,7 +84,7 @@ Vyžaduje se instalace předplatného Azure a centra Azure Stack.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Získání vlastní domény a konfigurace DNS
 
-Aktualizujte soubor zóny DNS pro doménu. Azure AD pak může ověřit vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Aktualizujte soubor zóny DNS pro doménu. Azure AD pak může ověřit vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro azure/Microsoft 365/externí záznamy DNS v rámci Azure nebo přidejte položku DNS v [jiném registrátoru DNS](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Zaregistrujte vlastní doménu s veřejným registrátorem.
 
@@ -248,7 +248,7 @@ Azure DevOps Services poskytují vysoce konfigurovatelný a spravovatelný kaná
 
 Pokud chcete do služby App Service migrovat živý web a jeho název domény DNS, přečtěte si téma [Migrace aktivního názvu DNS do služby Azure App Service](/azure/app-service/manage-custom-dns-migrate-domain).
 
-### <a name="prerequisites"></a>Požadavky
+### <a name="prerequisites"></a>Předpoklady
 
 Dokončení tohoto řešení:
 
@@ -256,7 +256,7 @@ Dokončení tohoto řešení:
 
 - Zakupte název domény a zajistěte přístup k registru DNS pro poskytovatele domény.
 
-Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro Azure/externí záznamy DNS v Azure, nebo přidejte položku DNS v [jiném registrátoru DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Aktualizujte soubor zóny DNS pro doménu. Azure AD ověří vlastnictví vlastního názvu domény. Použijte [Azure DNS](/azure/dns/dns-getstarted-portal) pro azure/Microsoft 365/externí záznamy DNS v rámci Azure nebo přidejte položku DNS v [jiném registrátoru DNS](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 - Zaregistrujte vlastní doménu s veřejným registrátorem.
 
@@ -357,7 +357,7 @@ V této části budeme:
 > [!Note]  
 > V případě potřeby Získejte certifikát SSL zákazníka v Azure Portal a navažte ho k webové aplikaci. Další informace najdete v [kurzu App Servicech certifikátů](/azure/app-service/web-sites-purchase-ssl-web-site).
 
-### <a name="prerequisites"></a>Požadavky
+### <a name="prerequisites"></a>Předpoklady
 
 Dokončení tohoto řešení:
 
