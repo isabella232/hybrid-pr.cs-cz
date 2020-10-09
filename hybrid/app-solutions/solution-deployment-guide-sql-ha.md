@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477078"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852469"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Nasazení skupiny dostupnosti SQL Server 2016 do Azure a centra Azure Stack
 
@@ -106,5 +106,5 @@ Image Docker pro každé nasazení eliminují problémy závislosti mezi různý
 ## <a name="next-steps"></a>Další kroky
 
 - Použijte SQL Server Management Studio k ručnímu převzetí služeb při selhání clusteru. Viz [provedení vynuceného ručního převzetí služeb při selhání skupiny dostupnosti Always On (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017) .
-- Přečtěte si další informace o hybridních cloudových aplikacích. Podívejte se na [hybridní cloudová řešení.](https://aka.ms/azsdevtutorials)
+- Přečtěte si další informace o hybridních cloudových aplikacích. Podívejte se na [hybridní cloudová řešení.](/azure-stack/user/)
 - Použijte vlastní data nebo upravte kód v této ukázce na [GitHubu](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

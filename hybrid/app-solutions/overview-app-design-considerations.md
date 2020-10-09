@@ -7,12 +7,12 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 8b975c7b99807490d446f557e84b6e0eabf34649
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477214"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852486"
 ---
 # <a name="hybrid-app-design-considerations"></a>Aspekty návrhu hybridních aplikací
 
@@ -219,7 +219,7 @@ Základní diskusi k tomuto pilíři najdete v tématu [*zabezpečení*](/azure/
 
 **Auditovat systém.** Sledování systému může protokolovat a agregovat data z komponent aplikace i souvisejících operací cloudové platformy.
 
-## <a name="summary"></a>Shrnutí
+## <a name="summary"></a>Souhrn
 
 Tento článek poskytuje kontrolní seznam položek, které je důležité zvážit během vytváření a navrhování hybridních aplikací. Před tím, než aplikaci nasadíte, si Projděte tyto pilíře, abyste se nemuseli spouštět na tyto otázky v produkčních výpadkech a případně vyžadovali, abyste přenavštívili návrh.
 
@@ -231,4 +231,4 @@ Další informace naleznete v následujících zdrojích:
 
 - [Hybridní cloud](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [Hybridní cloudové aplikace](https://azure.microsoft.com/solutions/hybrid-cloud-app/)
-- [Vývoj šablon Azure Resource Manageru pro konzistenci cloudu](https://aka.ms/consistency)
+- [Vývoj šablon Azure Resource Manageru pro konzistenci cloudu](/azure/azure-resource-manager/templates/templates-cloud-consistency)
