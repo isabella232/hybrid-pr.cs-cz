@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
+ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477316"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353474"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Nasazení hybridní aplikace s místními daty, která škálují mezi cloudy
 
@@ -37,7 +37,7 @@ Tento kurz se zabývá následujícími úkony:
 > - Nakonfigurujte automatické přepínání provozu mezi globálním centrem Azure a Azure Stack.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram hybridních pilířů](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Centrum Microsoft Azure Stack je rozšířením Azure. Centrum Azure Stack přináší flexibilitu a inovace cloud computingu do místního prostředí. tím se umožní jenom hybridní cloud, který umožňuje vytvářet a nasazovat hybridní aplikace odkudkoli.  
 > 
 > Články [týkající se návrhu hybridní aplikace](overview-app-design-considerations.md) prověří pilíře kvality softwaru (umístění, škálovatelnost, dostupnost, odolnost, možnosti správy a zabezpečení) pro navrhování, nasazování a provozování hybridních aplikací. Pokyny k návrhu pomáhají při optimalizaci návrhu hybridní aplikace a minimalizaci výzev v produkčních prostředích.
@@ -51,7 +51,7 @@ V tomto kurzu se předpokládá, že máte základní znalosti globálního cent
 
 V tomto kurzu se taky předpokládá, že máte předplatné Azure. Pokud předplatné nemáte, [Vytvořte si bezplatný účet](https://azure.microsoft.com/free/) před tím, než začnete.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Než začnete s tímto řešením, ujistěte se, že splňujete následující požadavky:
 
@@ -153,7 +153,7 @@ Aby bylo možné zajistit propojení mezi webovým front-end v Azure a databáz�
 
 Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat připojení typu Point-to-site k integraci s Azure App Service.
 
-1. V Azure přejdete na stránku brány virtuální sítě. V části **Nastavení**vyberte **Konfigurace Point-to-site**.
+1. V Azure Portal přejdete na stránku brány virtuální sítě. V části **Nastavení**vyberte **Konfigurace Point-to-site**.
 
     ![Možnost Point-to-site v bráně virtuální sítě Azure](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -192,7 +192,7 @@ Další informace o tom, jak se App Service integruje s Azure virtuální sítě
 
 Brána místní sítě ve virtuální síti centra Azure Stack musí být nakonfigurovaná tak, aby směrovala provoz z rozsahu adres App Service Point-to-site.
 
-1. V Azure Stackovém centru, přejít na **bránu místní sítě**. V části **Nastavení** vyberte **Konfigurace**.
+1. Na portálu centra Azure Stack otevřete **bránu místní sítě**. V části **Nastavení** vyberte **Konfigurace**.
 
     ![Možnost konfigurace brány v bráně místní sítě centra Azure Stack](media/solution-deployment-guide-hybrid/image14.png)
 
@@ -238,13 +238,13 @@ Přidání protokolu SSL do Azure:
 
 1. Ujistěte se, že certifikát SSL, který získáte, je platný pro subdoménu, kterou jste vytvořili. (Používání certifikátů se zástupnými znaky je v pořádku.)
 
-2. V Azure postupujte podle pokynů v části **Příprava vaší webové aplikace** a **vytvoření vazby certifikátu SSL** ve [vazbě existujícího vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) článku. Jako **typ SSL**vyberte **SSL založené na sni** .
+2. V Azure Portal postupujte podle pokynů v části **Příprava vaší webové aplikace** a **vytvoření vazby certifikátu SSL** v tématu [vytvoření vazby existujícího vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) . Jako **typ SSL**vyberte **SSL založené na sni** .
 
-3. Přesměrujte veškerý provoz na port HTTPS. Postupujte podle pokynů v části **vyhovět protokolu HTTPS** v tématu [vytvoření vazby EXISTUJÍCÍHO vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) článku.
+3. Přesměrujte veškerý provoz na port HTTPS. Postupujte podle pokynů v části   **vyhovět protokolu HTTPS** v tématu [vytvoření vazby EXISTUJÍCÍHO vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) článku.
 
 Postup přidání protokolu SSL do centra Azure Stack:
 
-1. Opakujte kroky 1-3, které jste použili pro Azure.
+1. Opakujte kroky 1-3, které jste použili pro Azure, pomocí portálu Azure Stack hub.
 
 ## <a name="configure-and-deploy-the-web-app"></a>Konfigurace a nasazení webové aplikace
 
@@ -300,7 +300,7 @@ Při vytváření webové aplikace v prostředí App Service se spustí s jednou
 
 ### <a name="enable-automatic-scale-out"></a>Povolit automatické horizontální navýšení kapacity
 
-1. V Azure Najděte App Service plán pro lokality, pro které chcete škálovat kapacitu, a pak vyberte škálování na více instancí **(App Service plán)**.
+1. V Azure Portal vyhledejte App Service plán pro weby, jejichž horizontální navýšení kapacity chcete škálovat, a pak vyberte možnost horizontální navýšení **kapacity (App Service plán)**.
 
     ![Horizontální navýšení kapacity Azure App Service](media/solution-deployment-guide-hybrid/image16.png)
 
@@ -372,7 +372,7 @@ Při snížení provozu může webová aplikace Azure automaticky snížit poče
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Vytvoření profilu Traffic Manager a konfigurace škálování mezi cloudy
 
-Vytvořte v Azure profil Traffic Manager a pak nakonfigurujte koncové body, aby se povolilo škálování mezi cloudy.
+Pomocí Azure Portal vytvořte profil Traffic Manager a pak nakonfigurujte koncové body, aby se povolilo škálování mezi cloudy.
 
 ### <a name="create-traffic-manager-profile"></a>Vytvořit profil Traffic Manager
 
@@ -413,7 +413,7 @@ Vytvořte v Azure profil Traffic Manager a pak nakonfigurujte koncové body, aby
 Potom nakonfigurujete koncový bod Azure.
 
 1. V **Traffic Manager profil**vyberte **koncové body**.
-2. Vyberte **+ Přidat**.
+2. Vyberte **+Přidat**.
 3. Na stránce **přidat koncový bod**použijte následující nastavení pro Azure:
 
    - Jako **typ**vyberte **koncový bod Azure**.
@@ -430,15 +430,15 @@ Po nakonfigurování obou koncových bodů jsou uvedeny v **Traffic Manager prof
 
 ![Koncové body v profilu Traffic Manager](media/solution-deployment-guide-hybrid/image20.png)
 
-## <a name="set-up-application-insights-monitoring-and-alerting"></a>Nastavení Application Insights monitorování a upozorňování
+## <a name="set-up-application-insights-monitoring-and-alerting-in-azure"></a>Nastavení monitorování a upozorňování Application Insights v Azure
 
 Azure Application Insights umožňuje monitorovat aplikaci a odesílat výstrahy na základě podmínek, které nakonfigurujete. Mezi příklady patří: aplikace není k dispozici, dochází k chybám nebo zobrazuje problémy s výkonem.
 
-K vytváření výstrah použijete Application Insights metriky. Při aktivaci těchto výstrah se instance webové aplikace automaticky přepne z centra Azure Stack do Azure pro horizontální navýšení kapacity a potom zpátky na Azure Stack centra pro horizontální navýšení kapacity.
+K vytváření výstrah použijete metriky Azure Application Insights. Při aktivaci těchto výstrah se instance webové aplikace automaticky přepne z centra Azure Stack do Azure pro horizontální navýšení kapacity a potom zpátky na Azure Stack centra pro horizontální navýšení kapacity.
 
 ### <a name="create-an-alert-from-metrics"></a>Vytvoření výstrahy z metriky
 
-Pro tento kurz vyberte skupinu prostředků a pak **Application Insights**otevřete tak, že vyberete instanci Application Insights.
+V Azure Portal přejdete do skupiny prostředků tohoto kurzu a výběrem Application Insights instance otevřete **Application Insights**.
 
 ![Application Insights](media/solution-deployment-guide-hybrid/image21.png)
 
