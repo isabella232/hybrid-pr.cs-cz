@@ -1,32 +1,32 @@
 ### YamlMime:Landing
-title: Dokumentace k hybridním vzorům a řešením Azure
-summary: Naučte se při vývoji vašich aplikací využívat příklady hybridních vzorů a řešení. Azure a Azure Stack umožňují vývoj hybridních aplikací postavených na sadě inteligentních cloudových služeb a služeb inteligentních hraničních zařízení.
+title: Dokumentace k hybridním a multicloudovým vzorům a řešením Azure
+summary: Zjistěte, jak při vývoji aplikací využít hybridní a multicloudové vzory a příklady řešení postavené na sadě inteligentních cloudových služeb a služeb inteligentních hraničních zařízení.
 metadata:
-  title: Dokumentace k hybridním vzorům a řešením Azure
-  description: Naučte se při vývoji vašich aplikací využívat příklady hybridních vzorů a řešení. Azure a Azure Stack umožňují vývoj hybridních aplikací postavených na sadě inteligentních cloudových služeb a služeb inteligentních hraničních zařízení.
+  title: Dokumentace k hybridním a multicloudovým vzorům a řešením Azure
+  description: Zjistěte, jak při vývoji aplikací využít hybridní a multicloudové vzory a příklady řešení postavené na sadě inteligentních cloudových služeb a služeb inteligentních hraničních zařízení.
   ms.service: azure-stack
   ms.topic: landing-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 10/31/2019
-  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
-  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.openlocfilehash: f51256c555011744f847e457b8bac46a1b5c4b14
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 06/17/2020
-  ms.locfileid: "84909659"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94872970"
 landingContent:
-- title: Informace o hybridních vzorech a řešeních
+- title: Informace o hybridních a multicloudových vzorech a řešeních
   linkLists:
   - linkListType: overview
     links:
-    - text: Co jsou příklady hybridních vzorů a řešení?
+    - text: Co jsou příklady vzorů a řešení?
       url: overview-patterns-solution-examples.md
   - linkListType: concept
     links:
-    - text: Aspekty návrhu hybridních aplikací
+    - text: Aspekty návrhu aplikací
       url: overview-app-design-considerations.md
-- title: Zkoumání hybridních vzorů
+- title: Zkoumání hybridních a multicloudových vzorů
   linkLists:
   - linkListType: architecture
     links:
@@ -38,7 +38,7 @@ landingContent:
       url: pattern-retail-footfall-detection.md
     - text: Geograficky distribuovaná aplikace
       url: pattern-geo-distributed.md
-- title: Nasazení příkladů hybridních řešení
+- title: Nasazení příkladů hybridních a multicloudových řešení
   linkLists:
   - linkListType: tutorial
     links:
