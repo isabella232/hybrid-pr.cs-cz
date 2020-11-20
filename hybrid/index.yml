@@ -1,21 +1,21 @@
 ### YamlMime:Hub
-title: Dokumentace k hybridnímu cloudu Azure
-summary: Prostředky pro sestavování a provozování hybridních řešení, která jsou rozložená v globálním cloudu, v datacentrech a na hraničních zařízeních.
+title: Dokumentace k hybridním a multicloudovým řešením v Azure
+summary: Prostředky pro sestavování a provozování hybridních a multicloudových řešení, která jsou rozmístěná v globálním cloudu, v datacentrech a na hraničních zařízeních
 brand: azure
 metadata:
-  title: Dokumentace k hybridnímu cloudu Azure
-  description: Prostředky pro sestavování a provozování hybridních řešení, která jsou rozložená v globálním cloudu, v datacentrech a na hraničních zařízeních.
+  title: Dokumentace k hybridním a multicloudovým řešením v Azure
+  description: Prostředky pro sestavování a provozování hybridních a multicloudových řešení, která jsou rozmístěná v globálním cloudu, v datacentrech a na hraničních zařízeních
   ms.service: multiple
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 09/02/2020
-  ms.openlocfilehash: 823d9f2f8823c47854647ce378c6866978df7feb
-  ms.sourcegitcommit: 6be3914e28349883dba004697dc550a6fd1b7393
+  ms.date: 11/16/2020
+  ms.openlocfilehash: 23c1d6e1444e637a8e012b2628d3dfbafe903b3e
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/30/2020
-  ms.locfileid: "93062912"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94873019"
 highlightedContent:
   items:
   - title: Představujeme Azure Modular Data Center
@@ -43,8 +43,8 @@ highlightedContent:
     itemType: video
     url: https://mybuild.microsoft.com/sessions?q=%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522
 productDirectory:
-  title: Hybridní cloudová platforma Azure
-  summary: Platformy podporující hybridní technologie používané k sestavování a provozování hybridních řešení
+  title: Hybridní a multicloudová platforma Azure
+  summary: Platformy používané k sestavování a provozování hybridních a multicloudových řešení
   items:
   - title: Globální veřejná/suverénní cloudová platforma Azure
     imageSrc: media/index/logo_azure.svg
@@ -70,8 +70,8 @@ productDirectory:
     - url: /windows/iot-core/
       text: Windows pro IoT
 conceptualContent:
-  title: Technologie podporující hybridní řešení
-  summary: Služby a produkty pro sestavování a provozování hybridních řešení
+  title: Hybridní a multicloudové technologie
+  summary: Služby a produkty pro sestavování a provozování hybridních a multicloudových řešení
   items:
   - title: AI a Machine Learning
     links:
@@ -155,7 +155,7 @@ conceptualContent:
       text: Event Hubs v Azure Stack Hubu
     - url: /azure-stack/user/iot-hub-overview
       itemType: overview
-      text: IoT Hub v Azure Stack Hubu
+      text: IoT Hub v Azure Stack Hubu (Preview)
   - title: Edge
     links:
     - url: /azure/databox-online/data-box-gateway-overview
@@ -164,6 +164,9 @@ conceptualContent:
     - url: /azure/iot-edge/
       itemType: overview
       text: Azure IoT Edge
+    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+      itemType: overview
+      text: Azure IoT Edge na platformě Kubernetes
     - url: /azure-sphere
       itemType: overview
       text: Azure Sphere
@@ -173,9 +176,6 @@ conceptualContent:
     - url: /azure/azure-sql-edge/overview
       itemType: overview
       text: Azure SQL Edge (Preview)
-    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
-      itemType: overview
-      text: IoT Edge na platformě Kubernetes
     - url: /windows/iot-core/
       itemType: overview
       text: Windows pro IoT
@@ -273,16 +273,16 @@ conceptualContent:
       text: Azure FXT Edge Filer
 additionalContent:
   sections:
-  - title: Hybridní řešení
-    summary: Doprovodné materiály a příklady, které si můžete projít a využít pro vaše hybridní projekty
+  - title: Hybridní a multicloudová řešení
+    summary: Doprovodné materiály a příklady, které si můžete projít a využít pro vaše hybridní a multicloudové projekty
     items:
-    - title: Příklady řešení a vzorů hybridních aplikací
+    - title: Příklady řešení a vzorů aplikací
       links:
       - url: ./app-solutions/overview-patterns-solution-examples.md
         text: Co jsou příklady vzorů a řešení?
       - url: ./app-solutions/overview-app-design-considerations.md
-        text: Aspekty návrhu hybridních aplikací
-    - title: Zkoumání vzorů hybridních aplikací
+        text: Aspekty návrhu aplikací
+    - title: Zkoumání vzorů aplikací
       links:
       - url: ./app-solutions/pattern-cross-cloud-scale.md
         text: Škálování napříč cloudy
@@ -292,7 +292,7 @@ additionalContent:
         text: Detekce provozu návštěvníků (maloobchod)
       - url: ./app-solutions/pattern-geo-distributed.md
         text: Geograficky distribuovaná aplikace
-    - title: Nasazení příkladů řešení hybridních aplikací
+    - title: Nasazení příkladů aplikačních řešení
       links:
       - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
         text: Škálování napříč cloudy

@@ -1,8 +1,8 @@
-- name: Dokumentace k hybridnímu využití Azure
+- name: Dokumentace k hybridním a multicloudovým řešením
   href: index.yml
 - name: Přehled
   items:
-    - name: Příklady hybridních vzorů a řešení
+    - name: Příklady vzorů a řešení
       href: overview-patterns-solution-examples.md
 - name: Vzory
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: Koncepty
   items:
-    - name: Aspekty návrhu hybridních aplikací
+    - name: Aspekty návrhu aplikací
       href: overview-app-design-considerations.md
 - name: Související
   items:
