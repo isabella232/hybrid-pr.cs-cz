@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477163"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901486"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Nasazení řešení pro detekci Footfall založené na AI pomocí Azure a centra Azure Stack
 
@@ -26,12 +26,12 @@ V tomto řešení se dozvíte, jak:
 > - Pro odvození na hranici použijte Custom Vision AI dev Kit.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram hybridních pilířů](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Centrum Microsoft Azure Stack je rozšířením Azure. Centrum Azure Stack přináší flexibilitu a inovace cloud computingu do místního prostředí. tím se umožní jenom hybridní cloud, který umožňuje vytvářet a nasazovat hybridní aplikace odkudkoli.  
 > 
 > Články [týkající se návrhu hybridní aplikace](overview-app-design-considerations.md) prověří pilíře kvality softwaru (umístění, škálovatelnost, dostupnost, odolnost, možnosti správy a zabezpečení) pro navrhování, nasazování a provozování hybridních aplikací. Pokyny k návrhu pomáhají při optimalizaci návrhu hybridní aplikace a minimalizaci výzev v produkčních prostředích.
 
-## <a name="prerequisites"></a>Požadavky
+## <a name="prerequisites"></a>Předpoklady
 
 Než začnete s tímto průvodcem nasazením, nezapomeňte:
 
@@ -44,7 +44,7 @@ Než začnete s tímto průvodcem nasazením, nezapomeňte:
 - Vytvořte ve svém adresáři dva instanční objekty:
   - Jedna nastavená pro použití s prostředky Azure s přístupem v oboru předplatného Azure.
   - Jedna je nastavená pro použití s prostředky centra Azure Stack s přístupem v oboru předplatného centra Azure Stack.
-  - Další informace o vytváření instančních objektů a autorizaci přístupu najdete v tématu [použití identity aplikace pro přístup k prostředkům](/azure-stack/operator/azure-stack-create-service-principals.md). Pokud dáváte přednost použití rozhraní příkazového řádku Azure, přečtěte si téma [Vytvoření instančního objektu Azure pomocí Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Další informace o vytváření instančních objektů a autorizaci přístupu najdete v tématu [použití identity aplikace pro přístup k prostředkům](/azure-stack/operator/azure-stack-create-service-principals.md). Pokud dáváte přednost použití rozhraní příkazového řádku Azure, přečtěte si téma [Vytvoření instančního objektu Azure pomocí Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Nasaďte Azure Cognitive Services v Azure nebo v centru Azure Stack.
   - Nejprve [si přečtěte další informace o Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
   - Potom navštivte [nasazení služby Azure Cognitive Services, abyste Azure Stack centrum](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) nasadili Cognitive Services v Azure Stackovém centru. Nejprve se musíte zaregistrovat pro přístup k verzi Preview.
@@ -56,7 +56,7 @@ Než začnete s tímto průvodcem nasazením, nezapomeňte:
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Pomocí Porter můžete nasazovat cloudové aplikace s využitím manifestů CNAB sad, které jsou pro vás k dispozici.
   - [Visual Studio Code](https://code.visualstudio.com/)
-  - [Nástroje Azure IoT pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
+  - [Azure IoT Tools pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   - [Rozšíření Pythonu pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
   - [Python](https://www.python.org/)
 
@@ -152,7 +152,7 @@ Pomocí rozhraní příkazového řádku Porter vygenerujte sadu přihlašovací
 
 Teď, když data přecházejí z kamery Azure Stream Analytics, musíme je ručně autorizovat, aby komunikovala s Power BI.
 
-1. Z Azure Portal otevřete **všechny prostředky**a úlohu *Process-Footfall \[ yoursuffix \] * .
+1. Z Azure Portal otevřete **všechny prostředky** a úlohu *Process-Footfall \[ yoursuffix \]* .
 
 2. V podokně úlohy Stream Analytics v části **Topologie úlohy** vyberte možnost **Výstupy**.
 
@@ -174,7 +174,7 @@ Teď, když data přecházejí z kamery Azure Stream Analytics, musíme je ručn
 
 2. V pracovním prostoru Power BI vyberte **+ vytvořit** a vytvořte nový řídicí panel s názvem *Analýza Footfall.*
 
-3. V horní části okna vyberte **Přidat dlaždici**. Potom vyberte **Vlastní streamovaná data** a **Další**. V **datových sadách**vyberte **Footfall-DataSet** . V rozevíracím seznamu **typ vizualizace** vyberte **karta** a do **polí**přidejte **věk** . Vyberte **Další**, zadejte název dlaždice a pak výběrem možnosti **Použít** dlaždici vytvořte.
+3. V horní části okna vyberte **Přidat dlaždici**. Potom vyberte **Vlastní streamovaná data** a **Další**. V **datových sadách** vyberte **Footfall-DataSet** . V rozevíracím seznamu **typ vizualizace** vyberte **karta** a do **polí** přidejte **věk** . Vyberte **Další**, zadejte název dlaždice a pak výběrem možnosti **Použít** dlaždici vytvořte.
 
 4. Podle potřeby můžete přidat další pole a karty.
 
@@ -194,5 +194,5 @@ porter uninstall footfall-camera –tag intelligentedge/footfall-camera-deployme
 
 ## <a name="next-steps"></a>Další kroky
 
-- Další informace o [hlediska návrhu hybridní aplikace]. (overview-app-design-considerations.md)
+- Další informace o [požadavcích na návrh hybridní aplikace](overview-app-design-considerations.md)
 - Přečtěte si a navrhněte vylepšení [kódu pro tuto ukázku na GitHubu](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis).
