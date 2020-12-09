@@ -26,6 +26,8 @@
           href: pattern-cross-cloud-scale-onprem-data.md
         - name: Detekce provozu návštěvníků (maloobchod)
           href: pattern-retail-footfall-detection.md
+        - name: Cluster Kubernetes s vysokou dostupností
+          href: pattern-highly-available-kubernetes.md
         - name: Detekce vyčerpání zásob na hraničních zařízeních
           href: pattern-out-of-stock-at-edge.md
 - name: Průvodci nasazením řešení
@@ -40,6 +42,8 @@
       href: solution-deployment-guide-retail-footfall-detection.md
     - name: Geograficky distribuovaná aplikace
       href: solution-deployment-guide-geo-distributed.md
+    - name: Cluster Kubernetes s vysokou dostupností
+      href: solution-deployment-guide-highly-available-kubernetes.md
     - name: Hybridní připojení
       href: solution-deployment-guide-connectivity.md
     - name: Hybridní identita
