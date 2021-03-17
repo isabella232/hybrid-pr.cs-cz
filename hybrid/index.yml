@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
-  ms.openlocfilehash: 218f52c27dee54dd4265a9c1eebc6de330bd6154
-  ms.sourcegitcommit: a5851a7351c39249a58da8d0cf121bbf0b306dca
+  ms.openlocfilehash: 59508b4cce80dd3a18a3e36feef6690290e26168
+  ms.sourcegitcommit: 25bfa6f85c1295ecbaf24e812ccebf1b7220bef8
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102606189"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103600654"
 highlightedContent:
   items:
   - title: 'Ignite 2021: hybridní relace'
@@ -336,12 +336,16 @@ additionalContent:
       links:
       - url: /learn/modules/align-requirements-in-azure/
         text: Koordinace požadavků s typy cloudu a modely služeb v Azure
+      - url: /azure/architecture/browse/?azure_categories=hybrid
+        text: Hybridní architektury Azure
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Hybridní možnosti Azure
       - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
         text: Virtuální akce Azure Hybrid
+      - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
+        text: Architektura pro přijetí do cloudu – Scénář hybridního a více cloudu
       - url: /learn/modules/intro-to-azure-hybrid-services/
-        text: Úvod k hybridnímu cloudu Azure
+        text: Úvod do služeb hybridního cloudu Azure
       - url: https://events.microsoft.com/
         text: Katalog událostí Microsoftu
       - url: /learn
@@ -350,6 +354,10 @@ additionalContent:
       links:
       - url: /learn/modules/azure-sentinel-deploy-configure/
         text: Nasazení Azure Sentinelu a připojení zdrojů dat
+      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+        text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
+      - url: /learn/modules/implement-manage-hybrid-identity/
+        text: Implementace a Správa hybridní identity
       - url: /learn/modules/implement-hybrid-identity-windows-server/
         text: Implementace hybridní identity s Windows Serverem
       - url: /learn/modules/intro-to-azure-sentinel/
@@ -358,16 +366,18 @@ additionalContent:
         text: Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru
     - title: Správa
       links:
-      - url: https://github.com/likamrat/azure_arc
+      - url: https://azurearcjumpstart.io/
         text: Průvodci rychlým zprovozněním služby Azure Arc
-      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
-        text: Vysoká dostupnost a strategie zotavení po havárii
-      - url: /learn/modules/explore-iaas-paas-platform-tools-for-high-availability-disaster-recovery/
-        text: Nástroje platformy PaaS a IaaS pro vysokou dostupnost a zotavení po havárii
+      - url: /learn/browse/?terms=%22%20Arc%20%22
+        text: Moduly učení Azure ARC
+      - url: /describe-high-availability-disaster-recovery-strategies/
+        text: Popis strategií vysoké dostupnosti a zotavení po havárii
+      - url: /learn/browse/?terms="disaster%20recovery"
+        text: Moduly s informací o zotavení po havárii
+      - url: /learn/browse/?terms="high%20availability"
+        text: Naučit se moduly vysoké dostupnosti
       - url: /learn/modules/intro-to-azure-arc/
-        text: Úvod ke službě Azure Arc
-      - url: /learn/modules/manage-hybrid-workloads-azure-arc/
-        text: Správa hybridních úloh s využitím služby Azure Arc
+        text: Seznámení s Azure Arc
       - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
         text: Monitorování hybridních instancí a virtuálních počítačů IaaS s využitím Windows Serveru
       - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
@@ -388,20 +398,6 @@ additionalContent:
         text: Implementace hybridního zálohování a obnovení s využitím IaaS a Windows Serveru
   - title: Další zdroje
     items:
-    - title: Vývojář
-      links:
-      - url: /azure/developer/
-        text: Nástroje a dokumentace pro vývojáře v Azure
-      - url: /azure/architecture/browse/?azure_categories=hybrid
-        text: Hybridní architektury Azure
-      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-        text: Azure IoT Tools pro Visual Studio Code
-      - url: /samples/browse/
-        text: Prohlížeč ukázek kódu
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Sada Vision AI Developer Kit
-      - url: /visualstudio/azure/
-        text: Vývoj pro Azure s využitím sady Visual Studio
     - title: Obecné
       links:
       - url: https://azure.microsoft.com/blog/topics/hybrid/
@@ -412,7 +408,7 @@ additionalContent:
         text: Zákaznická řešení Azure Stack Hubu
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Příběhy zákaznických hybridních cloudů
-    - title: Nápověda a podpora
+    - title: Podpora
       links:
       - url: https://azure.microsoft.com/support/options/
         text: Podpora Azure
@@ -422,3 +418,15 @@ additionalContent:
         text: Fóra Microsoft Q&A
       - url: https://stackoverflow.com/
         text: Stack Overflow
+    - title: Technické
+      links:
+      - url: /azure/developer/
+        text: Nástroje a dokumentace pro vývojáře v Azure
+      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+        text: Azure IoT Tools pro Visual Studio Code
+      - url: /samples/browse/
+        text: Prohlížeč ukázek kódu
+      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+        text: Sada Vision AI Developer Kit
+      - url: /visualstudio/azure/
+        text: Vývoj pro Azure s využitím sady Visual Studio
