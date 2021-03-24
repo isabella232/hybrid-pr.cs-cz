@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 0bf07bb38537f530a0adb3569c43d53af13b8d56
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910149"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895325"
 ---
 # <a name="footfall-detection-pattern"></a>Model detekce Footfall
 
@@ -35,7 +35,7 @@ Tady je přehled toho, jak řešení funguje:
 1. Sada Custom Vision AI dev Kit Získá konfiguraci z IoT Hub, která nainstaluje IoT Edge modul runtime a model ML.
 2. Pokud se model dohlíží na osobu, převezme obrázek a nahraje ho pro Azure Stack úložiště objektů BLOB hub.
 3. Služba BLOB Service aktivuje funkci Azure ve službě Azure Stack hub.
-4. Funkce Azure volá kontejner s Face API, aby získala data demografických a emoce z obrázku.
+4. Funkce Azure volá kontejner s rozhraní API pro rozpoznávání tváře, aby získala data demografických a emoce z obrázku.
 5. Data se v clusteru Azure Event Hubs neodesílají a odešlou.
 6. Cluster Event Hubs zasune data do Stream Analytics.
 7. Stream Analytics agreguje data a odešle je do Power BI.
@@ -44,17 +44,17 @@ Tady je přehled toho, jak řešení funguje:
 
 Toto řešení používá následující komponenty:
 
-| Vrstva | Součást | Description |
+| Vrstva | Komponenta | Popis |
 |----------|-----------|-------------|
 | Hardware v obchodě | [Custom Vision AI dev Kit](https://azure.github.io/Vision-AI-DevKit-Pages/) | Poskytuje filtrování in-Store pomocí místního modelu ML, který zachycuje jenom obrázky lidí pro účely analýzy. Bezpečně zřízené a aktualizované prostřednictvím IoT Hub.<br><br>|
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | Azure Event Hubs poskytuje škálovatelnou platformu pro ingestování anonymních dat, která se v Azure Stream Analytics integrují s využitím. |
 |  | [Azure Stream Analytics](/azure/stream-analytics/) | Úloha Azure Stream Analytics agreguje data a seskupuje je do 15 sekund Windows pro vizualizaci. |
 |  | [Microsoft Power BI](https://powerbi.microsoft.com/) | Power BI poskytuje snadno použitelné rozhraní řídicího panelu pro zobrazení výstupu z Azure Stream Analytics. |
-| Centrum Azure Stack | [App Service](/azure-stack/operator/azure-stack-app-service-overview.md) | Poskytovatel prostředků App Service (RP) poskytuje základ pro komponenty Edge, včetně funkcí hostování a správy pro webové aplikace/rozhraní API a funkce. |
-| | Cluster [modulu AKS (](https://github.com/Azure/aks-engine) Azure Kubernetes Service) | AKS RP s clusterem AKS nasazeným do centra Azure Stack poskytuje škálovatelný a odolný modul pro spuštění kontejneru Face API. |
-| | [Kontejnery Face API](/azure/cognitive-services/face/face-how-to-install-containers) Azure Cognitive Services| Azure Cognitive Services RP s Face API Containers poskytuje demografické, emoce a jedinečné zjišťování návštěvníků v privátní síti společnosti Contoso. |
+| Azure Stack Hub | [App Service](/azure-stack/operator/azure-stack-app-service-overview) | Poskytovatel prostředků App Service (RP) poskytuje základ pro komponenty Edge, včetně funkcí hostování a správy pro webové aplikace/rozhraní API a funkce. |
+| | Cluster [modulu AKS (](https://github.com/Azure/aks-engine) Azure Kubernetes Service) | AKS RP s AKS-Engine clusteru nasazeným do centra Azure Stack poskytuje škálovatelný a odolný modul pro spuštění kontejneru rozhraní API pro rozpoznávání tváře. |
+| | [Kontejnery rozhraní API pro rozpoznávání tváře](/azure/cognitive-services/face/face-how-to-install-containers) Azure Cognitive Services| Azure Cognitive Services RP s rozhraní API pro rozpoznávání tváře Containers poskytuje demografické, emoce a jedinečné zjišťování návštěvníků v privátní síti společnosti Contoso. |
 | | Blob Storage | Image zachycené ze sady AI dev Kit se nahrají do úložiště objektů BLOB v centru Azure Stack. |
-| | Azure Functions | Funkce Azure spuštěná v centru Azure Stack přijímá vstup z úložiště objektů BLOB a spravuje interakce s Face API. Emituje data do clusteru Event Hubs umístěného v Azure.<br><br>|
+| | Azure Functions | Funkce Azure spuštěná v centru Azure Stack přijímá vstup z úložiště objektů BLOB a spravuje interakce s rozhraní API pro rozpoznávání tváře. Emituje data do clusteru Event Hubs umístěného v Azure.<br><br>|
 
 ## <a name="issues-and-considerations"></a>Problémy a důležité informace
 
@@ -65,13 +65,13 @@ Při rozhodování, jak implementovat toto řešení, vezměte v úvahu následu
 Pokud chcete toto řešení povolit pro škálování napříč několika fotoaparáty a umístěními, musíte zajistit, aby všechny součásti mohly zpracovat zvýšené zatížení. Možná budete muset provést následující akce:
 
 - Zvyšte počet Stream Analytics jednotek streamování.
-- Horizontální navýšení kapacity Face API nasazení.
+- Horizontální navýšení kapacity rozhraní API pro rozpoznávání tváře nasazení.
 - Zvyšte propustnost Event Hubs clusteru.
 - V extrémních případech může být potřeba migrovat z Azure Functions do virtuálního počítače.
 
 ### <a name="availability"></a>Dostupnost
 
-Vzhledem k tomu, že toto řešení je vrstveno, je důležité vzít v úvahu, jak řešit potíže se sítí nebo výpadky napájení. V závislosti na obchodních potřebách můžete chtít implementovat mechanismus pro místní ukládání imagí do mezipaměti a pak předána do centra Azure Stack, když se připojení vrátí. Pokud je umístění dostatečně velké, může být lepší volbou nasazení Data Box Edge s kontejnerem Face API do tohoto umístění.
+Vzhledem k tomu, že toto řešení je vrstveno, je důležité vzít v úvahu, jak řešit potíže se sítí nebo výpadky napájení. V závislosti na obchodních potřebách můžete chtít implementovat mechanismus pro místní ukládání imagí do mezipaměti a pak předána do centra Azure Stack, když se připojení vrátí. Pokud je umístění dostatečně velké, může být lepší volbou nasazení Data Box Edge s kontejnerem rozhraní API pro rozpoznávání tváře do tohoto umístění.
 
 ### <a name="manageability"></a>Možnosti správy
 

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901486"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895358"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Nasazení řešení pro detekci Footfall založené na AI pomocí Azure a centra Azure Stack
 
@@ -37,22 +37,22 @@ Než začnete s tímto průvodcem nasazením, nezapomeňte:
 
 - Projděte si téma [Footfall Detection Pattern](pattern-retail-footfall-detection.md) .
 - Získejte přístup uživatele k Azure Stack Development Kit (ASDK) nebo k instanci integrovaného systému centra Azure Stack pomocí:
-  - Azure App Service nainstalovaného [poskytovatele prostředků centra Azure Stack](/azure-stack/operator/azure-stack-app-service-overview.md) . K vaší instanci centra Azure Stack potřebujete přistupovat pomocí operátoru, nebo pokud chcete nainstalovat správce, spolupracujte se správcem.
+  - Azure App Service nainstalovaného [poskytovatele prostředků centra Azure Stack](/azure-stack/operator/azure-stack-app-service-overview) . K vaší instanci centra Azure Stack potřebujete přistupovat pomocí operátoru, nebo pokud chcete nainstalovat správce, spolupracujte se správcem.
   - Předplatné nabídky, které poskytuje App Service a kvótu úložiště. Chcete-li vytvořit nabídku, potřebujete přístup k operátoru.
 - Získejte přístup k předplatnému Azure.
   - Pokud ještě nemáte předplatné Azure, zaregistrujte si [bezplatný zkušební účet](https://azure.microsoft.com/free/) před tím, než začnete.
 - Vytvořte ve svém adresáři dva instanční objekty:
   - Jedna nastavená pro použití s prostředky Azure s přístupem v oboru předplatného Azure.
   - Jedna je nastavená pro použití s prostředky centra Azure Stack s přístupem v oboru předplatného centra Azure Stack.
-  - Další informace o vytváření instančních objektů a autorizaci přístupu najdete v tématu [použití identity aplikace pro přístup k prostředkům](/azure-stack/operator/azure-stack-create-service-principals.md). Pokud dáváte přednost použití rozhraní příkazového řádku Azure, přečtěte si téma [Vytvoření instančního objektu Azure pomocí Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
+  - Další informace o vytváření instančních objektů a autorizaci přístupu najdete v tématu [použití identity aplikace pro přístup k prostředkům](/azure-stack/operator/azure-stack-create-service-principals). Pokud dáváte přednost použití rozhraní příkazového řádku Azure, přečtěte si téma [Vytvoření instančního objektu Azure pomocí Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Nasaďte Azure Cognitive Services v Azure nebo v centru Azure Stack.
   - Nejprve [si přečtěte další informace o Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
-  - Potom navštivte [nasazení služby Azure Cognitive Services, abyste Azure Stack centrum](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) nasadili Cognitive Services v Azure Stackovém centru. Nejprve se musíte zaregistrovat pro přístup k verzi Preview.
+  - Potom navštivte [nasazení služby Azure Cognitive Services, abyste Azure Stack centrum](/azure-stack/user/azure-stack-solution-template-cognitive-services) nasadili Cognitive Services v Azure Stackovém centru. Nejprve se musíte zaregistrovat pro přístup k verzi Preview.
 - Naklonujte nebo Stáhněte si nenakonfigurovanou sadu Azure Custom Vision AI dev Kit. Podrobnosti najdete v tématu [Vision AI DevKit](https://azure.github.io/Vision-AI-DevKit-Pages/).
 - Zaregistrujte si účet Power BI.
-- Klíč předplatného služby Azure Cognitive Services Face API a adresa URL koncového bodu. Jak můžete získat [Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api) bezplatnou zkušební verzi. Případně postupujte podle pokynů v části [Vytvoření účtu Cognitive Services](/azure/cognitive-services/cognitive-services-apis-create-account).
+- Klíč předplatného služby Azure Cognitive Services rozhraní API pro rozpoznávání tváře a adresa URL koncového bodu. Jak můžete získat [Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api) bezplatnou zkušební verzi. Případně postupujte podle pokynů v části [Vytvoření účtu Cognitive Services](/azure/cognitive-services/cognitive-services-apis-create-account).
 - Nainstalujte následující prostředky pro vývoj:
-  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter](https://porter.sh/). Pomocí Porter můžete nasazovat cloudové aplikace s využitím manifestů CNAB sad, které jsou pro vás k dispozici.
   - [Visual Studio Code](https://code.visualstudio.com/)
@@ -72,7 +72,7 @@ Nejprve pomocí rozhraní příkazového řádku Porter vygenerujte sadu přihla
     - ID předplatného pro vaše předplatné Azure.
     - Instanční objekt pro přístup k prostředkům služby Azure Stack hub, včetně ID instančního objektu, klíče a DNS tenanta.
     - ID předplatného pro vaše předplatné centra Azure Stack.
-    - Adresa URL vašeho klíče Face API a klíčového bodu prostředku služby Azure Cognitive Services.
+    - Adresa URL vašeho klíče rozhraní API pro rozpoznávání tváře a klíčového bodu prostředku služby Azure Cognitive Services.
 
 1. Spusťte proces generování přihlašovacích údajů Porter a postupujte podle následujících pokynů:
 

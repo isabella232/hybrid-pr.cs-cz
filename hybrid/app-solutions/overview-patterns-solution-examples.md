@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ab0eb885e7b0fefaca8991522712652f979d8712
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910061"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895308"
 ---
 # <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Hybridní vzory a příklady řešení pro Azure a Azure Stack
 
@@ -31,7 +31,7 @@ Aplikace, které zahrnují cloudy, se také označují jako *hybridní aplikace*
 
 Scénáře hybridních aplikací se značně liší u prostředků, které jsou k dispozici pro vývoj. Také zahrnují hlediska geografického zabezpečení, přístupu k Internetu a dalších. I když zde popsané vzorce a řešení nemusí řešit všechny požadavky, poskytují pokyny a příklady pro prozkoumání a opakované použití při implementaci hybridních řešení.
 
-## <a name="design-patterns"></a>Způsoby návrhu
+## <a name="design-patterns"></a>Vzory návrhu
 
 Vzory návrhu odvrácené na základě možností opakovaného návrhu, od reálných scénářů a zkušeností zákazníků. Vzor je abstraktní a umožňuje, aby byl použitelný pro různé typy scénářů nebo vertikální obory. Každý vzor dokumentuje kontext a problém a poskytuje přehled o příkladech řešení. Příklad řešení je určen jako možná implementace vzoru.
 
@@ -49,4 +49,4 @@ Podrobný průvodce nasazením vám pomůže při nasazení příkladu řešení
 - Další informace o celém portfoliu produktů a řešení najdete v [Azure Stack rodině produktů a řešení](/azure-stack) .
 - Další informace najdete v částech "vzory" a "Průvodci nasazením řešení" v obsahu.
 - Přečtěte si o [otázkách návrhu hybridní aplikace](overview-app-design-considerations.md) a prozkoumejte pilíře kvality softwaru pro navrhování, nasazování a provozování hybridních aplikací.
-- [Nastavte vývojové prostředí na Azure Stack](/azure-stack/user/azure-stack-dev-start.md) a [nasaďte svoji první aplikaci](/azure-stack/user/azure-stack-dev-start-deploy-app.md) na Azure Stack.
+- [Nastavte vývojové prostředí na Azure Stack](/azure-stack/user/azure-stack-dev-start) a [nasaďte svoji první aplikaci](/azure-stack/user/azure-stack-dev-start-deploy-app) na Azure Stack.

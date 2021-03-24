@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
-ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
+ms.openlocfilehash: 0989859fd68847932d3e69defee59740a2bffd44
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92353474"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895393"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Nasazení hybridní aplikace s místními daty, která škálují mezi cloudy
 
@@ -47,7 +47,7 @@ Tento kurz se zabývá následujícími úkony:
 V tomto kurzu se předpokládá, že máte základní znalosti globálního centra Azure a centra Azure Stack. Pokud se chcete dozvědět víc, než začnete s kurzem, přečtěte si tyto články:
 
 - [Úvod do Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Klíčové koncepty centra Azure Stack](/azure-stack/operator/azure-stack-overview.md)
+- [Klíčové koncepty centra Azure Stack](/azure-stack/operator/azure-stack-overview)
 
 V tomto kurzu se taky předpokládá, že máte předplatné Azure. Pokud předplatné nemáte, [Vytvořte si bezplatný účet](https://azure.microsoft.com/free/) před tím, než začnete.
 
@@ -55,7 +55,7 @@ V tomto kurzu se taky předpokládá, že máte předplatné Azure. Pokud předp
 
 Než začnete s tímto řešením, ujistěte se, že splňujete následující požadavky:
 
-- Azure Stack Development Kit (ASDK) nebo předplatné v integrovaném systému Azure Stack hub. Pokud chcete nasadit ASDK, postupujte podle pokynů v tématu [nasazení ASDK pomocí instalačního programu](/azure-stack/asdk/asdk-install.md).
+- Azure Stack Development Kit (ASDK) nebo předplatné v integrovaném systému Azure Stack hub. Pokud chcete nasadit ASDK, postupujte podle pokynů v tématu [nasazení ASDK pomocí instalačního programu](/azure-stack/asdk/asdk-install).
 - Vaše instalace centra Azure Stack by měla mít nainstalované následující:
   - Azure App Service. K nasazení a konfiguraci Azure App Service ve vašem prostředí můžete použít operátor centra Azure Stack. Tento kurz vyžaduje, aby v App Service bylo aspoň jedna (1) dostupná vyhrazená role pracovního procesu.
   - Bitová kopie systému Windows Server 2016.
@@ -72,23 +72,23 @@ Než začnete s tímto řešením, ujistěte se, že splňujete následující p
 
 1. Přihlašovat se k portálu Azure Stack User Portal.
 
-2. Na **řídicím panelu**vyberte **Marketplace**.
+2. Na **řídicím panelu** vyberte **Marketplace**.
 
     ![Tržiště centra Azure Stack](media/solution-deployment-guide-hybrid/image1.png)
 
-3. V **tržišti**vyberte **COMPUTE**a pak klikněte na **Další**. V části **Další**vyberte **bezplatnou licenci SQL Server: SQL Server 2017 vývojář v imagi Windows serveru** .
+3. V **tržišti** vyberte **COMPUTE** a pak klikněte na **Další**. V části **Další** vyberte **bezplatnou licenci SQL Server: SQL Server 2017 vývojář v imagi Windows serveru** .
 
     ![Výběr image virtuálního počítače na portálu Azure Stack User Portal](media/solution-deployment-guide-hybrid/image2.png)
 
-4. **Licence na bezplatnou SQL Server: SQL Server 2017 vývojář na Windows serveru**vyberte **vytvořit**.
+4. **Licence na bezplatnou SQL Server: SQL Server 2017 vývojář na Windows serveru** vyberte **vytvořit**.
 
 5. **Základy > nakonfigurovat základní nastavení**, zadat **název** virtuálního počítače (VM), **uživatelské jméno** pro SQL Server SA a **heslo** pro SA.  V rozevíracím seznamu **předplatné** vyberte předplatné, na které nasazujete. V poli **Skupina prostředků** **Vyberte vybrat existující** a vložte virtuální počítač do stejné skupiny prostředků, jako je vaše webová aplikace Azure Stack hub.
 
     ![Konfigurace základního nastavení pro virtuální počítač v portálu Azure Stack User Portal](media/solution-deployment-guide-hybrid/image3.png)
 
-6. V části **Velikost**vyberte velikost pro svůj virtuální počítač. Pro tento kurz doporučujeme A2_Standard nebo DS2_V2_Standard.
+6. V části **Velikost** vyberte velikost pro svůj virtuální počítač. Pro tento kurz doporučujeme A2_Standard nebo DS2_V2_Standard.
 
-7. V části **nastavení > nakonfigurovat volitelné funkce**nakonfigurujte následující nastavení:
+7. V části **nastavení > nakonfigurovat volitelné funkce** nakonfigurujte následující nastavení:
 
    - **Účet úložiště**: vytvořte nový účet, pokud ho potřebujete.
    - **Virtuální síť**:
@@ -104,20 +104,20 @@ Než začnete s tímto řešením, ujistěte se, že splňujete následující p
 
      ![Konfigurace volitelných funkcí virtuálních počítačů na portálu Azure Stack User Portal](media/solution-deployment-guide-hybrid/image4.png)
 
-8. V části **nastavení SQL Server**nakonfigurujte následující nastavení:
+8. V části **nastavení SQL Server** nakonfigurujte následující nastavení:
 
-   - V případě **připojení SQL**vyberte **veřejné (Internet)**.
-   - V poli **port**ponechte výchozí hodnotu **1433**.
-   - Pro **ověřování SQL**vyberte **Povolit**.
+   - V případě **připojení SQL** vyberte **veřejné (Internet)**.
+   - V poli **port** ponechte výchozí hodnotu **1433**.
+   - Pro **ověřování SQL** vyberte **Povolit**.
 
      > [!Note]  
-     > Pokud povolíte ověřování SQL, mělo by se automaticky naplnit informace o "SQLAdmin", které jste nakonfigurovali v **základních**informacích.
+     > Pokud povolíte ověřování SQL, mělo by se automaticky naplnit informace o "SQLAdmin", které jste nakonfigurovali v **základních** informacích.
 
    - U zbývajících nastavení ponechte výchozí nastavení. Vyberte **OK**.
 
      ![Konfigurace nastavení SQL Server v uživatelském portálu centra Azure Stack](media/solution-deployment-guide-hybrid/image5.png)
 
-9. Na stránce **Souhrn**Zkontrolujte konfiguraci virtuálních počítačů a potom kliknutím na **tlačítko OK** spusťte nasazení.
+9. Na stránce **Souhrn** Zkontrolujte konfiguraci virtuálních počítačů a potom kliknutím na **tlačítko OK** spusťte nasazení.
 
     ![Souhrn konfigurace na portálu pro uživatele centra Azure Stack](media/solution-deployment-guide-hybrid/image6.png)
 
@@ -139,7 +139,7 @@ Azure App Service zjednodušuje spouštění a správu webové aplikace. Vzhlede
 
 App Service v centru Azure Stack musí být směrovatelné z veřejného Internetu a umožnit tak uživatelům přístup k vaší aplikaci. Pokud je vaše centrum Azure Stack dostupné z Internetu, poznamenejte si veřejnou IP adresu nebo adresu URL pro webovou aplikaci Azure Stack hub.
 
-Pokud používáte ASDK, můžete [nakonfigurovat mapování statického překladu adres (NAT)](/azure-stack/operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) , které vystavuje App Service mimo virtuální prostředí.
+Pokud používáte ASDK, můžete [nakonfigurovat mapování statického překladu adres (NAT)](/azure-stack/operator/azure-stack-create-vpn-connection-one-node#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) , které vystavuje App Service mimo virtuální prostředí.
 
 ### <a name="connect-a-web-app-in-azure-to-a-hybrid-network"></a>Připojení webové aplikace v Azure k hybridní síti
 
@@ -153,7 +153,7 @@ Aby bylo možné zajistit propojení mezi webovým front-end v Azure a databáz�
 
 Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat připojení typu Point-to-site k integraci s Azure App Service.
 
-1. V Azure Portal přejdete na stránku brány virtuální sítě. V části **Nastavení**vyberte **Konfigurace Point-to-site**.
+1. V Azure Portal přejdete na stránku brány virtuální sítě. V části **Nastavení** vyberte **Konfigurace Point-to-site**.
 
     ![Možnost Point-to-site v bráně virtuální sítě Azure](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -166,7 +166,7 @@ Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat p�
    > [!Note]  
    > Ujistěte se, že se rozsah, který zadáte, nepřekrývá s žádným z rozsahů adres, které už jsou využívané v podsítích v globálním komponentě Azure nebo Azure Stack hub hybridní sítě.
 
-   V části **Typ tunelu**zrušte ověření **IKEv2 VPN**. Výběrem **Uložit** dokončete konfiguraci Point-to-site.
+   V části **Typ tunelu** zrušte ověření **IKEv2 VPN**. Výběrem **Uložit** dokončete konfiguraci Point-to-site.
 
    ![Nastavení Point-to-site v bráně virtuální sítě Azure](media/solution-deployment-guide-hybrid/image10.png)
 
@@ -174,7 +174,7 @@ Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat p�
 
 1. Pokud chcete připojit aplikaci k virtuální síti Azure, postupujte podle pokynů v části [Brána požadovaná integrace virtuální](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration)sítě.
 
-2. Přejít na **Nastavení** pro App Service plán hostování webové aplikace. V **Nastavení**vyberte **sítě**.
+2. Přejít na **Nastavení** pro App Service plán hostování webové aplikace. V **Nastavení** vyberte **sítě**.
 
     ![Konfigurace sítě pro plán App Service](media/solution-deployment-guide-hybrid/image11.png)
 
@@ -182,7 +182,7 @@ Brána virtuální sítě na straně Azure hybridní sítě musí umožňovat p�
 
     ![Správa integrace virtuální sítě pro plán App Service](media/solution-deployment-guide-hybrid/image12.png)
 
-4. Vyberte virtuální síť, kterou chcete nakonfigurovat. V části **IP adresy SMĚROVANÉ do virtuální**sítě zadejte rozsah IP adres pro virtuální síť Azure, virtuální síť centra Azure Stack a adresní prostory Point-to-site. Vyberte **Uložit** a ověřte a uložte tato nastavení.
+4. Vyberte virtuální síť, kterou chcete nakonfigurovat. V části **IP adresy SMĚROVANÉ do virtuální** sítě zadejte rozsah IP adres pro virtuální síť Azure, virtuální síť centra Azure Stack a adresní prostory Point-to-site. Vyberte **Uložit** a ověřte a uložte tato nastavení.
 
     ![Rozsahy IP adres, které se mají směrovat v Virtual Network Integration](media/solution-deployment-guide-hybrid/image13.png)
 
@@ -196,7 +196,7 @@ Brána místní sítě ve virtuální síti centra Azure Stack musí být nakonf
 
     ![Možnost konfigurace brány v bráně místní sítě centra Azure Stack](media/solution-deployment-guide-hybrid/image14.png)
 
-2. Do pole **adresní prostor**zadejte rozsah adres Point-to-site pro bránu virtuální sítě v Azure.
+2. Do pole **adresní prostor** zadejte rozsah adres Point-to-site pro bránu virtuální sítě v Azure.
 
     ![Adresní prostor Point-to-site v bráně místní sítě centra Azure Stack](media/solution-deployment-guide-hybrid/image15.png)
 
@@ -238,7 +238,7 @@ Přidání protokolu SSL do Azure:
 
 1. Ujistěte se, že certifikát SSL, který získáte, je platný pro subdoménu, kterou jste vytvořili. (Používání certifikátů se zástupnými znaky je v pořádku.)
 
-2. V Azure Portal postupujte podle pokynů v části **Příprava vaší webové aplikace** a **vytvoření vazby certifikátu SSL** v tématu [vytvoření vazby existujícího vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) . Jako **typ SSL**vyberte **SSL založené na sni** .
+2. V Azure Portal postupujte podle pokynů v části **Příprava vaší webové aplikace** a **vytvoření vazby certifikátu SSL** v tématu [vytvoření vazby existujícího vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) . Jako **typ SSL** vyberte **SSL založené na sni** .
 
 3. Přesměrujte veškerý provoz na port HTTPS. Postupujte podle pokynů v části   **vyhovět protokolu HTTPS** v tématu [vytvoření vazby EXISTUJÍCÍHO vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl) článku.
 
@@ -267,7 +267,7 @@ Proměnné prostředí App Service můžete použít k předání jiného připo
 
 1. Otevřete aplikaci v aplikaci Visual Studio.
 
-2. Otevřete Startup.cs a vyhledejte následující blok kódu:
+2. Otevřete Startup. cs a vyhledejte následující blok kódu:
 
     ```C#
     services.AddDbContext<MyDatabaseContext>(options =>
@@ -308,28 +308,28 @@ Při vytváření webové aplikace v prostředí App Service se spustí s jednou
 
     ![Povolit automatické škálování v Azure App Service](media/solution-deployment-guide-hybrid/image17.png)
 
-3. Zadejte název pro **název nastavení automatického škálování**. Pro **výchozí** pravidlo automatického škálování vyberte škálovat na **základě metriky**. Nastavte **limity instancí** na **minimum: 1**, **maximum: 10**a **Výchozí hodnota: 1**.
+3. Zadejte název pro **název nastavení automatického škálování**. Pro **výchozí** pravidlo automatického škálování vyberte škálovat na **základě metriky**. Nastavte **limity instancí** na **minimum: 1**, **maximum: 10** a **Výchozí hodnota: 1**.
 
     ![Konfigurace automatického škálování v Azure App Service](media/solution-deployment-guide-hybrid/image18.png)
 
 4. Vyberte **+ Přidat pravidlo**.
 
-5. Ve **zdroji metriky**vyberte **aktuální prostředek**. Pro pravidlo použijte následující kritéria a akce.
+5. Ve **zdroji metriky** vyberte **aktuální prostředek**. Pro pravidlo použijte následující kritéria a akce.
 
 #### <a name="criteria"></a>Kritéria
 
 1. V části **Časová agregace** vyberte **průměr**.
 
-2. V části **název metriky**vyberte **Procento procesoru**.
+2. V části **název metriky** vyberte **Procento procesoru**.
 
-3. V části **operátor**vyberte **větší než**.
+3. V části **operátor** vyberte **větší než**.
 
    - Nastavte **prahovou hodnotu** na **50**.
    - Nastavte **dobu trvání** na **10**.
 
 #### <a name="action"></a>Akce
 
-1. V části **operace**vyberte **zvýšit počet o**.
+1. V části **operace** vyberte **zvýšit počet o**.
 
 2. Nastavte **počet instancí** na **2**.
 
@@ -339,7 +339,7 @@ Při vytváření webové aplikace v prostředí App Service se spustí s jednou
 
 5. Vyberte **+ Přidat pravidlo**.
 
-6. Ve **zdroji metriky**vyberte **aktuální prostředek.**
+6. Ve **zdroji metriky** vyberte **aktuální prostředek.**
 
    > [!Note]  
    > Aktuální prostředek bude obsahovat název nebo identifikátor GUID vašeho plánu App Service a rozevírací seznamy pro **typ prostředku** a **prostředek** nebudou k dispozici.
@@ -354,16 +354,16 @@ Při snížení provozu může webová aplikace Azure automaticky snížit poče
 
 1. V části **Časová agregace** vyberte **průměr**.
 
-2. V části **název metriky**vyberte **Procento procesoru**.
+2. V části **název metriky** vyberte **Procento procesoru**.
 
-3. V části **operátor**vyberte **menší než**.
+3. V části **operátor** vyberte **menší než**.
 
    - Nastavte **prahovou hodnotu** na **30**.
    - Nastavte **dobu trvání** na **10**.
 
 #### <a name="action"></a>Akce
 
-1. V části **operace**vyberte **snížit počet o**.
+1. V části **operace** vyberte **snížit počet o**.
 
    - Nastavte **počet instancí** na **1**.
    - Nastavte **vychladnutí dolů** na **5**.
@@ -380,10 +380,10 @@ Pomocí Azure Portal vytvořte profil Traffic Manager a pak nakonfigurujte konco
 2. Vyberte **Sítě**.
 3. Vyberte **profil Traffic Manager** a nakonfigurujte následující nastavení:
 
-   - Do **název**zadejte název profilu. Tento název **musí** být v zóně trafficmanager.NET jedinečný a používá se k vytvoření nového názvu DNS (například northwindstore.trafficmanager.NET).
-   - U **metody směrování**vyberte **Vážená**.
-   - V části **předplatné**vyberte předplatné, ve kterém chcete vytvořit tento profil.
-   - V rámci **skupiny prostředků**vytvořte novou skupinu prostředků pro tento profil.
+   - Do **název** zadejte název profilu. Tento název **musí** být v zóně trafficmanager.NET jedinečný a používá se k vytvoření nového názvu DNS (například northwindstore.trafficmanager.NET).
+   - U **metody směrování** vyberte **Vážená**.
+   - V části **předplatné** vyberte předplatné, ve kterém chcete vytvořit tento profil.
+   - V rámci **skupiny prostředků** vytvořte novou skupinu prostředků pro tento profil.
    - V poli **Umístění skupiny prostředků** vyberte umístění skupiny prostředků. Toto nastavení odkazuje na umístění skupiny prostředků a nemá žádný vliv na profil Traffic Manager, který se globálně nasazuje.
 
 4. Vyberte **Vytvořit**.
@@ -396,32 +396,32 @@ Pomocí Azure Portal vytvořte profil Traffic Manager a pak nakonfigurujte konco
 
 1. Vyhledejte profil Traffic Manager, který jste vytvořili. Pokud jste přešli na skupinu prostředků pro daný profil, vyberte profil.
 
-2. V části **profil Traffic Manager**v části **Nastavení**vyberte **koncové body**.
+2. V části **profil Traffic Manager** v části **Nastavení** vyberte **koncové body**.
 
 3. Vyberte **Přidat**.
 
-4. V části **přidat koncový bod**použijte pro Azure Stack centrum následující nastavení:
+4. V části **přidat koncový bod** použijte pro Azure Stack centrum následující nastavení:
 
-   - Jako **typ**vyberte **externí koncový bod**.
+   - Jako **typ** vyberte **externí koncový bod**.
    - Zadejte **název** koncového bodu.
-   - Pro **plně kvalifikovaný název domény (FQDN) nebo IP**adresu zadejte externí adresu URL webové aplikace centra Azure Stack.
-   - Pro **váhu**ponechte výchozí hodnotu **1**. Tato váha má za následek veškerý provoz směřující do tohoto koncového bodu, pokud je v pořádku.
+   - Pro **plně kvalifikovaný název domény (FQDN) nebo IP** adresu zadejte externí adresu URL webové aplikace centra Azure Stack.
+   - Pro **váhu** ponechte výchozí hodnotu **1**. Tato váha má za následek veškerý provoz směřující do tohoto koncového bodu, pokud je v pořádku.
    - Nechejte položku **Přidat jako zakázanou** nezaškrtnutou.
 
 5. Výběrem **OK** uložte koncový bod centra Azure Stack.
 
 Potom nakonfigurujete koncový bod Azure.
 
-1. V **Traffic Manager profil**vyberte **koncové body**.
+1. V **Traffic Manager profil** vyberte **koncové body**.
 2. Vyberte **+Přidat**.
-3. Na stránce **přidat koncový bod**použijte následující nastavení pro Azure:
+3. Na stránce **přidat koncový bod** použijte následující nastavení pro Azure:
 
-   - Jako **typ**vyberte **koncový bod Azure**.
+   - Jako **typ** vyberte **koncový bod Azure**.
    - Zadejte **název** koncového bodu.
-   - Jako **typ cílového prostředku**vyberte **App Service**.
-   - V části **cílový prostředek**vyberte **možnost zvolit službu App Service** , ve které se zobrazí seznam Web Apps ve stejném předplatném.
+   - Jako **typ cílového prostředku** vyberte **App Service**.
+   - V části **cílový prostředek** vyberte **možnost zvolit službu App Service** , ve které se zobrazí seznam Web Apps ve stejném předplatném.
    - V části **Prostředek** vyberte službu App Service, kterou chcete přidat jako první koncový bod.
-   - V případě **váhy**vyberte **2**. Toto nastavení způsobí, že veškerý provoz směřující do tohoto koncového bodu je v případě, že primární koncový bod není v pořádku, nebo pokud máte pravidlo nebo výstrahu, která přesměruje provoz, když se aktivuje.
+   - V případě **váhy** vyberte **2**. Toto nastavení způsobí, že veškerý provoz směřující do tohoto koncového bodu je v případě, že primární koncový bod není v pořádku, nebo pokud máte pravidlo nebo výstrahu, která přesměruje provoz, když se aktivuje.
    - Nechejte položku **Přidat jako zakázanou** nezaškrtnutou.
 
 4. Výběrem **OK** uložte koncový bod Azure.
@@ -446,19 +446,19 @@ Pomocí tohoto zobrazení můžete vytvořit upozornění na horizontální nav�
 
 ### <a name="create-the-scale-out-alert"></a>Vytvoření upozornění na horizontální navýšení kapacity
 
-1. V části **Konfigurovat**vyberte **výstrahy (klasické)**.
+1. V části **Konfigurovat** vyberte **výstrahy (klasické)**.
 2. Vyberte **Přidat upozornění na metriku (Classic)**.
-3. V části **Přidat pravidlo**nakonfigurujte následující nastavení:
+3. V části **Přidat pravidlo** nakonfigurujte následující nastavení:
 
-   - Jako **název**zadejte **nárůst do cloudu Azure**.
+   - Jako **název** zadejte **nárůst do cloudu Azure**.
    - **Popis** je volitelný.
-   - V **Source**části  >  **Výstraha**zdrojového kódu **vyberte metriky**.
-   - V části **kritéria**vyberte své předplatné, skupinu prostředků pro profil Traffic Manager a název profilu Traffic Manager pro daný prostředek.
+   - V části  >  **Výstraha** zdrojového kódu **vyberte metriky**.
+   - V části **kritéria** vyberte své předplatné, skupinu prostředků pro profil Traffic Manager a název profilu Traffic Manager pro daný prostředek.
 
-4. Jako **metrika**vyberte **rychlost požadavků**.
-5. V případě **podmínky**vyberte **větší než**.
-6. V případě **prahové hodnoty**zadejte **2**.
-7. Jako **periodu**vyberte **za posledních 5 minut**.
+4. Jako **metrika** vyberte **rychlost požadavků**.
+5. V případě **podmínky** vyberte **větší než**.
+6. V případě **prahové hodnoty** zadejte **2**.
+7. Jako **periodu** vyberte **za posledních 5 minut**.
 8. V části **oznamovat prostřednictvím**:
    - Zaškrtněte políčko pro **vlastníky e-mailů, přispěvatele a čtenáře**.
    - Zadejte svou e- **mailovou adresu pro další e-maily správce**.
@@ -467,19 +467,19 @@ Pomocí tohoto zobrazení můžete vytvořit upozornění na horizontální nav�
 
 ### <a name="create-the-scale-in-alert"></a>Vytvoření upozornění na horizontální navýšení kapacity
 
-1. V části **Konfigurovat**vyberte **výstrahy (klasické)**.
+1. V části **Konfigurovat** vyberte **výstrahy (klasické)**.
 2. Vyberte **Přidat upozornění na metriku (Classic)**.
-3. V části **Přidat pravidlo**nakonfigurujte následující nastavení:
+3. V části **Přidat pravidlo** nakonfigurujte následující nastavení:
 
-   - Jako **název**zadejte horizontální navýšení **kapacity zpátky do centra Azure Stack**.
+   - Jako **název** zadejte horizontální navýšení **kapacity zpátky do centra Azure Stack**.
    - **Popis** je volitelný.
-   - V **Source**části  >  **Výstraha**zdrojového kódu **vyberte metriky**.
-   - V části **kritéria**vyberte své předplatné, skupinu prostředků pro profil Traffic Manager a název profilu Traffic Manager pro daný prostředek.
+   - V části  >  **Výstraha** zdrojového kódu **vyberte metriky**.
+   - V části **kritéria** vyberte své předplatné, skupinu prostředků pro profil Traffic Manager a název profilu Traffic Manager pro daný prostředek.
 
-4. Jako **metrika**vyberte **rychlost požadavků**.
-5. V případě **podmínky**vyberte **méně než**.
-6. V případě **prahové hodnoty**zadejte **2**.
-7. Jako **periodu**vyberte **za posledních 5 minut**.
+4. Jako **metrika** vyberte **rychlost požadavků**.
+5. V případě **podmínky** vyberte **méně než**.
+6. V případě **prahové hodnoty** zadejte **2**.
+7. Jako **periodu** vyberte **za posledních 5 minut**.
 8. V části **oznamovat prostřednictvím**:
    - Zaškrtněte políčko pro **vlastníky e-mailů, přispěvatele a čtenáře**.
    - Zadejte svou e- **mailovou adresu pro další e-maily správce**.
@@ -504,12 +504,12 @@ Když váš web dosáhne prahových hodnot, které nakonfigurujete, zobrazí se 
 
 2. Vyberte **koncové body**.
 3. Vyberte **koncový bod Azure**.
-4. V části **stav**vyberte **povoleno**a pak vyberte **Uložit**.
+4. V části **stav** vyberte **povoleno** a pak vyberte **Uložit**.
 
     ![Povolit koncový bod Azure v Azure Portal](media/solution-deployment-guide-hybrid/image23.png)
 
 5. V části **koncové body** profilu Traffic Manager vyberte **externí koncový bod**.
-6. V části **stav**vyberte **zakázáno**a pak vyberte **Uložit**.
+6. V části **stav** vyberte **zakázáno** a pak vyberte **Uložit**.
 
     ![Zakázat koncový bod centra Azure Stack v Azure Portal](media/solution-deployment-guide-hybrid/image24.png)
 
