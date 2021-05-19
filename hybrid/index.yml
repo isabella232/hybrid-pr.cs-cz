@@ -1,445 +1,439 @@
 ### YamlMime:Hub
 title: Dokumentace k hybridním a multicloudovým řešením v Azure
-summary: Prostředky pro sestavování a provozování hybridních a multicloudových řešení, která jsou rozmístěná v globálním cloudu, v datacentrech a na hraničních zařízeních
+summary: 'Prostředky pro sestavování a provozování hybridních a multicloudových řešení, která jsou rozmístěná v globálním cloudu, v datacentrech a na hraničních zařízeních'
 brand: azure
 metadata:
   title: Dokumentace k hybridním a multicloudovým řešením v Azure
-  description: Prostředky pro sestavování a provozování hybridních a multicloudových řešení, která jsou rozmístěná v globálním cloudu, v datacentrech a na hraničních zařízeních
+  description: 'Prostředky pro sestavování a provozování hybridních a multicloudových řešení, která jsou rozmístěná v globálním cloudu, v datacentrech a na hraničních zařízeních'
   ms.service: multiple
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
   ms.custom: e2e-hybrid
-  ms.openlocfilehash: 63dedc60e43b3dac708772821bd6f2a0b00c38fb
-  ms.sourcegitcommit: 6404be204d56d42f96ab525baf6108f4b710da77
-  ms.translationtype: MT
-  ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/29/2021
-  ms.locfileid: "105735588"
 highlightedContent:
   items:
-  - title: 'Ignite 2021: hybridní relace'
-    itemType: video
-    url: https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=hybrid
-  - title: 'Ignite 2021: relace ARC Azure'
-    itemType: video
-    url: https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=" Arc "
-  - title: 'Ignite 2021: relace AI na Edge'
-    itemType: video
-    url: https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=" AI edge"
-  - title: Sestavování moderních hybridních aplikací pomocí ARC Azure a Azure Stack
-    itemType: video
-    url: https://channel9.msdn.com/Shows/Azure-Friday/Building-modern-hybrid-applications-with-Azure-Arc-and-Azure-Stack
-  - title: 'Pojednání v něm: všechny věci jsou hybridní (s označením Russinovich).'
-    itemType: video
-    url: https://techcommunity.microsoft.com/t5/itops-talk-blog/bg-p/ITOpsTalkBlog/label-name/ITOps%20Talks?WT.mc_modinfra-12531-socuff
-  - title: Představujeme Azure Modular Data Center
-    itemType: video
-    url: https://azure.microsoft.com/resources/videos/azure-modular-datacenter/
-  - title: 'Inspire 2020: Novinky v Azure Stack HCI'
-    itemType: video
-    url: https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030
-  - title: 'Build 2020: Semináře k hybridním technologií'
-    itemType: video
-    url: https://mybuild.microsoft.com/sessions?q=hybrid%2520%2522%2520Arc%2520%2522%2520%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522&g=%255B%2522on-demand%2522%255D
+    - title: 'Ignite 2021: hybridní relace'
+      itemType: video
+      url: 'https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=hybrid'
+    - title: 'Ignite 2021: relace ARC Azure'
+      itemType: video
+      url: 'https://myignite.microsoft.com/sessions?t={"from":"2021-03-02T00:00:00-07:00","to":"2021-03-04T23:59:00-07:00"}&q=" Arc "'
+    - title: 'Ignite 2021: relace AI na Edge'
+      itemType: video
+      url: 'https://myignite.microsoft.com/sessions?t={"from":"2020-09-22T00:00:00-07:00","to":"2020-09-25T23:59:00-07:00"}&q=" AI edge"'
+    - title: Sestavování moderních hybridních aplikací pomocí ARC Azure a Azure Stack
+      itemType: video
+      url: 'https://channel9.msdn.com/Shows/Azure-Friday/Building-modern-hybrid-applications-with-Azure-Arc-and-Azure-Stack'
+    - title: 'Pojednání v něm: všechny věci jsou hybridní (s označením Russinovich).'
+      itemType: video
+      url: 'https://techcommunity.microsoft.com/t5/itops-talk-blog/bg-p/ITOpsTalkBlog/label-name/ITOps%20Talks?WT.mc_modinfra-12531-socuff'
+    - title: Představujeme Azure Modular Data Center
+      itemType: video
+      url: 'https://azure.microsoft.com/resources/videos/azure-modular-datacenter/'
+    - title: 'Inspire 2020: Novinky v Azure Stack HCI'
+      itemType: video
+      url: 'https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030'
+    - title: 'Build 2020: Semináře k hybridním technologií'
+      itemType: video
+      url: 'https://mybuild.microsoft.com/sessions?q=hybrid%2520%2522%2520Arc%2520%2522%2520%2522%2520intelligent%2520edge%2520%2522%2520%2522%2520sql%2520edge%2520%2522&g=%255B%2522on-demand%2522%255D'
 productDirectory:
   title: Hybridní a multicloudová platforma Azure
   summary: Platformy používané k sestavování a provozování hybridních a multicloudových řešení
   items:
-  - title: Globální veřejná/suverénní cloudová platforma Azure
-    imageSrc: media/index/logo_azure.svg
-    links:
-    - url: /azure
-      text: Služby Azure
-  - title: Platformy privátních cloudů pro hostovaná, místní a mobilní datacentra
-    imageSrc: media/index/azure-stack-hub.svg
-    links:
-    - url: /azure-stack/mdc
-      text: Azure Modular Datacenter
-    - url: /azure-stack/hci
-      text: Azure Stack HCI
-    - url: /azure-stack#azure-stack-hub
-      text: Azure Stack Hub
-    - url: /azure-stack/ruggedized
-      text: Azure Stack Hub Ruggedized
-  - title: Inteligentní hraniční platformy pro zařízení
-    imageSrc: media/index/intelligent.svg
-    links:
-    - url: /azure/iot-edge/
-      text: Azure IoT Edge
-    - url: /azure-sphere
-      text: Azure Sphere
-    - url: /azure/databox-online/
-      text: Azure Stack Edge
-    - url: /windows/iot-core/
-      text: Windows pro IoT
+    - title: Globální veřejná/suverénní cloudová platforma Azure
+      imageSrc: 'https://static.docs.com/ui/media/product/azure/azure.svg'
+      links:
+        - url: /azure
+          text: Služby Azure
+    - title: 'Platformy privátních cloudů pro hostovaná, místní a mobilní datacentra'
+      imageSrc: media/index/azure-stack-hub.svg
+      links:
+        - url: /azure-stack/mdc
+          text: Azure Modular Datacenter
+        - url: /azure-stack/hci
+          text: Azure Stack HCI
+        - url: /azure-stack#azure-stack-hub
+          text: Azure Stack Hub
+        - url: /azure-stack/ruggedized
+          text: Azure Stack Hub Ruggedized
+    - title: Inteligentní hraniční platformy pro zařízení
+      imageSrc: media/index/intelligent.svg
+      links:
+        - url: /azure/iot-edge/
+          text: Azure IoT Edge
+        - url: /azure-sphere
+          text: Azure Sphere
+        - url: /azure/databox-online/
+          text: Azure Stack Edge
+        - url: /windows/iot-core/
+          text: Windows pro IoT
 conceptualContent:
   title: Hybridní a multicloudové technologie
   summary: Služby a produkty pro sestavování a provozování hybridních a multicloudových řešení
   items:
-  - title: AI a Machine Learning
-    links:
-    - url: /azure/bot-service
-      itemType: overview
-      text: Azure Bot Service
-    - url: /azure/search/
-      itemType: overview
-      text: Azure Cognitive Search
-    - url: /azure/cognitive-services/
-      itemType: overview
-      text: Azure Cognitive Services
-    - url: /azure/machine-learning/
-      itemType: overview
-      text: Azure Machine Learning
-  - title: Containers
-    links:
-    - url: /azure/azure-arc/kubernetes/
-      itemType: overview
-      text: Kubernetes s podporou Azure Arc (Preview)
-    - url: /azure/container-instances/
-      itemType: overview
-      text: Azure Container Instances
-    - url: /azure/container-registry/
-      itemType: overview
-      text: Azure Container Registry
-    - url: /azure/aks/
-      itemType: overview
-      text: Služby Azure Kubernetes Service v Azure
-    - url: /azure-stack/user/azure-stack-kubernetes-aks-engine-overview
-      itemType: overview
-      text: Služby Azure Kubernetes Service v Azure Stack Hubu
-    - url: /azure/docker/
-      itemType: overview
-      text: Docker v Azure
-    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
-      itemType: overview
-      text: IoT Edge na platformě Kubernetes
-  - title: databáze
-    links:
-    - url: /azure/azure-arc/data/overview
-      itemType: overview
-      text: Datové služby s podporou služby Azure Arc (Preview)
-    - url: /sql/sql-server/azure-arc/overview
-      itemType: overview
-      text: SQL Server s podporou služby Azure Arc (Preview)
-    - url: /azure/azure-sql-edge/overview
-      itemType: overview
-      text: Azure SQL Edge (Preview)
-  - title: Vývoj a integrace
-    links:
-    - url: /azure-stack/operator/azure-stack-app-service-overview
-      itemType: overview
-      text: App Service v Azure Stack Hubu
-    - url: /azure/app-service/app-service-hybrid-connections
-      itemType: overview
-      text: Hybridní připojení Azure App Service
-    - url: /azure/devops
-      itemType: overview
-      text: Azure DevOps pro CI/CD
-    - url: /azure/event-hubs/
-      itemType: overview
-      text: Azure Event Hubs
-    - url: /azure/azure-functions/
-      itemType: overview
-      text: Azure Functions
-    - url: /azure/iot-hub/
-      itemType: overview
-      text: Azure IoT Hub
-    - url: /azure/logic-apps/
-      itemType: overview
-      text: Azure Logic Apps
-    - url: /azure/azure-monitor/app/app-insights-overview
-      itemType: overview
-      text: Azure Monitor – Application Insights
-    - url: /azure/service-fabric/
-      itemType: overview
-      text: Azure Service Fabric
-    - url: /azure-stack/user/event-hubs-overview
-      itemType: overview
-      text: Event Hubs v Azure Stack Hubu
-    - url: /azure-stack/user/iot-hub-overview
-      itemType: overview
-      text: IoT Hub v Azure Stack Hubu (Preview)
-  - title: Edge
-    links:
-    - url: /azure/databox-online/data-box-gateway-overview
-      itemType: overview
-      text: Azure Databox Gateway
-    - url: /azure/iot-edge/
-      itemType: overview
-      text: Azure IoT Edge
-    - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
-      itemType: overview
-      text: Azure IoT Edge na platformě Kubernetes
-    - url: /azure-sphere
-      itemType: overview
-      text: Azure Sphere
-    - url: /azure/databox-online/azure-stack-edge-overview
-      itemType: overview
-      text: Azure Stack Edge
-    - url: /azure/azure-sql-edge/overview
-      itemType: overview
-      text: Azure SQL Edge (Preview)
-    - url: /windows/iot-core/
-      itemType: overview
-      text: Windows pro IoT
-  - title: Identity a zabezpečení
-    links:
-    - url: /azure/active-directory/hybrid/
-      itemType: overview
-      text: Hybridní identita Azure AD
-    - url: /azure/security-center/
-      itemType: overview
-      text: Azure Security Center
-    - url: /azure/sentinel/
-      itemType: overview
-      text: Azure Sentinel
-    - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
-      itemType: overview
-      text: Hybridní zařízení připojená k Azure AD
-  - title: Správa
-    links:
-    - url: /azure/azure-arc/data/overview
-      itemType: overview
-      text: Datové služby s podporou služby Azure Arc (Preview)
-    - url: /azure/azure-arc/kubernetes/
-      itemType: overview
-      text: Kubernetes s podporou Azure Arc (Preview)
-    - url: /azure/azure-arc/servers
-      itemType: overview
-      text: Servery s podporou služby Azure Arc
-    - url: /sql/sql-server/azure-arc/overview
-      itemType: overview
-      text: SQL Server s podporou služby Azure Arc (Preview)
-    - url: /azure/automation/
-      itemType: overview
-      text: Azure Automation
-    - url: /azure/storage/files/
-      itemType: overview
-      text: Azure Files
-    - url: /azure/azure-monitor
-      itemType: overview
-      text: Azure Monitor
-    - url: /azure/site-recovery/
-      itemType: overview
-      text: Azure Site Recovery
-    - url: /azure-stack/hci/overview
-      itemType: overview
-      text: Hybridní možnosti řešení Azure Stack HCI
-    - url: /windows-server/manage/windows-admin-center/azure/
-      itemType: overview
-      text: Hybridní služby Azure s využitím řešení Windows Admin Center
-  - title: Sítě
-    links:
-    - url: /azure/networking/edge-zones-overview
-      itemType: overview
-      text: Azure Edge Zone
-    - url: /azure/expressroute/
-      itemType: overview
-      text: Azure ExpressRoute
-    - url: /azure/networking/azure-orbital-overview
-      itemType: overview
-      text: Azure Orbital (Preview)
-    - url: /azure/load-balancer/
-      itemType: overview
-      text: Azure Load Balancer
-    - url: /azure/private-link/
-      itemType: overview
-      text: Azure Private Link
-    - url: /azure/azure-relay/
-      itemType: overview
-      text: Azure Relay
-    - url: /azure/traffic-manager/
-      itemType: overview
-      text: Azure Traffic Manager
-    - url: /azure/virtual-network/
-      itemType: overview
-      text: Azure Virtual Network
-    - url: /azure/vpn-gateway/
-      itemType: overview
-      text: Azure VPN Gateway
-  - title: Storage
-    links:
-    - url: /azure/avere-vfxt/avere-vfxt-overview
-      itemType: overview
-      text: Avere vFXT for Azure
-    - url: /azure/backup/
-      itemType: overview
-      text: Azure Backup
-    - url: /azure/storage/files/storage-files-introduction
-      itemType: overview
-      text: Azure Files
-    - url: /azure/site-recovery/
-      itemType: overview
-      text: Azure Site Recovery
-    - url: /azure/fxt-edge-filer/fxt-overview
-      itemType: overview
-      text: Azure FXT Edge Filer
-additionalContent:
-  sections:
-  - title: Hybridní a multicloudová řešení
-    summary: Doprovodné materiály a příklady, které si můžete projít a využít pro vaše hybridní a multicloudové projekty
-    items:
-    - title: Příklady řešení a vzorů aplikací
+    - title: AI a Machine Learning
       links:
-      - url: ./app-solutions/overview-patterns-solution-examples.md
-        text: Co jsou příklady vzorů a řešení?
-      - url: ./app-solutions/overview-app-design-considerations.md
-        text: Aspekty návrhu aplikací
-    - title: Zkoumání vzorů aplikací
+        - url: /azure/bot-service
+          itemType: overview
+          text: Azure Bot Service
+        - url: /azure/search/
+          itemType: overview
+          text: Azure Cognitive Search
+        - url: /azure/cognitive-services/
+          itemType: overview
+          text: Azure Cognitive Services
+        - url: /azure/machine-learning/
+          itemType: overview
+          text: Azure Machine Learning
+    - title: Containers
       links:
-      - url: ./app-solutions/pattern-cross-cloud-scale.md
-        text: Škálování napříč cloudy
-      - url: ./app-solutions/pattern-cicd-pipeline.md
-        text: Hybridní CI/CD v rámci DevOps
-      - url: ./app-solutions/pattern-retail-footfall-detection.md
-        text: Detekce provozu návštěvníků (maloobchod)
-      - url: ./app-solutions/pattern-geo-distributed.md
-        text: Geograficky distribuovaná aplikace
-      - url: ./app-solutions/pattern-highly-available-kubernetes.md
-        text: Vysoce dostupný cluster Kubernetes
-    - title: Nasazení příkladů aplikačních řešení
+        - url: /azure/azure-arc/kubernetes/
+          itemType: overview
+          text: Kubernetes s podporou Azure Arc (Preview)
+        - url: /azure/container-instances/
+          itemType: overview
+          text: Azure Container Instances
+        - url: /azure/container-registry/
+          itemType: overview
+          text: Azure Container Registry
+        - url: /azure/aks/
+          itemType: overview
+          text: Služby Azure Kubernetes Service v Azure
+        - url: /azure-stack/user/azure-stack-kubernetes-aks-engine-overview
+          itemType: overview
+          text: Služby Azure Kubernetes Service v Azure Stack Hubu
+        - url: /azure/docker/
+          itemType: overview
+          text: Docker v Azure
+        - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+          itemType: overview
+          text: IoT Edge na platformě Kubernetes
+    - title: databáze
       links:
-      - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
-        text: Škálování napříč cloudy
-      - url: https://aka.ms/hybriddevopsdeploy
-        text: Hybridní CI/CD v rámci DevOps
-      - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
-        text: Detekce provozu návštěvníků (maloobchod)
-      - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
-        text: Geograficky distribuovaná aplikace
-      - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
-        text: Vysoce dostupný cluster Kubernetes
-  - title: Vyhodnocení a výukové materiály
-    items:
-    - title: Azure Stack
+        - url: /azure/azure-arc/data/overview
+          itemType: overview
+          text: Datové služby s podporou služby Azure Arc (Preview)
+        - url: /sql/sql-server/azure-arc/overview
+          itemType: overview
+          text: SQL Server s podporou služby Azure Arc (Preview)
+        - url: /azure/azure-sql-edge/overview
+          itemType: overview
+          text: Azure SQL Edge (Preview)
+    - title: Vývoj a integrace
       links:
-      - url: /azure-stack/asdk
-        text: Sada Azure Stack Development Kit
-      - url: https://github.com/Azure/AzureStackHCI-EvalGuide
-        text: Příručka pro vyhodnocení Azure Stack HCI
-      - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
-        text: Úvod k hybridním aplikacím Azure Stacku
-      - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
-        text: Dynamické škálování z Azure Stack Hubu do Azure
+        - url: /azure-stack/operator/azure-stack-app-service-overview
+          itemType: overview
+          text: App Service v Azure Stack Hubu
+        - url: /azure/app-service/app-service-hybrid-connections
+          itemType: overview
+          text: Hybridní připojení Azure App Service
+        - url: /azure/devops
+          itemType: overview
+          text: Azure DevOps pro CI/CD
+        - url: /azure/event-hubs/
+          itemType: overview
+          text: Azure Event Hubs
+        - url: /azure/azure-functions/
+          itemType: overview
+          text: Azure Functions
+        - url: /azure/iot-hub/
+          itemType: overview
+          text: Azure IoT Hub
+        - url: /azure/logic-apps/
+          itemType: overview
+          text: Azure Logic Apps
+        - url: /azure/azure-monitor/app/app-insights-overview
+          itemType: overview
+          text: Azure Monitor – Application Insights
+        - url: /azure/service-fabric/
+          itemType: overview
+          text: Azure Service Fabric
+        - url: /azure-stack/user/event-hubs-overview
+          itemType: overview
+          text: Event Hubs v Azure Stack Hubu
+        - url: /azure-stack/user/iot-hub-overview
+          itemType: overview
+          text: IoT Hub v Azure Stack Hubu (Preview)
     - title: Edge
       links:
-      - url: https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator
-        text: Akcelerátor inteligentních řešení AI pro Azure IoT Edge
-      - url: https://labs.iotedge.dev/
-        text: Praktická cvičení pro Azure IoT Edge
-      - url: https://www.azureiotsolutions.com/Accelerators
-        text: Akcelerátory řešení Azure IoT
-      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
-        text: Certifikace pro zařízení Azure IoT Edge
-    - title: Obecné
-      links:
-      - url: /learn/modules/align-requirements-in-azure/
-        text: Koordinace požadavků s typy cloudu a modely služeb v Azure
-      - url: /azure/architecture/browse/?azure_categories=hybrid
-        text: Hybridní architektury Azure
-      - url: https://azure.microsoft.com/overview/azure-hybrid/
-        text: Hybridní možnosti Azure
-      - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
-        text: Virtuální akce Azure Hybrid
-      - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
-        text: Architektura pro přijetí do cloudu – Scénář hybridního a více cloudu
-      - url: /learn/modules/intro-to-azure-hybrid-services/
-        text: Úvod do služeb hybridního cloudu Azure
-      - url: https://events.microsoft.com/
-        text: Katalog událostí Microsoftu
-      - url: /learn
-        text: Microsoft Learn
+        - url: /azure/databox-online/data-box-gateway-overview
+          itemType: overview
+          text: Azure Databox Gateway
+        - url: /azure/iot-edge/
+          itemType: overview
+          text: Azure IoT Edge
+        - url: /azure/iot-edge/how-to-install-iot-edge-kubernetes
+          itemType: overview
+          text: Azure IoT Edge na platformě Kubernetes
+        - url: /azure-sphere
+          itemType: overview
+          text: Azure Sphere
+        - url: /azure/databox-online/azure-stack-edge-overview
+          itemType: overview
+          text: Azure Stack Edge
+        - url: /azure/azure-sql-edge/overview
+          itemType: overview
+          text: Azure SQL Edge (Preview)
+        - url: /windows/iot-core/
+          itemType: overview
+          text: Windows pro IoT
     - title: Identity a zabezpečení
       links:
-      - url: /learn/modules/azure-sentinel-deploy-configure/
-        text: Nasazení Azure Sentinelu a připojení zdrojů dat
-      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
-        text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
-      - url: /learn/modules/implement-manage-hybrid-identity/
-        text: Implementace a Správa hybridní identity
-      - url: /learn/modules/implement-hybrid-identity-windows-server/
-        text: Implementace hybridní identity s Windows Serverem
-      - url: /learn/modules/intro-to-azure-sentinel/
-        text: Úvod k Azure Sentinelu
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
-        text: Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru
+        - url: /azure/active-directory/hybrid/
+          itemType: overview
+          text: Hybridní identita Azure AD
+        - url: /azure/security-center/
+          itemType: overview
+          text: Azure Security Center
+        - url: /azure/sentinel/
+          itemType: overview
+          text: Azure Sentinel
+        - url: /azure/active-directory/devices/concept-azure-ad-join-hybrid
+          itemType: overview
+          text: Hybridní zařízení připojená k Azure AD
     - title: Správa
       links:
-      - url: https://azurearcjumpstart.io/
-        text: Průvodci rychlým zprovozněním služby Azure Arc
-      - url: /learn/browse/?terms=%22%20Arc%20%22
-        text: Moduly učení Azure ARC
-      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
-        text: Popis strategií vysoké dostupnosti a zotavení po havárii
-      - url: /learn/browse/?terms="disaster%20recovery"
-        text: Moduly s informací o zotavení po havárii
-      - url: /learn/browse/?terms="high%20availability"
-        text: Naučit se moduly vysoké dostupnosti
-      - url: /learn/modules/intro-to-azure-arc/
-        text: Seznámení s Azure Arc
-      - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
-        text: Monitorování hybridních instancí a virtuálních počítačů IaaS s využitím Windows Serveru
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
-        text: Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru
+        - url: /azure/azure-arc/data/overview
+          itemType: overview
+          text: Datové služby s podporou služby Azure Arc (Preview)
+        - url: /azure/azure-arc/kubernetes/
+          itemType: overview
+          text: Kubernetes s podporou Azure Arc (Preview)
+        - url: /azure/azure-arc/servers
+          itemType: overview
+          text: Servery s podporou služby Azure Arc
+        - url: /sql/sql-server/azure-arc/overview
+          itemType: overview
+          text: SQL Server s podporou služby Azure Arc (Preview)
+        - url: /azure/automation/
+          itemType: overview
+          text: Azure Automation
+        - url: /azure/storage/files/
+          itemType: overview
+          text: Azure Files
+        - url: /azure/azure-monitor
+          itemType: overview
+          text: Azure Monitor
+        - url: /azure/site-recovery/
+          itemType: overview
+          text: Azure Site Recovery
+        - url: /azure-stack/hci/overview
+          itemType: overview
+          text: Hybridní možnosti řešení Azure Stack HCI
+        - url: /windows-server/manage/windows-admin-center/azure/
+          itemType: overview
+          text: Hybridní služby Azure s využitím řešení Windows Admin Center
     - title: Sítě
       links:
-      - url: /learn/modules/design-a-hybrid-network-architecture/
-        text: Navržení hybridní síťové architektury v Azure
-      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
-        text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
-      - url: /learn/modules/implement-hybrid-network-infrastructure/
-        text: Implementace hybridní síťové infrastruktury
+        - url: /azure/networking/edge-zones-overview
+          itemType: overview
+          text: Azure Edge Zone
+        - url: /azure/expressroute/
+          itemType: overview
+          text: Azure ExpressRoute
+        - url: /azure/networking/azure-orbital-overview
+          itemType: overview
+          text: Azure Orbital (Preview)
+        - url: /azure/load-balancer/
+          itemType: overview
+          text: Azure Load Balancer
+        - url: /azure/private-link/
+          itemType: overview
+          text: Azure Private Link
+        - url: /azure/azure-relay/
+          itemType: overview
+          text: Azure Relay
+        - url: /azure/traffic-manager/
+          itemType: overview
+          text: Azure Traffic Manager
+        - url: /azure/virtual-network/
+          itemType: overview
+          text: Azure Virtual Network
+        - url: /azure/vpn-gateway/
+          itemType: overview
+          text: Azure VPN Gateway
     - title: Storage
       links:
-      - url: /learn/modules/implement-hybrid-file-server-infrastructure/
-        text: Implementace hybridní infrastruktury souborových serverů
-      - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
-        text: Implementace hybridního zálohování a obnovení s využitím IaaS a Windows Serveru
-    - title: Windows Server
-      links:
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-infrastructure/
-        text: Implementace hybridní cloudové infrastruktury Windows Serveru
-      - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
-        text: Implementace hybridního zálohování a obnovení s využitím IaaS a Windows Serveru
-      - url: /learn/modules/implement-hybrid-identity-windows-server/
-        text: Implementace hybridní identity s Windows Serverem
-      - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
-        text: Monitorování hybridních instancí a virtuálních počítačů IaaS s využitím Windows Serveru
-      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
-        text: Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru
-  - title: Další zdroje
-    items:
-    - title: Obecné
-      links:
-      - url: https://azure.microsoft.com/blog/topics/hybrid/
-        text: Blog k hybridnímu využití Azure
-      - url: https://azure.microsoft.com/overview/azure-hybrid/
-        text: Hybridní možnosti Azure
-      - url: https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22
-        text: Zákaznická řešení Azure Stack Hubu
-      - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
-        text: Příběhy zákaznických hybridních cloudů
-    - title: Podpora
-      links:
-      - url: https://azure.microsoft.com/support/options/
-        text: Podpora Azure
-      - url: https://feedback.azure.com/
-        text: Zpětná vazba k Azure na webu User Voice
-      - url: /answers/products/
-        text: Fóra Microsoft Q&A
-      - url: https://stackoverflow.com/
-        text: Stack Overflow
-    - title: Technické
-      links:
-      - url: /azure/developer/
-        text: Nástroje a dokumentace pro vývojáře v Azure
-      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-        text: Azure IoT Tools pro Visual Studio Code
-      - url: /samples/browse/
-        text: Prohlížeč ukázek kódu
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Sada Vision AI Developer Kit
-      - url: /visualstudio/azure/
-        text: Vývoj pro Azure s využitím sady Visual Studio
+        - url: /azure/avere-vfxt/avere-vfxt-overview
+          itemType: overview
+          text: Avere vFXT for Azure
+        - url: /azure/backup/
+          itemType: overview
+          text: Azure Backup
+        - url: /azure/storage/files/storage-files-introduction
+          itemType: overview
+          text: Azure Files
+        - url: /azure/site-recovery/
+          itemType: overview
+          text: Azure Site Recovery
+        - url: /azure/fxt-edge-filer/fxt-overview
+          itemType: overview
+          text: Azure FXT Edge Filer
+additionalContent:
+  sections:
+    - title: Hybridní a multicloudová řešení
+      summary: 'Doprovodné materiály a příklady, které si můžete projít a využít pro vaše hybridní a multicloudové projekty'
+      items:
+        - title: Příklady řešení a vzorů aplikací
+          links:
+            - url: ./app-solutions/overview-patterns-solution-examples.md
+              text: Co jsou příklady vzorů a řešení?
+            - url: ./app-solutions/overview-app-design-considerations.md
+              text: Aspekty návrhu aplikací
+        - title: Zkoumání vzorů aplikací
+          links:
+            - url: ./app-solutions/pattern-cross-cloud-scale.md
+              text: Škálování napříč cloudy
+            - url: ./app-solutions/pattern-cicd-pipeline.md
+              text: Hybridní CI/CD v rámci DevOps
+            - url: ./app-solutions/pattern-retail-footfall-detection.md
+              text: Detekce provozu návštěvníků (maloobchod)
+            - url: ./app-solutions/pattern-geo-distributed.md
+              text: Geograficky distribuovaná aplikace
+            - url: ./app-solutions/pattern-highly-available-kubernetes.md
+              text: Vysoce dostupný cluster Kubernetes
+        - title: Nasazení příkladů aplikačních řešení
+          links:
+            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+              text: Škálování napříč cloudy
+            - url: 'https://aka.ms/hybriddevopsdeploy'
+              text: Hybridní CI/CD v rámci DevOps
+            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+              text: Detekce provozu návštěvníků (maloobchod)
+            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+              text: Geograficky distribuovaná aplikace
+            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+              text: Vysoce dostupný cluster Kubernetes
+    - title: Vyhodnocení a výukové materiály
+      items:
+        - title: Azure Stack
+          links:
+            - url: /azure-stack/asdk
+              text: Sada Azure Stack Development Kit
+            - url: 'https://github.com/Azure/AzureStackHCI-EvalGuide'
+              text: Příručka pro vyhodnocení Azure Stack HCI
+            - url: 'https://www.youtube.com/watch?v=to8D7Xl9SU8'
+              text: Úvod k hybridním aplikacím Azure Stacku
+            - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
+              text: Dynamické škálování z Azure Stack Hubu do Azure
+        - title: Edge
+          links:
+            - url: 'https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator'
+              text: Akcelerátor inteligentních řešení AI pro Azure IoT Edge
+            - url: 'https://labs.iotedge.dev/'
+              text: Praktická cvičení pro Azure IoT Edge
+            - url: 'https://www.azureiotsolutions.com/Accelerators'
+              text: Akcelerátory řešení Azure IoT
+            - url: 'https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}'
+              text: Certifikace pro zařízení Azure IoT Edge
+        - title: Obecné
+          links:
+            - url: /learn/modules/align-requirements-in-azure/
+              text: Koordinace požadavků s typy cloudu a modely služeb v Azure
+            - url: /azure/architecture/browse/?azure_categories=hybrid
+              text: Hybridní architektury Azure
+            - url: 'https://azure.microsoft.com/overview/azure-hybrid/'
+              text: Hybridní možnosti Azure
+            - url: 'https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf'
+              text: Virtuální akce Azure Hybrid
+            - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
+              text: Architektura pro přijetí do cloudu – Scénář hybridního a více cloudu
+            - url: /learn/modules/intro-to-azure-hybrid-services/
+              text: Úvod do služeb hybridního cloudu Azure
+            - url: 'https://events.microsoft.com/'
+              text: Katalog událostí Microsoftu
+            - url: /learn
+              text: Microsoft Learn
+        - title: Identity a zabezpečení
+          links:
+            - url: /learn/modules/azure-sentinel-deploy-configure/
+              text: Nasazení Azure Sentinelu a připojení zdrojů dat
+            - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+              text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
+            - url: /learn/modules/implement-manage-hybrid-identity/
+              text: Implementace a Správa hybridní identity
+            - url: /learn/modules/implement-hybrid-identity-windows-server/
+              text: Implementace hybridní identity s Windows Serverem
+            - url: /learn/modules/intro-to-azure-sentinel/
+              text: Úvod k Azure Sentinelu
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+              text: 'Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru'
+        - title: Správa
+          links:
+            - url: 'https://azurearcjumpstart.io/'
+              text: Průvodci rychlým zprovozněním služby Azure Arc
+            - url: /learn/browse/?terms=%22%20Arc%20%22
+              text: Moduly učení Azure ARC
+            - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
+              text: Popis strategií vysoké dostupnosti a zotavení po havárii
+            - url: /learn/browse/?terms="disaster%20recovery"
+              text: Moduly s informací o zotavení po havárii
+            - url: /learn/browse/?terms="high%20availability"
+              text: Naučit se moduly vysoké dostupnosti
+            - url: /learn/modules/intro-to-azure-arc/
+              text: Seznámení s Azure Arc
+            - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
+              text: Monitorování hybridních instancí a virtuálních počítačů IaaS s využitím Windows Serveru
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+              text: 'Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru'
+        - title: Sítě
+          links:
+            - url: /learn/modules/design-a-hybrid-network-architecture/
+              text: Navržení hybridní síťové architektury v Azure
+            - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+              text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
+            - url: /learn/modules/implement-hybrid-network-infrastructure/
+              text: Implementace hybridní síťové infrastruktury
+        - title: Storage
+          links:
+            - url: /learn/modules/implement-hybrid-file-server-infrastructure/
+              text: Implementace hybridní infrastruktury souborových serverů
+            - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
+              text: Implementace hybridního zálohování a obnovení s využitím IaaS a Windows Serveru
+        - title: Windows Server
+          links:
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-infrastructure/
+              text: Implementace hybridní cloudové infrastruktury Windows Serveru
+            - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
+              text: Implementace hybridního zálohování a obnovení s využitím IaaS a Windows Serveru
+            - url: /learn/modules/implement-hybrid-identity-windows-server/
+              text: Implementace hybridní identity s Windows Serverem
+            - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
+              text: Monitorování hybridních instancí a virtuálních počítačů IaaS s využitím Windows Serveru
+            - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+              text: 'Správa, monitorování a zabezpečení hybridního cloudu s využitím Windows Serveru'
+    - title: Další zdroje
+      items:
+        - title: Obecné
+          links:
+            - url: 'https://azure.microsoft.com/blog/topics/hybrid/'
+              text: Blog k hybridnímu využití Azure
+            - url: 'https://azure.microsoft.com/overview/azure-hybrid/'
+              text: Hybridní možnosti Azure
+            - url: 'https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22'
+              text: Zákaznická řešení Azure Stack Hubu
+            - url: 'https://customers.microsoft.com/en-us/search?sq="hybrid cloud"'
+              text: Příběhy zákaznických hybridních cloudů
+        - title: Podpora
+          links:
+            - url: 'https://azure.microsoft.com/support/options/'
+              text: Podpora Azure
+            - url: 'https://feedback.azure.com/'
+              text: Zpětná vazba k Azure na webu User Voice
+            - url: /answers/products/
+              text: Fóra Microsoft Q&A
+            - url: 'https://stackoverflow.com/'
+              text: Stack Overflow
+        - title: Technické
+          links:
+            - url: /azure/developer/
+              text: Nástroje a dokumentace pro vývojáře v Azure
+            - url: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools'
+              text: Azure IoT Tools pro Visual Studio Code
+            - url: /samples/browse/
+              text: Prohlížeč ukázek kódu
+            - url: 'https://azure.github.io/Vision-AI-DevKit-Pages/'
+              text: Sada Vision AI Developer Kit
+            - url: /visualstudio/azure/
+              text: Vývoj pro Azure s využitím sady Visual Studio
