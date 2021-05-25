@@ -3,16 +3,16 @@ title: Neuložené zjišťování pomocí Azure a Azure Stack Edge
 description: Naučte se používat Azure a Azure Stack Edge Services k implementaci detekce z provozu.
 author: BryanLa
 ms.topic: article
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 865f63bc4234e50ed169aa29cefdb1886750594c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: b25a6391c4e64fa7018031bac4fb7d098c56b529
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910140"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343871"
 ---
 # <a name="out-of-stock-detection-at-the-edge-pattern"></a>Zjišťování z hranice hraničního modelu z neaktivního zásobníku
 
@@ -35,31 +35,31 @@ Jak řešení funguje:
 3. Model ML vrátí jakékoli z burzovních oblastí.
 4. Ovladač Inferencing nahraje nezpracovaný obrázek do objektu BLOB (Pokud je zadaný) a pošle výsledky z modelu do Azure IoT Hub a s procesorem ohraničujícího pole na zařízení.
 5. Procesor ohraničujících uzlů přidává do obrázku ohraničovací rámečky a cestu k imagi ukládá do mezipaměti v paměti databáze.
-6. Webová aplikace se dotazuje na obrázky a zobrazí je v přijatém pořadí.
-7. Zprávy z IoT Hub jsou agregovány v Time Series Insights.
-8. Power BI zobrazí interaktivní sestavu z neskladovaných položek v průběhu času s daty z Time Series Insights.
+6. Webová aplikace se dotazuje na obrázky a zobrazuje je v přijatém pořadí.
+7. Zprávy z IoT Hub se agregují v Time Series Insights.
+8. Power BI se v průběhu času zobrazí interaktivní sestava s daty z Time Series Insights.
 
 
 ## <a name="components"></a>Komponenty
 
 Toto řešení používá následující komponenty:
 
-| Vrstva | Součást | Description |
+| Vrstva | Komponenta | Popis |
 |----------|-----------|-------------|
-| Místní hardware | Síťová kamera | Je vyžadován síťový fotoaparát s kanálem HTTP nebo RTSP pro poskytování imagí pro odvození. |
-| Azure | Azure IoT Hub | [Azure IoT Hub](/azure/iot-hub/) zpracovává zřizování zařízení a zasílání zpráv pro hraniční zařízení. |
-|  | Azure Time Series Insights | [Azure Time Series Insights](/azure/time-series-insights/) ukládá zprávy z IoT Hub pro vizualizaci. |
-|  | Power BI | [Microsoft Power BI](https://powerbi.microsoft.com/) poskytuje podnikové sestavy o neskladovaných událostech. Power BI poskytuje snadno použitelné rozhraní řídicího panelu pro zobrazení výstupu z Azure Stream Analytics. |
+| Místní hardware | Síťová kamera | K odvozování obrázků se vyžaduje síťová kamera s kanálem HTTP nebo RTSP. |
+| Azure | Azure IoT Hub | [Azure IoT Hub](/azure/iot-hub/) o zřizování zařízení a zasílání zpráv pro hraniční zařízení. |
+|  | Azure Time Series Insights | [Azure Time Series Insights](/azure/time-series-insights/) uloží zprávy z IoT Hub pro vizualizaci. |
+|  | Power BI | [Microsoft Power BI](https://powerbi.microsoft.com/) poskytuje obchodní sestavy o neskladně obchodních událostech. Power BI poskytuje snadno použitelný řídicí panel pro zobrazení výstupu z Azure Stream Analytics. |
 | Azure Stack Edge nebo<br>Azure IoT Edge zařízení | Azure IoT Edge | [Azure IoT Edge](/azure/iot-edge/) orchestruje modul runtime pro místní kontejnery a zpracovává správu a aktualizace zařízení.|
-| | Brainwave projektu Azure | V Azure Stack hraničním zařízení [Brainwave Project](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) pro zrychlení inferencingí používá pole brány (FPGA) s programovatelnými poli.|
+| | Projekt Azure brainwave | Na zařízení Azure Stack Edge používá [Project Brainwave](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) pole FPGA (Field-Programmable Gate Array) k urychlení odvozování ML.|
 
 ## <a name="issues-and-considerations"></a>Problémy a důležité informace
 
-Při rozhodování, jak implementovat toto řešení, vezměte v úvahu následující body:
+Při rozhodování o tom, jak toto řešení implementovat, zvažte následující body:
 
 ### <a name="scalability"></a>Škálovatelnost
 
-Většina modelů strojového učení se dá spustit jenom na určitém počtu snímků za sekundu v závislosti na zadaném hardwaru. Určete optimální vzorkovací frekvenci z fotoaparátů, aby se zajistilo, že kanál ML nezálohuje. Různé typy hardwaru budou pracovat s různými počty fotoaparátů a snímků.
+Většina modelů strojového učení může běžet pouze s určitým počtem snímků za sekundu v závislosti na poskytnutém hardwaru. Určete optimální vzorkovací frekvenci z fotoaparátů, abyste zajistili, že se kanál ML nebude zálohovat. Různé typy hardwaru budou zpracovávat různé počty fotoaparátů a snímek.
 
 ### <a name="availability"></a>Dostupnost
 
@@ -81,4 +81,4 @@ Další informace o tématech zavedených v tomto článku:
 - Další informace o osvědčených postupech a odpovědi na další otázky najdete v tématu [aspekty návrhu hybridní aplikace](overview-app-design-considerations.md) .
 - Další informace o celém portfoliu produktů a řešení najdete v [Azure Stack rodině produktů a řešení](/azure-stack) .
 
-Až budete připraveni otestovat příklad řešení, pokračujte v [Průvodci nasazením vrstvených dat pro analytické řešení](https://aka.ms/edgeinferencingdeploy). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent.
+Až budete připraveni otestovat příklad řešení, pokračujte v [Průvodci nasazením řešení Edge ml Inferencing](https://aka.ms/edgeinferencingdeploy). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent.

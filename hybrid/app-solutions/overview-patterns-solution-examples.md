@@ -1,39 +1,39 @@
 ---
-title: Hybridní vzory a příklady řešení pro Azure a centrum Azure Stack
-description: Přehled hybridních vzorů a příkladů řešení pro učení a sestavování hybridních řešení v Azure a centra Azure Stack.
+title: Příklady hybridních vzorů a řešení pro Azure a Azure Stack Hub
+description: Přehled hybridních vzorů a příkladů řešení pro výuku a vytváření hybridních řešení v Azure a Azure Stack Hub.
 author: BryanLa
 ms.topic: overview
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: 9f3f13c23bec31c5132c7e90294356b9463fd72b
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895308"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343854"
 ---
-# <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Hybridní vzory a příklady řešení pro Azure a Azure Stack
+# <a name="hybrid-solution-patterns-and-examples-for-azure-and-azure-stack"></a>Příklady a vzory hybridních řešení pro Azure a Azure Stack
 
-Microsoft poskytuje produkty a řešení Azure a Azure Stack jako jeden konzistentní ekosystém Azure. Microsoft Azure Stack rodina je rozšířením Azure.
+Microsoft poskytuje Azure a Azure Stack a řešení jako jeden konzistentní ekosystém Azure. Rodina Microsoft Azure Stack je rozšířením Azure.
 
 ## <a name="the-hybrid-cloud-and-hybrid-apps"></a>Hybridní cloud a hybridní aplikace
 
-Azure Stack přináší flexibilitu cloud computingu do místního prostředí a hraničního prostředí tím, že umožňuje *hybridní cloud*. Centrum Azure Stack, Azure Stack HCI a Azure Stack Edge rozšíří Azure z cloudu do datacenter v svrchovaných pobočkách, poboček, polí a mimo ně. Díky této různorodé sadě funkcí můžete:
+Azure Stack hybridního cloudu cloud computing a hraničních zařízení flexibilitu místních prostředí a *hraničních zařízení.* Azure Stack Hub, Azure Stack HCI a Azure Stack Edge rozšiřují Azure z cloudu do suverénních datacenter, poboček, terénu i mimo ni. Díky této různorodé sadě funkcí můžete:
 
-- Používejte kód a spouštějte nativní cloudové aplikace konzistentně napříč Azure a místními prostředími.
-- Spouštějte tradiční virtualizované úlohy s volitelnými připojeními ke službám Azure.
-- Přeneste data do cloudu nebo je udržujte v datacentru svrchovan, abyste zachovali dodržování předpisů.
-- Spusťte hardwarově akcelerované strojové učení, kontejnery nebo virtualizované úlohy, a to vše na inteligentních hraničních zařízeních.
+- Opakovaně používat kód a spouštět aplikace nativní pro cloud konzistentně napříč Azure a místními prostředími.
+- Spouštění tradičních virtualizovaných úloh s volitelnými připojeními ke službám Azure
+- Přenášet data do cloudu nebo je uchovat v suverénním datacentru, aby se zachovala kompatibilita.
+- Spouštění hardwarově akcelerovaných úloh strojového učení, kontejnerizovaných nebo virtualizovaných úloh na inteligentních hraničních zařízeních
 
-Aplikace, které zahrnují cloudy, se také označují jako *hybridní aplikace*. V Azure můžete vytvářet hybridní cloudové aplikace a nasazovat je do připojeného nebo odpojeného datacentra, které najdete kdekoli.
+Aplikace, které pokrývají cloudy, se také označují jako *hybridní aplikace*. V Azure můžete vytvářet hybridní cloudové aplikace a nasazovat je do připojeného nebo odpojeného datacentra, které se nachází kdekoli.
 
-Scénáře hybridních aplikací se značně liší u prostředků, které jsou k dispozici pro vývoj. Také zahrnují hlediska geografického zabezpečení, přístupu k Internetu a dalších. I když zde popsané vzorce a řešení nemusí řešit všechny požadavky, poskytují pokyny a příklady pro prozkoumání a opakované použití při implementaci hybridních řešení.
+Scénáře hybridních aplikací se výrazně liší podle prostředků, které jsou k dispozici pro vývoj. Zahrnují také aspekty, jako je zeměpisná oblast, zabezpečení, přístup k internetu a další. I když zde popsané vzory a příklady řešení nemusí řešit všechny požadavky, poskytují pokyny a příklady pro zkoumání a opakované použití při implementaci hybridních řešení.
 
-## <a name="design-patterns"></a>Vzory návrhu
+## <a name="solution-patterns"></a>Vzory řešení
 
-Vzory návrhu odvrácené na základě možností opakovaného návrhu, od reálných scénářů a zkušeností zákazníků. Vzor je abstraktní a umožňuje, aby byl použitelný pro různé typy scénářů nebo vertikální obory. Každý vzor dokumentuje kontext a problém a poskytuje přehled o příkladech řešení. Příklad řešení je určen jako možná implementace vzoru.
+Vzory řešení zobecněné opakovatelné pokyny k návrhu z reálných zákaznických scénářů a prostředí. Vzor je abstraktní a umožňuje, aby byl použitelný pro různé typy scénářů nebo vertikální obory. Každý vzor dokumentuje kontext a problém a poskytuje přehled o příkladech řešení. Příklad řešení je určen jako možná implementace vzoru.
 
 Existují dva typy článků o vzorcích:
 
