@@ -9,7 +9,7 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 03/09/2021
+  ms.date: 06/11/2021
   ms.custom: e2e-hybrid
 highlightedContent:
   items:
@@ -318,7 +318,21 @@ additionalContent:
             - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
               text: Dynamické škálování z Azure Stack Hubu do Azure
             - url: 'https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030'
-              text: Co je nového pro Azure Stack HCL
+              text: Co je nového pro Azure Stack HCI
+        - title: Vývoj a integrace
+          links:
+            - url: 'https://www.youtube.com/watch?v=to8D7Xl9SU8'
+              text: Úvod k hybridním aplikacím Azure Stacku
+            - url: 'https://mybuild.microsoft.com/sessions/2debfc2e-f0b3-4adf-bcec-d126930f806f'
+              text: 'Vytváření aplikací nativních pro cloud, které běží kdekoli'
+            - url: 'https://mybuild.microsoft.com/sessions/9f56bc10-30bd-42e2-afc8-b61b22260c49'
+              text: Vytváření konzistentních hybridních a multicloudových aplikací s Azure Arc (zeptejte se odborníků)
+            - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
+              text: Dynamické škálování z Azure Stack Hubu do Azure
+            - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'
+              text: Logic Apps – Rozvoj budoucnosti integrace
+            - url: 'https://mybuild.microsoft.com/sessions/76ebac39-517d-44da-a58e-df4193b5efa9'
+              text: Budoucnost moderního vývoje aplikací pomocí .NET
         - title: Edge
           links:
             - url: 'https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator'
@@ -340,11 +354,11 @@ additionalContent:
             - url: 'https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf'
               text: Virtuální akce Azure Hybrid
             - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
-              text: Architektura pro přijetí do cloudu – Scénář hybridního a více cloudu
+              text: Cloud Adoption Framework – Hybridní a multicloudový scénář
             - url: /learn/modules/intro-to-azure-hybrid-services/
               text: Úvod do služeb hybridního cloudu Azure
             - url: 'https://events.microsoft.com/'
-              text: Katalog událostí Microsoftu
+              text: Katalog událostí společnosti Microsoft
             - url: /learn
               text: Microsoft Learn
         - title: Identity a zabezpečení
@@ -354,7 +368,7 @@ additionalContent:
             - url: /learn/modules/expose-hybrid-services-with-azure-relay/
               text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
             - url: /learn/modules/implement-manage-hybrid-identity/
-              text: Implementace a Správa hybridní identity
+              text: Implementace a správa hybridní identity
             - url: /learn/modules/implement-hybrid-identity-windows-server/
               text: Implementace hybridní identity s Windows Serverem
             - url: /learn/modules/intro-to-azure-sentinel/
@@ -366,13 +380,13 @@ additionalContent:
             - url: 'https://azurearcjumpstart.io/'
               text: Průvodci rychlým zprovozněním služby Azure Arc
             - url: /learn/browse/?terms=%22%20Arc%20%22
-              text: Moduly učení Azure ARC
+              text: Azure Arc Learn
             - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
               text: Popis strategií vysoké dostupnosti a zotavení po havárii
             - url: /learn/browse/?terms="disaster%20recovery"
-              text: Moduly s informací o zotavení po havárii
+              text: Moduly Learn pro zotavení po havárii
             - url: /learn/browse/?terms="high%20availability"
-              text: Naučit se moduly vysoké dostupnosti
+              text: Moduly Learn s vysokou dostupností
             - url: /learn/modules/intro-to-azure-arc/
               text: Seznámení s Azure Arc
             - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
