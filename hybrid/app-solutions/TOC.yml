@@ -33,29 +33,29 @@
 - name: Průvodci nasazením řešení
   items:
     - name: Škálování napříč cloudy
-      href: solution-deployment-guide-cross-cloud-scaling.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
     - name: Škálování napříč cloudy (místní data)
-      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data
     - name: Hybridní CI/CD v rámci DevOps
       href: 'https://aka.ms/hybriddevopsdeploy'
     - name: Detekce provozu návštěvníků (maloobchod)
-      href: solution-deployment-guide-retail-footfall-detection.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
     - name: Geograficky distribuovaná aplikace
-      href: solution-deployment-guide-geo-distributed.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
     - name: Cluster Kubernetes s vysokou dostupností
-      href: solution-deployment-guide-highly-available-kubernetes.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
     - name: Hybridní připojení
-      href: solution-deployment-guide-connectivity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-connectivity
     - name: Hybridní identita
-      href: solution-deployment-guide-identity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-identity
     - name: Hybridní přenos
       href: 'https://aka.ms/hybridrelaydeployment'
     - name: Vrstvená data
       href: 'https://aka.ms/tiereddatadeploy'
     - name: MongoDB s vysokou dostupností
-      href: solution-deployment-guide-mongodb-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-mongodb-ha
     - name: SQL Server 2016 s vysokou dostupností
-      href: solution-deployment-guide-sql-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-sql-ha
     - name: Vyčerpání zásob na hraničních zařízeních
       href: 'https://aka.ms/edgeinferencingdeploy'
     - name: Trénování modelů ML na hraničních zařízeních

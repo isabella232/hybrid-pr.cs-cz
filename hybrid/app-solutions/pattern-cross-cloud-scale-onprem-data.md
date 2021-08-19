@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: edbb608fbf8e5288f29572bfe4cca98ffb3cb8fc
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5c8e3adb621ae4322bf6d60792fc307dbb24ff90
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910121"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281240"
 ---
 # <a name="cross-cloud-scaling-on-premises-data-pattern"></a>Škálování mezi cloudy (místní data) – vzor
 
@@ -34,7 +34,7 @@ Průvodce nasazením řešení umožňuje nasadit identickou webovou aplikaci do
 
 Toto řešení používá následující komponenty:
 
-| Vrstva | Součást | Description |
+| Vrstva | Komponenta | Popis |
 |----------|-----------|-------------|
 | Azure | Azure App Service | [Azure App Service](/azure/app-service/) umožňuje sestavovat a hostovat webové aplikace, aplikace API RESTful a Azure Functions. Vše v programovacím jazyce podle vašeho výběru bez správy infrastruktury. |
 | | Azure Virtual Network| [Azure Virtual Network (VNET)](/azure/virtual-network/virtual-networks-overview) je základní stavební blok pro privátní sítě v Azure. Virtuální síť umožňuje více typů prostředků Azure, jako jsou virtuální počítače, pro zabezpečenou komunikaci mezi sebou, internetem a místními sítěmi. Řešení také ukazuje použití dalších síťových součástí:<br>– podsítě aplikací a brány.<br>– místní brána místní sítě.<br>– Brána virtuální sítě, která funguje jako připojení brány VPN typu Site-to-site.<br>– Veřejná IP adresa.<br>– připojení VPN typu Point-to-site.<br>– Azure DNS pro hostování domén DNS a poskytování překladu názvů. |
@@ -42,12 +42,12 @@ Toto řešení používá následující komponenty:
 | | Azure Application Insights | [Application Insights](/azure/azure-monitor/app/app-insights-overview) je rozšiřitelná služba pro správu výkonu aplikací, která umožňuje webovým vývojářům vytvářet a spravovat aplikace na různých platformách.|
 | | Azure Functions | [Azure Functions](/azure/azure-functions/) umožňuje spuštění kódu v prostředí bez serveru, aniž byste nejdřív museli vytvořit virtuální počítač nebo publikovat webovou aplikaci. |
 | | Automatické škálování Azure | [Automatické škálování](/azure/azure-monitor/platform/autoscale-overview) je integrovaná funkce Cloud Services, virtuálních počítačů a webových aplikací. Tato funkce umožňuje aplikacím provádět své nejlepší změny při změnách na vyžádání. Aplikace se upraví pro špičky provozu a upozorní vás, když se podle potřeby mění a mění velikost metrik. |
-| Centrum Azure Stack | IaaS COMPUTE | Služba Azure Stack hub umožňuje používat stejný aplikační model, Samoobslužný portál a rozhraní API, které podporuje Azure. Azure Stack centra IaaS umožňuje širokou škálu Open Source technologií pro konzistentní nasazení hybridních cloudů. Příklad řešení používá virtuální počítač s Windows serverem, který SQL Server například.|
+| Azure Stack Hub | IaaS COMPUTE | Služba Azure Stack hub umožňuje používat stejný aplikační model, Samoobslužný portál a rozhraní API, které podporuje Azure. Azure Stack centra IaaS umožňuje širokou škálu Open Source technologií pro konzistentní nasazení hybridních cloudů. příklad řešení používá pro SQL Server například virtuální počítač Windows serveru.|
 | | Azure App Service | Stejně jako u webové aplikace Azure používá řešení [Azure App Service v centru Azure Stack](/azure-stack/operator/azure-stack-app-service-overview) k hostování webové aplikace. |
 | | Sítě | Virtual Network centra Azure Stack funguje stejně jako Azure Virtual Network. Používá mnoho ze stejných síťových součástí, včetně vlastních názvů hostitelů.
 | Azure DevOps Services | Registrace | Rychle nastavte průběžnou integraci pro sestavování, testování a nasazování. Další informace najdete v tématu [registrace, přihlášení do Azure DevOps](/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops). |
-| | Azure Pipelines | Použijte [Azure Pipelines](/azure/devops/pipelines/agents/agents?view=azure-devops) pro průběžnou integraci/průběžné doručování. Azure Pipelines umožňuje spravovat hostované agenty sestavení a vydání a definice. |
-| | Úložiště kódu | Využijte více úložišť kódu pro zjednodušení vašeho vývojového kanálu. Používejte existující úložiště kódu na GitHubu, BitBucket, Dropboxu, OneDrivu a Azure Repos. |
+| | Azure Pipelines | použijte [Azure Pipelines](/azure/devops/pipelines/agents/agents?view=azure-devops) pro průběžnou integraci/průběžné doručování. Azure Pipelines umožňuje spravovat hostované agenty sestavení a vydání a definice. |
+| | Úložiště kódu | Využijte více úložišť kódu pro zjednodušení vašeho vývojového kanálu. použijte existující úložiště kódu v GitHub, Bitbucket, Dropbox, OneDrive a Azure Repos. |
 
 ## <a name="issues-and-considerations"></a>Problémy a důležité informace
 
@@ -94,7 +94,7 @@ Hybridní kanál CI/CD vám může pomáhat:
 
 ### <a name="a-single-consistent-identity-management-solution"></a>Jediné, konzistentní řešení pro správu identit
 
-Centrum Azure Stack spolupracuje s Azure Active Directory (Azure AD) i Active Directory Federation Services (AD FS) (ADFS). Centrum Azure Stack spolupracuje se službou Azure AD v propojených scénářích. Pro prostředí, která nemají připojení, můžete použít AD FS jako odpojené řešení. Instanční objekty slouží k udělení přístupu k aplikacím, které jim umožní nasadit nebo nakonfigurovat prostředky prostřednictvím Azure Resource Manager.
+centrum Azure Stack spolupracuje s Azure Active Directory (Azure AD) i Active Directory Federation Services (AD FS) (ADFS). Centrum Azure Stack spolupracuje se službou Azure AD v propojených scénářích. Pro prostředí, která nemají připojení, můžete použít AD FS jako odpojené řešení. Instanční objekty slouží k udělení přístupu k aplikacím, které jim umožní nasadit nebo nakonfigurovat prostředky prostřednictvím Azure Resource Manager.
 
 ### <a name="security"></a>Zabezpečení
 
@@ -119,7 +119,7 @@ Další informace o vytváření instančního objektu a použití certifikátu 
 
 ## <a name="when-to-use-this-pattern"></a>Kdy se má tento model použít
 
-- Moje organizace používá přístup DevOps nebo má jedno plánované pro budoucnost v blízké budoucnosti.
+- moje organizace používá DevOps přístup, nebo má v blízké budoucnosti jeden plán.
 - Chci implementovat postupy CI/CD v rámci naší implementace centra Azure Stack a veřejného cloudu.
 - Chci konsolidovat kanál CI/CD napříč cloudem a místními prostředími.
 - Chci mít možnost vyvíjet aplikace hladce pomocí cloudu nebo místních služeb.
@@ -137,4 +137,4 @@ Další informace o tématech zavedených v tomto článku:
 - Další informace o osvědčených postupech a zodpovězení dalších dotazů, které můžete mít, najdete v tématu [aspekty návrhu hybridní aplikace](overview-app-design-considerations.md) .
 - Tento model používá Azure Stack řady produktů, včetně centra Azure Stack. Další informace o celém portfoliu produktů a řešení najdete v [Azure Stack rodině produktů a řešení](/azure-stack) .
 
-Až budete připraveni otestovat příklad řešení, pokračujte v [Průvodci nasazením řešení pro škálování mezi cloudy (místní data)](solution-deployment-guide-cross-cloud-scaling-onprem-data.md). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent.
+Až budete připraveni otestovat příklad řešení, pokračujte v [Průvodci nasazením řešení pro škálování mezi cloudy (místní data)](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent.

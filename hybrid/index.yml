@@ -252,7 +252,7 @@ conceptualContent:
           text: Azure Virtual Network
         - url: /azure/vpn-gateway/
           itemType: overview
-          text: Azure VPN Gateway
+          text: Službu Azure VPN Gateway
     - title: Storage
       links:
         - url: /azure/avere-vfxt/avere-vfxt-overview
@@ -295,15 +295,15 @@ additionalContent:
               text: Vysoce dostupný cluster Kubernetes
         - title: Nasazení příkladů aplikačních řešení
           links:
-            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
               text: Škálování napříč cloudy
             - url: 'https://aka.ms/hybriddevopsdeploy'
               text: Hybridní CI/CD v rámci DevOps
-            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
               text: Detekce provozu návštěvníků (maloobchod)
-            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
               text: Geograficky distribuovaná aplikace
-            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
               text: Vysoce dostupný cluster Kubernetes
     - title: Vyhodnocení a výukové materiály
       items:
@@ -320,7 +320,7 @@ additionalContent:
             - url: 'https://azure.microsoft.com/resources/videos/azure-modular-datacenter/'
               text: Představujeme Azure Modular Data Center
             - url: 'https://www.youtube.com/watch?v=DPG7wGhh3sA'
-              text: Co je nového pro Azure Stack HCL
+              text: Co je nového pro Azure Stack HCI
         - title: Vývoj a integrace
           links:
             - url: 'https://www.youtube.com/watch?v=to8D7Xl9SU8'
@@ -328,11 +328,11 @@ additionalContent:
             - url: 'https://mybuild.microsoft.com/sessions/2debfc2e-f0b3-4adf-bcec-d126930f806f'
               text: 'Vytváření aplikací nativních pro cloud, které běží kdekoli'
             - url: 'https://mybuild.microsoft.com/sessions/9f56bc10-30bd-42e2-afc8-b61b22260c49'
-              text: Vytvářejte konzistentní hybridní a cloudové aplikace s využitím Azure ARC (zeptejte se odborníků).
+              text: Vytváření konzistentních hybridních a multicloudových aplikací s Azure Arc (zeptejte se odborníků)
             - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
               text: Dynamické škálování z Azure Stack Hubu do Azure
             - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'
-              text: Logic Apps – zasílat budoucí integraci
+              text: Logic Apps – rozvoj budoucnosti integrace
             - url: 'https://mybuild.microsoft.com/sessions/76ebac39-517d-44da-a58e-df4193b5efa9'
               text: Budoucnost vývoje moderních aplikací s využitím .NET
         - title: Edge
@@ -356,13 +356,13 @@ additionalContent:
             - url: 'https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf'
               text: Virtuální akce Azure Hybrid
             - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
-              text: Architektura pro přijetí do cloudu – Scénář hybridního a více cloudu
+              text: Cloud Adoption Framework – Hybridní a multicloudový scénář
             - url: /learn/modules/intro-to-azure-hybrid-services/
               text: Úvod do služeb hybridního cloudu Azure
             - url: 'https://techcommunity.microsoft.com/t5/itops-talk-blog/bg-p/ITOpsTalkBlog/label-name/ITOps%20Talks?WT.mc_modinfra-12531-socuff'
-              text: Rozhovory s IT operacemi – všechny věci Hybrid (s označením Russinovich)
+              text: IT Ops Talks – vše hybridní (představuje Mark Russinovich)
             - url: 'https://events.microsoft.com/'
-              text: Události Microsoft Zařazení
+              text: Události Microsoft Katalogu
             - url: /learn
               text: Microsoft Learn
         - title: Identity a zabezpečení
@@ -372,7 +372,7 @@ additionalContent:
             - url: /learn/modules/expose-hybrid-services-with-azure-relay/
               text: Bezpečné zveřejňování hybridních služeb pomocí Azure Relay
             - url: /learn/modules/implement-manage-hybrid-identity/
-              text: Implementace a Správa hybridní identity
+              text: Implementace a správa hybridní identity
             - url: /learn/modules/implement-hybrid-identity-windows-server/
               text: Implementace hybridní identity s Windows Serverem
             - url: /learn/modules/intro-to-azure-sentinel/
@@ -384,13 +384,13 @@ additionalContent:
             - url: 'https://azurearcjumpstart.io/'
               text: Průvodci rychlým zprovozněním služby Azure Arc
             - url: /learn/browse/?terms=%22%20Arc%20%22
-              text: Moduly učení Azure ARC
+              text: Azure Arc Learn
             - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
               text: Popis strategií vysoké dostupnosti a zotavení po havárii
             - url: /learn/browse/?terms="disaster%20recovery"
-              text: Moduly s informací o zotavení po havárii
+              text: Moduly Learn pro zotavení po havárii
             - url: /learn/browse/?terms="high%20availability"
-              text: Naučit se moduly vysoké dostupnosti
+              text: Moduly Learn s vysokou dostupností
             - url: /learn/modules/intro-to-azure-arc/
               text: Seznámení s Azure Arc
             - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/

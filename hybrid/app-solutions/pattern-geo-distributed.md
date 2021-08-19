@@ -1,55 +1,55 @@
 ---
-title: Model geografické distribuované aplikace v centru Azure Stack
-description: Přečtěte si o modelu geograficky distribuovaných aplikací pro inteligentní Edge pomocí Azure a centra Azure Stack.
+title: Model geograficky distribuovaných aplikací v Azure Stack Hub
+description: Seznamte se s modelem geograficky distribuovaných aplikací pro inteligentní hraniční zařízení s využitím Azure a Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod2019
-ms.openlocfilehash: 1f6243927390c7a520c2607c722664b2d31fc07f
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 3c839d9bf3b6c3e1ff50cc695fd5f1a1127793d2
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910052"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281223"
 ---
 # <a name="geo-distributed-app-pattern"></a>Model geograficky distribuované aplikace
 
-Naučte se poskytovat koncové body aplikací napříč několika oblastmi a směrovat provoz uživatelů na základě umístění a požadavků na dodržování předpisů.
+Zjistěte, jak poskytovat koncové body aplikace napříč několika oblastmi a směrovat uživatelský provoz na základě potřeb z oblasti a dodržování předpisů.
 
 ## <a name="context-and-problem"></a>Kontext a problém
 
-Organizace, které mají rozsáhlou škálu geografických oblastí, se snaží bezpečně a přesně distribuovat a umožňují přístup k datům a současně zajišťují požadavky na zabezpečení, dodržování předpisů a výkon na uživatele, umístění a zařízení přes hranice.
+Organizace se širokým dosahem zeměpisných údajů se snaží bezpečně a přesně distribuovat a umožnit přístup k datům a zároveň zajistit požadovanou úroveň zabezpečení, dodržování předpisů a výkonu pro uživatele, umístění a zařízení přes hranice.
 
 ## <a name="solution"></a>Řešení
 
-Model směrování geografického provozu Azure Stack centra nebo geografické distribuované aplikace umožňuje směrovat provoz na konkrétní koncové body na základě různých metrik. Vytvoření Traffic Manager s využitím geograficky směrování a konfigurace koncového bodu směruje provoz do koncových bodů na základě regionálních požadavků, podnikových a mezinárodních předpisů a datových potřeb.
+Model Azure Stack Hub geografického směrování provozu neboli geograficky distribuované aplikace umožňuje směrovat provoz do konkrétních koncových bodů na základě různých metrik. Vytvořením Traffic Manager geografickým směrováním a konfigurací koncových bodů se provoz směruje do koncových bodů na základě regionálních požadavků, firemních a mezinárodních předpisů a požadavků na data.
 
-![Geograficky distribuovaný model](media/pattern-geo-distributed/geo-distribution.png)
+![Geograficky distribuovaný vzor](media/pattern-geo-distributed/geo-distribution.png)
 
 ## <a name="components"></a>Komponenty
 
-### <a name="outside-the-cloud"></a>Mimo Cloud
+### <a name="outside-the-cloud"></a>Mimo cloud
 
 #### <a name="traffic-manager"></a>Traffic Manager
 
-V diagramu se Traffic Manager nachází mimo veřejný cloud, ale musí být schopný koordinovat provoz v místním datacentru i ve veřejném cloudu. Nástroj pro vyrovnávání zatížení směruje provoz do geografických umístění.
+V diagramu se Traffic Manager nachází mimo veřejný cloud, ale musí být schopný koordinovat provoz v místním datacentru i ve veřejném cloudu. Balancer směruje provoz do geografických umístění.
 
 #### <a name="domain-name-system-dns"></a>DNS (Domain Name System)
 
-Název domény systému nebo DNS zodpovídá za překlad (nebo překladu) názvu webu nebo služby na jeho IP adresu.
+Dns (Domain Name System) zodpovídá za překlad (nebo překlad) názvu webu nebo služby na jeho IP adresu.
 
 ### <a name="public-cloud"></a>Veřejný cloud
 
 #### <a name="cloud-endpoint"></a>Koncový bod cloudu
 
-Veřejné IP adresy se používají ke směrování příchozího provozu prostřednictvím Traffic Manageru do koncového bodu prostředků cloudové aplikace.  
+Veřejné IP adresy slouží ke směrování příchozího provozu přes Traffic Manager do koncového bodu prostředků aplikace veřejného cloudu.  
 
 ### <a name="local-clouds"></a>Místní cloudy
 
 #### <a name="local-endpoint"></a>Místní koncový bod
 
-Veřejné IP adresy se používají ke směrování příchozího provozu prostřednictvím Traffic Manageru do koncového bodu prostředků cloudové aplikace.
+Veřejné IP adresy slouží ke směrování příchozího provozu přes Traffic Manager do koncového bodu prostředků aplikace veřejného cloudu.
 
 ## <a name="issues-and-considerations"></a>Problémy a důležité informace
 
@@ -57,29 +57,29 @@ Když se budete rozhodovat, jak tento model implementovat, měli byste vzít v �
 
 ### <a name="scalability"></a>Škálovatelnost
 
-Tento model zpracovává směr geografického provozu, nikoli škálování pro zvýšení provozu. Tento model však můžete zkombinovat s jinými řešeními Azure a místními řešeními. Tento model se dá použít například se vzorem škálování mezi cloudy.
+Tento model zpracovává geografické směrování provozu, nikoli škálování, aby se splňovalo zvýšení provozu. Tento model ale můžete kombinovat s jinými řešeními Azure a místními řešeními. Tento model můžete například použít se vzorem škálování mezi cloudy.
 
 ### <a name="availability"></a>Dostupnost
 
-Zajistěte, aby lokálně nasazené aplikace byly nakonfigurované pro vysokou dostupnost prostřednictvím místní konfigurace hardwaru a nasazení softwaru.
+Zajistěte, aby byly místně nasazené aplikace nakonfigurované pro vysokou dostupnost prostřednictvím místní konfigurace hardwaru a nasazení softwaru.
 
 ### <a name="manageability"></a>Možnosti správy
 
-Vzor zajišťuje bezproblémové řízení a známé rozhraní mezi prostředími.
+Tento model zajišťuje bezproblémovou správu a známé rozhraní mezi prostředími.
 
 ## <a name="when-to-use-this-pattern"></a>Kdy se má tento model použít
 
-- Moje organizace má mezinárodní pobočky vyžadující vlastní regionální zásady zabezpečení a distribuce.
-- Každá z kanceláří mojí organizace si vyžádá data o zaměstnancích, firmách a obchodních přístavech a vyžaduje, aby se na základě místních předpisů a časového pásma vycházely
-- Vysoce škálovatelné požadavky můžou být splněné horizontálním škálováním aplikací, přičemž v jedné oblasti a v různých oblastech se provádí nasazení s více aplikacemi, aby se mohly zvládnout extrémní požadavky na zatížení.
-- Aplikace musí být vysoce dostupné a reagovat na požadavky klientů i v případě výpadků v jedné oblasti.
+- Moje organizace má mezinárodní pobočky, které vyžadují vlastní místní zásady zabezpečení a distribuce.
+- Každá firemní pobočka si vyžádá data zaměstnanců, podniků a zařízení, což vyžaduje aktivitu generování sestav podle místních předpisů a časového pásma.
+- Požadavky ve velkém měřítku je možné splnit horizontálním horizontálním navýšením kapacity aplikací, kdy se v rámci jedné oblasti a napříč oblastmi provádí několik nasazení aplikací, aby bylo možné zvládat extrémní požadavky na zatížení.
+- Aplikace musí být vysoce dostupné a musí reagovat na požadavky klientů i v případě výpadků v jedné oblasti.
 
 ## <a name="next-steps"></a>Další kroky
 
-Další informace o tématech zavedených v tomto článku:
+Další informace o tématech uvedených v tomto článku:
 
-- Další informace o tom, jak tento nástroj pro vyrovnávání zatížení využívající službu DNS funguje, najdete v tématu [Přehled Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) .
-- Další informace o osvědčených postupech a získání odpovědí na případné další otázky najdete v tématu [aspekty návrhu hybridní aplikace](overview-app-design-considerations.md) .
-- Další informace o celém portfoliu produktů a řešení najdete v [Azure Stack rodině produktů a řešení](/azure-stack) .
+- Další informace [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) tomto nástroji pro vyrovnávání zatížení provozu na základě DNS najdete v přehledu konfigurace.
+- Další [informace o osvědčených](overview-app-design-considerations.md) postupech a získání odpovědí na jakékoli další otázky najdete v tématu Aspekty návrhu hybridních aplikací.
+- Další [informace Azure Stack o celém portfoliu produktů a](/azure-stack) řešení najdete v článku o celé Azure Stack produktech a řešeních.
 
-Až budete připraveni otestovat příklad řešení, pokračujte pomocí [Průvodce nasazením geograficky distribuovaných aplikací](solution-deployment-guide-geo-distributed.md). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent. Naučíte se, jak směrovat provoz do konkrétních koncových bodů na základě různých metrik pomocí vzoru geograficky distribuované aplikace. Když vytvoříte profil Traffic Manager s využitím geografického směrování a konfigurace koncového bodu, zajistíte směrování informací na koncové body na základě regionálních požadavků, podnikových a mezinárodních předpisů a vašich datových potřeb.
+Až budete připraveni otestovat příklad řešení, pokračujte v průvodci [nasazením geograficky distribuovaného řešení aplikací.](/azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed) Průvodce nasazením obsahuje podrobné pokyny pro nasazení a testování komponent. Naučíte se směrovat provoz do konkrétních koncových bodů na základě různých metrik pomocí vzoru geograficky distribuovaných aplikací. Vytvořením Traffic Manager profilu s geografickým směrováním a konfigurací koncových bodů zajistíte směrování informací do koncových bodů na základě místních požadavků, firemní a mezinárodní regulace a potřeb vašich dat.

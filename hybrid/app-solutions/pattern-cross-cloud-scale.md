@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a830f96e97c347cbbcc09a1b17f4836ecb6eb3e6
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 90e0c177b5eaee4d223b4613e0b2ddf385fa799c
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910124"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281257"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Vzor škálování mezi cloudy
 
@@ -119,8 +119,8 @@ Tento model se nedoporučuje, pokud:
 
 Další informace o tématech zavedených v tomto článku:
 
-- Další informace o tom, jak tento nástroj pro vyrovnávání zatížení využívající službu DNS funguje, najdete v tématu [Přehled Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) .
+- další informace o tom, jak tento nástroj pro vyrovnávání zatížení využívající službu DNS funguje, najdete v [přehledu Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) .
 - Další informace o osvědčených postupech a získání odpovědí na jakékoli další otázky najdete v tématu [aspekty návrhu hybridní aplikace](overview-app-design-considerations.md) .
 - Další informace o celém portfoliu produktů a řešení najdete v [Azure Stack rodině produktů a řešení](/azure-stack) .
 
-Až budete připraveni otestovat příklad řešení, pokračujte v [Průvodci nasazením řešení škálování mezi cloudy](solution-deployment-guide-cross-cloud-scaling.md). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent. Naučíte se, jak vytvořit řešení pro různé cloudy, které umožní ručně aktivovaný proces přepnutí z hostované webové aplikace Azure Stack hub do hostované webové aplikace Azure. Naučíte se také, jak používat automatické škálování prostřednictvím Traffic Manageru, což zajišťuje flexibilní a škálovatelný cloudový nástroj při zatížení.
+Až budete připraveni otestovat příklad řešení, pokračujte v [Průvodci nasazením řešení škálování mezi cloudy](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent. Naučíte se, jak vytvořit řešení pro různé cloudy, které umožní ručně aktivovaný proces přepnutí z hostované webové aplikace Azure Stack hub do hostované webové aplikace Azure. Naučíte se také, jak používat automatické škálování prostřednictvím Traffic Manageru, což zajišťuje flexibilní a škálovatelný cloudový nástroj při zatížení.

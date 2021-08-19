@@ -1,111 +1,111 @@
 ---
-title: Kubernetes vzor vysoké dostupnosti s využitím Azure a centra Azure Stack
-description: Naučte se, jak řešení clusteru Kubernetes poskytuje vysokou dostupnost pomocí Azure a centra Azure Stack.
+title: Model Kubernetes s vysokou dostupností s využitím Azure a Azure Stack Hub
+description: Zjistěte, jak řešení clusteru Kubernetes poskytuje vysokou dostupnost pomocí Azure a Azure Stack Hub.
 author: BryanLa
 ms.topic: article
 ms.date: 12/03/2020
 ms.author: bryanla
 ms.reviewer: bryanla
 ms.lastreviewed: 12/03/2020
-ms.openlocfilehash: 454cc0a0531882b7a8ec050a461420ce13eebcfe
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: f8a733bcdab871695e552ec687d42e3ff4230490
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96911790"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281308"
 ---
 # <a name="high-availability-kubernetes-cluster-pattern"></a>Model clusteru Kubernetes s vysokou dostupností
 
-Tento článek popisuje, jak architektovat a provozovat vysoce dostupnou infrastrukturu založenou na Kubernetes pomocí modulu Azure Kubernetes Service (AKS) na rozbočovači Azure Stack. Tento scénář je společný pro organizace s důležitými úlohami ve vysoce omezených a regulovaných prostředích. Organizace v doménách, jako jsou finance, obrana a státní správa.
+Tento článek popisuje, jak pomocí modulu AKS (Azure Kubernetes Service) na počítači na základě architektury a provozu infrastruktury založené na Kubernetes Azure Stack Hub. Tento scénář je běžný pro organizace s důležitými úlohami ve vysoce omezených a regulovaných prostředích. Organizace v oblastech, jako jsou finance, obrana a státní správa.
 
 ## <a name="context-and-problem"></a>Kontext a problém
 
-Mnoho organizací vyvíjí nativní řešení cloudu, které využívá špičkové služby a technologie, jako je Kubernetes. I když Azure poskytuje datacentra ve většině oblastí světa, někdy existují oblasti použití hraničního prostředí a scénáře, kdy je potřeba, aby podnikové kritické aplikace běžely v určitém umístění. K důležitým hlediskům patří:
+Mnoho organizací vyvíjí řešení nativní pro cloud, která využívají nejmodernější služby a technologie, jako je Kubernetes. I když Azure poskytuje datacentra ve většině oblastí světa, někdy existují hraniční případy použití a scénáře, ve kterých musí důležité obchodní aplikace běžet v konkrétním umístění. Důležité informace:
 
-- Citlivost na umístění
+- Citlivost umístění
 - Latence mezi aplikací a místními systémy
-- Zachování šířky pásma
+- Ochrana šířky pásma
 - Připojení
 - Zákonné nebo zákonné požadavky
 
-Azure, v kombinaci s Azure Stack hub, řeší většinu těchto otázek. V následující části je popsána široká sada možností, rozhodnutí a důležitých informací pro úspěšnou implementaci Kubernetes běžící v centru Azure Stack.
+Azure v kombinaci s Azure Stack Hub řeší většinu těchto problémů. Široká škála možností, rozhodnutí a důležité informace pro úspěšnou implementaci Kubernetes běžící na Azure Stack Hub je popsána níže.
 
 ## <a name="solution"></a>Řešení
 
-Tento vzor předpokládá, že musíme řešit striktní sadu omezení. Aplikace musí běžet místně a veškerá osobní data musí mít přístup k veřejným cloudovým službám. Monitorování a další data, která nejsou PII, se dají do Azure Odeslat a zpracovat tam. Externím službám, jako jsou veřejné Container Registry nebo jiné, se dá přistupovat, ale můžou se filtrovat přes bránu firewall nebo proxy server.
+Tento model předpokládá, že musíme řešit striktní sadu omezení. Aplikace musí běžet místně a všechny osobní údaje se nesmí dostat k veřejným cloudovým službám. Monitorování a další data bez PII je možné odeslat do Azure a zpracovávat je tam. Externí služby, jako je Container Registry nebo jiné, jsou přístupné, ale můžou být filtrované přes bránu firewall nebo proxy server.
 
-Ukázková aplikace uvedená tady (na základě [služby Azure Kubernetes Service Workshop](/learn/modules/aks-workshop/)) je navržená tak, aby používala řešení nativní pro Kubernetes, kdykoli to bude možné. Tento návrh zabraňuje zamčení dodavatele namísto použití služeb nativního pro platformu. Jako příklad používá aplikace jako hostitele back-end MongoDB Database namísto služby PaaS nebo externí databázové služby.
+Ukázková aplikace zobrazená tady (na [základě Azure Kubernetes Service Workshop)](/learn/modules/aks-workshop/)je navržená tak, aby kdykoli je to možné, používat řešení nativní pro Kubernetes. Tento návrh zabraňuje zamykání dodavatelů místo používání služeb nativních pro platformu. Aplikace například místo služby PaaS nebo externí databázové služby používá back-end databáze MongoDB v samostatném prostředí.
 
-[![Hybridní vzor aplikace](media/pattern-highly-available-kubernetes/application-architecture.png)](media/pattern-highly-available-kubernetes/application-architecture.png#lightbox)
+[![Vzor aplikace v hybridním prostředí](media/pattern-highly-available-kubernetes/application-architecture.png)](media/pattern-highly-available-kubernetes/application-architecture.png#lightbox)
 
-Předchozí diagram znázorňuje architekturu aplikace ukázkové aplikace spuštěné v Kubernetes na rozbočovači Azure Stack. Aplikace se skládá z několika součástí, včetně:
+Předchozí diagram znázorňuje architekturu aplikace ukázkové aplikace spuštěné v Kubernetes na Azure Stack Hub. Aplikace se skládá z několika komponent, mezi které patří:
 
- 1) Cluster AKS založený na stroji Kubernetes na rozbočovači Azure Stack.
- 2) [správce certifikace](https://www.jetstack.io/cert-manager/), který poskytuje sadu nástrojů pro správu certifikátů v Kubernetes, který slouží k automatickému vyžádání certifikátů pomocí šifrování.
- 3) Obor názvů Kubernetes, který obsahuje komponenty aplikace pro front-end (hodnocení – Web), rozhraní API (hodnocení – API) a databázi (hodnocení-MongoDB).
+ 1) Cluster Kubernetes založený na modulu AKS na Azure Stack Hub.
+ 2) [cert-manager](https://www.jetstack.io/cert-manager/), který poskytuje sadu nástrojů pro správu certifikátů v Kubernetes, který se používá k automatickému vyžádání certifikátů z Let's Encrypt.
+ 3) Obor názvů Kubernetes obsahující komponenty aplikace pro front-end (ratings-web), rozhraní API (ratings-api) a databázi (ratings-mongodb).
  4) Kontroler příchozích dat, který směruje provoz HTTP/HTTPS do koncových bodů v rámci clusteru Kubernetes.
 
-Ukázková aplikace se používá k ilustraci architektury aplikace. Všechny komponenty jsou příklady. Architektura obsahuje jenom jedno nasazení aplikace. Abychom dosáhli vysoké dostupnosti (HA), spustíme nasazení minimálně dvakrát na dvou různých instancích centra Azure Stack – můžou běžet buď ve stejném umístění, nebo ve dvou (nebo více) různých lokalitách:
+Ukázková aplikace slouží k ilustraci architektury aplikace. Všechny komponenty jsou příklady. Architektura obsahuje pouze jedno nasazení aplikace. K dosažení vysoké dostupnosti (HA) spustíme nasazení alespoň dvakrát na dvou různých instancích Azure Stack Hub – mohou běžet buď ve stejném umístění, nebo ve dvou (nebo více) různých lokalitách:
 
 ![Architektura infrastruktury](media/pattern-highly-available-kubernetes/aks-azure-architecture.png)
 
-Služby, jako jsou Azure Container Registry, Azure Monitor a další, se hostují mimo Azure Stack centrum v Azure nebo místně. Tento hybridní návrh chrání řešení před výpadkem jedné instance centra Azure Stack.
+Služby jako Azure Container Registry, Azure Monitor a další, jsou hostované mimo Azure Stack Hub v Azure nebo místně. Tento hybridní návrh chrání řešení před výpadkem jedné instance Azure Stack Hub instance.
 
 ## <a name="components"></a>Komponenty
 
 Celková architektura se skládá z následujících součástí:
 
-**Centrum Azure Stack** je rozšířením Azure, které může spouštět úlohy v místním prostředí tím, že poskytuje služby Azure ve vašem datovém centru. Další informace najdete v článku [Přehled centra Azure Stack](/azure-stack/operator/azure-stack-overview) .
+**Azure Stack Hub** rozšíření Azure, které může spouštět úlohy v místním prostředí tím, že poskytuje služby Azure ve vašem datacentru. Další informace [Azure Stack Hub v přehledu.](/azure-stack/operator/azure-stack-overview)
 
-Modul **AKS (Azure Kubernetes Service Engine)** je modul, na kterém se nachází služba Azure Kubernetes Service (AKS), která je v Azure ještě dnes dostupná. V případě centra Azure Stack umožňuje modul AKS nasadit, škálovat a upgradovat plně vybavené a samoobslužné clustery Kubernetes s využitím IaaS možností centra Azure Stack. Další informace najdete v článku [Přehled modulu AKS](https://github.com/Azure/aks-engine) .
+**Azure Kubernetes Service Engine (modul AKS)** je modul za nabídkou spravované služby Kubernetes Azure Kubernetes Service (AKS), která je v Současné době dostupná v Azure. Například Azure Stack Hub AKS umožňuje nasazovat, škálovat a upgradovat plně vybavené, samoobslužně spravované clustery Kubernetes s Azure Stack Hub funkcemi IaaS od společnosti Azure Stack Hub. Další informace [najdete v přehledu modulu AKS.](https://github.com/Azure/aks-engine)
 
-Pokud se chcete dozvědět víc o rozdílech mezi modulem AKS v Azure a modulem AKS v centru Azure Stack, přečtěte si o [známých problémech a omezeních](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#known-issues-and-limitations) .
+Další informace [o rozdílech](https://github.com/Azure/aks-engine/blob/master/docs/topics/azure-stack.md#known-issues-and-limitations) mezi strojem AKS v Azure a strojem AKS na virtuálních zařízeních najdete v Azure Stack Hub.
 
-Služba **Azure Virtual Network (VNET)** slouží k poskytování síťové infrastruktury v každém centru Azure Stack pro Virtual Machines (virtuální počítače) hostující infrastrukturu clusteru Kubernetes.
+**Azure Virtual Network (VNet)** se používá k poskytování síťové infrastruktury na jednotlivých Azure Stack Hub pro virtuální počítače Virtual Machines hostující infrastrukturu clusteru Kubernetes.
 
-**Azure Load Balancer** se používá pro koncový bod rozhraní API Kubernetes a kontroler Nginx pro příchozí přenosy. Nástroj pro vyrovnávání zatížení směruje externí provoz (například Internet) do uzlů a virtuálních počítačů, které nabízejí konkrétní službu.
+**Azure Load Balancer** se používá pro koncový bod rozhraní Kubernetes API a kontroler příchozího přenosu dat Nginx. Nástroj pro vyrovnávání zatížení směruje externí (například internetový) provoz na uzly a virtuální počítače nabízející konkrétní službu.
 
-**Azure Container Registry (ACR)** se používá k ukládání privátních imagí Docker a grafů Helm, které se nasazují do clusteru. Modul AKS se může ověřit s Container Registry pomocí identity Azure AD. Kubernetes nevyžaduje ACR. Můžete použít jiné Registry kontejnerů, jako je například Docker Hub.
+**Azure Container Registry (ACR)** se používá k ukládání privátních imagí Dockeru a diagramů Helm, které jsou nasazené do clusteru. Modul AKS se může ověřit u Container Registry pomocí identity Azure AD. Kubernetes nevyžaduje ACR. Můžete použít jiné registry kontejnerů, například Docker Hub.
 
-**Azure Repos** je sada nástrojů pro správu verzí, které lze použít ke správě kódu. Můžete také použít GitHub nebo jiná úložiště založená na Gitu. Další informace najdete v článku [přehled Azure Repos](/azure/devops/repos/get-started/what-is-repos) .
+**Azure Repos** je sada nástrojů pro správu verzí, které můžete použít ke správě kódu. Můžete také použít GitHub nebo jiná úložiště založená na gitu. Další informace [Azure Repos v části Přehled.](/azure/devops/repos/get-started/what-is-repos)
 
-**Azure Pipelines** je součástí Azure DevOps Services a spouští automatizované sestavení, testy a nasazení. Můžete také použít řešení CI/CD třetí strany, jako je například Jenkinse. Další informace najdete v článku [Přehled kanálu Azure](/azure/devops/pipelines/get-started/what-is-azure-pipelines) .
+**Azure Pipelines** je součástí Azure DevOps Services a spouští automatizovaná sestavení, testy a nasazení. Můžete také použít řešení CI/CD třetích stran, jako je Jenkins. Další informace [najdete v tématu Přehled služby Azure Pipelines.](/azure/devops/pipelines/get-started/what-is-azure-pipelines)
 
-**Azure monitor** shromažďuje a ukládá metriky a protokoly, včetně metrik platforem pro služby Azure v telemetrie řešení a aplikace. Tato data slouží k monitorování aplikace, nastavení výstrah a řídicích panelů a k analýze selhání hlavní příčiny. Azure Monitor se integruje s Kubernetes ke shromažďování metrik z řadičů, uzlů a kontejnerů a také protokolů kontejnerů a protokolů hlavního uzlu. Další informace najdete v článku [přehled Azure monitor](/azure/azure-monitor/overview) .
+**Azure Monitor** shromažďuje a ukládá metriky a protokoly, včetně metrik platformy pro služby Azure v řešení a telemetrii aplikací. Tato data můžete použít k monitorování aplikace, nastavení výstrah a řídicích panelů a provádění analýzy hlavní příčiny selhání. Azure Monitor se integruje s Kubernetes a shromažďuje metriky z kontrolerů, uzlů a kontejnerů, jakož i protokolů kontejnerů a protokolů hlavních uzlů. Další informace [Azure Monitor v části Přehled.](/azure/azure-monitor/overview)
 
-**Azure Traffic Manager** je nástroj pro vyrovnávání zatížení založený na DNS, který umožňuje distribuci provozu optimálně do služeb napříč různými oblastmi Azure nebo nasazeními centra Azure Stack. Traffic Manager také nabízí vysokou dostupnost a rychlost odezvy. Koncové body aplikace musí být přístupné z vnějšku. K dispozici jsou také další místní řešení.
+**Azure Traffic Manager** je nástroj pro vyrovnávání zatížení provozu založený na DNS, který umožňuje optimálně distribuovat provoz do služeb napříč různými oblastmi Azure nebo Azure Stack Hub nasazeními. Traffic Manager také vysokou dostupnost a rychlost odezvy. Koncové body aplikace musí být přístupné z vnějšku. K dispozici jsou i další místní řešení.
 
-**Kontroler** příchozího přenosu dat (Kubernetes) zpřístupňuje trasy HTTP (S) službám v clusteru Kubernetes. Pro tento účel se dá použít Nginx nebo jakýkoli vhodný kontroler příchozího přenosu dat.
+**Kontroler příchozího přenosu dat Kubernetes** zpřístupňuje trasy HTTP(S) službám v clusteru Kubernetes. K tomuto účelu je možné použít Nginx nebo jakýkoli vhodný kontroler příchozího přenosu dat.
 
-**Helm** je správce balíčků pro nasazení Kubernetes, který poskytuje způsob, jak seskupit různé objekty Kubernetes jako nasazení, služby, tajné kódy do jediného "grafu". Můžete publikovat, nasazovat, řídit správu verzí a aktualizovat objekt grafu. Azure Container Registry lze použít jako úložiště pro ukládání zabalených Helm grafů.
+**Helm** je správce balíčků pro nasazení Kubernetes a poskytuje způsob, jak do jednoho chartu zabalit různé objekty Kubernetes, jako jsou nasazení, služby a tajné kódy. Můžete publikovat, nasazovat, řídit správu verzí a aktualizovat objekt chartu. Azure Container Registry lze použít jako úložiště pro ukládání zabalených helmových grafů.
 
 ## <a name="design-considerations"></a>Na co dát pozor při navrhování
 
-Tento model následuje několik nejdůležitějších doporučení, která jsou podrobněji vysvětlena v dalších částech tohoto článku:
+Tento model se řídí několika aspekty na vysoké úrovni, které jsou podrobněji vysvětlené v dalších částech tohoto článku:
 
-- Aplikace používá Kubernetes řešení, aby se předešlo zamčení dodavatele.
+- Aplikace používá nativní řešení Kubernetes, aby se zabránilo zámku dodavatele.
 - Aplikace používá architekturu mikroslužeb.
-- Rozbočovač Azure Stack nepotřebuje příchozí, ale umožňuje odchozí připojení k Internetu.
+- Azure Stack Hub nepotřebuje příchozí, ale umožňuje odchozí připojení k internetu.
 
-Tyto doporučené postupy se budou vztahovat i na reálné úlohy a scénáře.
+Tyto doporučené postupy budou platit i pro reálné úlohy a scénáře.
 
 ## <a name="scalability-considerations"></a>Aspekty zabezpečení
 
-Škálovatelnost je důležité zajistit, aby uživatelé měli konzistentní, spolehlivý a dobře fungující přístup k aplikaci.
+Škálovatelnost je důležitá k tomu, aby uživatelům poskytovala konzistentní, spolehlivý a dobře výkonný přístup k aplikaci.
 
-Vzorový scénář pokrývá škálovatelnost na více vrstvách aplikačního zásobníku. Tady je podrobný přehled různých vrstev:
+Ukázkový scénář pokrývá škálovatelnost ve více vrstvách zásobníku aplikací. Tady je celkový přehled různých vrstev:
 
 | Úroveň architektury | Ovlivňuje | Jak? |
 | --- | --- | ---
-| Aplikace | Aplikace | Horizontální škálování na základě počtu lusků/replik/Container Instances * |
-| Cluster | Cluster Kubernetes | Počet uzlů (mezi 1 a 50), virtuální počítače-SKU-velikosti a fondy uzlů (modul AKS na rozbočovači Azure Stack aktuálně podporuje pouze jeden fond uzlů); použití příkazu Scale AKS Engine (ruční) |
-| Infrastruktura | Azure Stack Hub | Počet uzlů, kapacity a jednotek škálování v rámci nasazení Azure Stackového centra |
+| Aplikace | Aplikace | Horizontální škálování na základě počtu podů, replik nebo Container Instances* |
+| Cluster | Cluster Kubernetes | Počet uzlů (1 až 50), velikost SKU virtuálního počítače a fondy uzlů (modul AKS v Azure Stack Hub aktuálně podporuje pouze jeden fond uzlů); použití příkazu škálování modulu AKS (ruční) |
+| Infrastruktura | Azure Stack Hub | Počet uzlů, kapacity a jednotek škálování v rámci Azure Stack Hub nasazení |
 
-\* Používá se Kubernetes ' Horizontal pod autoscaleer (HPA); Automatizovaná škála založená na metrikách nebo vertikální škálování podle velikosti kontejnerových instancí (CPU/paměť).
+\* Použití horizontálního automatického škálování podů (HPA) Kubernetes automatické škálování na základě metrik nebo vertikální škálování pomocí nastavení velikosti instancí kontejneru (cpu/memory).
 
-**Centrum Azure Stack (úroveň infrastruktury)**
+**Azure Stack Hub (úroveň infrastruktury)**
 
-Infrastruktura centra Azure Stack je základem této implementace, protože centrum Azure Stack běží na fyzickém hardwaru v datacentru. Při výběru hardwaru vašeho rozbočovače je třeba provést volby pro CPU, hustotu paměti, konfiguraci úložiště a počet serverů. Další informace o škálovatelnosti centra Azure Stack najdete v následujících materiálech:
+Základem Azure Stack Hub infrastruktura sítě, protože Azure Stack Hub běží na fyzickém hardwaru v datacentru. Při výběru hardwaru centra je potřeba zvolit procesor, hustotu paměti, konfiguraci úložiště a počet serverů. Další informace o Azure Stack Hub škálovatelnosti najdete v následujících zdrojích informací:
 
 - [Přehled plánování kapacity pro Azure Stack centra](/azure-stack/operator/azure-stack-capacity-planning-overview)
 - [Přidání dalších uzlů jednotek škálování do centra Azure Stack](/azure-stack/operator/azure-stack-add-scale-node)
@@ -121,7 +121,7 @@ Při výběru velikostí virtuálních počítačů pro počáteční nasazení 
 
 - **Náklady** – při plánování pracovních uzlů mějte na paměti celkové náklady na virtuální počítač, který se vám bude účtovat. Pokud například úlohy vaší aplikace vyžadují omezené prostředky, měli byste naplánovat nasazení virtuálních počítačů s menší velikostí. Centrum Azure Stack, jako je Azure, se obvykle účtuje na základě spotřeby, takže vhodně navýšení velikosti virtuálních počítačů pro role Kubernetes je klíčové pro optimalizaci nákladů na spotřebu. 
 
-- **Škálovatelnost clusteru** se dosahuje tím, že se škáluje a rozchází na počet hlavních a pracovních uzlů nebo přidáním dalších fondů uzlů (není k dispozici v Azure Stack hub ještě dnes). Škálování clusteru se dá udělat na základě dat o výkonu, shromážděných pomocí kontejneru Insights (Azure Monitor + Log Analytics). 
+- **Škálovatelnost clusteru** se dosahuje tím, že se škáluje a rozchází na počet hlavních a pracovních uzlů nebo přidáním dalších fondů uzlů (není k dispozici v Azure Stack hub ještě dnes). škálování clusteru se dá udělat na základě údajů o výkonu shromážděných pomocí Přehledy kontejnerů (Azure Monitor + Log Analytics). 
 
     Pokud vaše aplikace potřebuje více (nebo méně) prostředků, můžete horizontální navýšení kapacity (nebo v nich) horizontálně škálovat (mezi 1 a 50 uzly). Pokud potřebujete více než 50 uzlů, můžete vytvořit další cluster v samostatném předplatném. Nemůžete vertikálně škálovat skutečné virtuální počítače na jinou velikost virtuálního počítače bez opětovného nasazení clusteru.
 
@@ -160,7 +160,7 @@ Předchozí blok považuje příchozí přenos do aplikace za provozu. Dalším 
 
 - Přijímání imagí kontejneru uložených na Dockerhubu nebo Azure Container Registry
 - Načítání Helm grafů
-- Emitování Application Insights dat (nebo jiných dat monitorování)
+- emitování Application Insights dat (nebo jiných dat monitorování)
 
 Některá podniková prostředí můžou vyžadovat použití _transparentních_ nebo _netransparentních_ proxy serverů. Tyto servery vyžadují konkrétní konfiguraci různých komponent našeho clusteru. Dokumentace k modulům AKS obsahuje různé informace o tom, jak se kterými se vejdou síťové proxy. Další podrobnosti najdete v tématu [modul AKS a proxy servery](https://github.com/Azure/aks-engine/blob/master/docs/topics/proxy-servers.md) .
 
@@ -170,7 +170,7 @@ A konečně provoz mezi clustery musí být mezi Azure Stack instancemi centra. 
 
 **Cluster**  
 
-Cluster Kubernetes nemusí být nutně přístupný prostřednictvím Internetu. Relevantní část je rozhraní API Kubernetes používané k provozování clusteru, například pomocí nástroje `kubectl` . Koncový bod rozhraní API Kubernetes musí být přístupný všem, kdo provozuje cluster nebo nasazuje aplikace a služby nad ním. V tomto tématu se podrobněji věnujeme DevOps perspektivě v níže uvedené části věnované [nasazení (CI/CD)](#deployment-cicd-considerations) .
+Cluster Kubernetes nemusí být nutně přístupný prostřednictvím Internetu. Relevantní část je rozhraní API Kubernetes používané k provozování clusteru, například pomocí nástroje `kubectl` . Koncový bod rozhraní API Kubernetes musí být přístupný všem, kdo provozuje cluster nebo nasazuje aplikace a služby nad ním. v tomto tématu se podrobněji věnuje DevOps perspektivě v níže uvedené části věnované [nasazení (CI/CD)](#deployment-cicd-considerations) .
 
 Na úrovni clusteru existuje také několik informací o odchozím provozu:
 
@@ -190,13 +190,13 @@ Dvě instance naší aplikace se nasadí na dva jednotlivé clustery Kubernetes 
 
 S Azure máme integrovanou možnost replikace úložiště napříč několika oblastmi a zónami v rámci cloudu. V současné době s centrem Azure Stack neexistují žádné nativní způsoby, jak replikovat úložiště mezi dvěma různými instancemi centra Azure Stack – tvoří dva nezávislé cloudy s žádným způsobem, jak je spravovat jako sadu. Plánování odolnosti aplikací spuštěných v rámci centra Azure Stack vynutí tuto nezávislost v návrhu a nasazeních aplikací.
 
-Ve většině případů nebude replikace úložiště nutná pro zajištění odolné a vysoce dostupné aplikace nasazené v AKS. V návrhu aplikací byste ale měli zvážit nezávislé úložiště na instanci centra Azure Stack. Pokud se tento návrh týká nasazení řešení v centru Azure Stack, existují možná řešení od partnerů Microsoftu, která poskytují přílohy úložiště. Přílohy úložiště poskytují řešení replikace úložiště v rámci několika Azure Stackch Center a Azure. Další informace najdete v tématu [Partnerská řešení](#partner-solutions).
+Ve většině případů nebude replikace úložiště nutná pro zajištění odolné a vysoce dostupné aplikace nasazené v AKS. V návrhu aplikací byste ale měli zvážit nezávislé úložiště na instanci centra Azure Stack. Pokud se tento návrh týká nasazení řešení v centru Azure Stack, existují možná řešení od partnerů Microsoftu, která poskytují přílohy úložiště. Storage přílohy poskytují řešení replikace úložiště napříč různými Azure Stack rozbočovači a Azure. Další informace najdete v tématu [Partnerská řešení](#partner-solutions).
 
 V naší architektuře byly zváženy tyto vrstvy:
 
 **Konfigurace**
 
-Konfigurace zahrnuje konfiguraci centra Azure Stack, modulu AKS a samotného clusteru Kubernetes. Konfigurace by měla být co nejvíc automatizovaná a uložená jako infrastruktura jako kód v systému správy verzí založeném na Gitu, jako je Azure DevOps nebo GitHub. Tato nastavení se nedají snadno synchronizovat mezi několika nasazeními. Proto doporučujeme uložit a použít konfiguraci z vnějšku a pomocí kanálu DevOps.
+Konfigurace zahrnuje konfiguraci centra Azure Stack, modulu AKS a samotného clusteru Kubernetes. konfigurace by měla být co nejvíc automatizovaná a uložená jako infrastruktura jako kód v systému správy verzí založeném na gitu, jako je Azure DevOps nebo GitHub. Tato nastavení se nedají snadno synchronizovat mezi několika nasazeními. proto doporučujeme uložit a použít konfiguraci z vnějšku a pomocí DevOpsho kanálu.
 
 **Aplikace**
 
@@ -208,13 +208,13 @@ Data jsou nejdůležitějším aspektem většiny návrhů aplikací. Data aplik
 
 Dosahování tohoto návrhu je silně závislé na technologických volbách. Tady je několik příkladů řešení pro implementaci databáze ve vysoce dostupném režimu v centru Azure Stack:
 
-- [Nasazení skupiny dostupnosti SQL Server 2016 do Azure a centra Azure Stack](/azure-stack/hybrid/solution-deployment-guide-sql-ha)
+- [nasazení skupiny dostupnosti SQL Server 2016 do Azure a centra Azure Stack](/azure-stack/hybrid/solution-deployment-guide-sql-ha)
 - [Nasazení vysoce dostupného řešení MongoDB do Azure a centra Azure Stack](/azure-stack/hybrid/solution-deployment-guide-mongodb-ha)
 
 Důležité informace týkající se práce s daty napříč více umístěními jsou ještě složitějším aspektem vysoce dostupného a odolného řešení. Rozmyslete si:
 
 - Latence a síťové připojení mezi Azure Stackmi rozbočovači.
-- Dostupnost identit pro služby a oprávnění. Každá instance centra Azure Stack se integruje s externím adresářem. Během nasazování se rozhodnete použít buď Azure Active Directory (Azure AD) nebo Active Directory Federation Services (AD FS) (ADFS). V takovém případě je možné použít jedinou identitu, která může pracovat s několika nezávislými instancemi centra Azure Stack.
+- Dostupnost identit pro služby a oprávnění. Každá instance centra Azure Stack se integruje s externím adresářem. během nasazování se rozhodnete použít buď Azure Active Directory (Azure AD) nebo Active Directory Federation Services (AD FS) (ADFS). V takovém případě je možné použít jedinou identitu, která může pracovat s několika nezávislými instancemi centra Azure Stack.
 
 ## <a name="business-continuity-and-disaster-recovery"></a>Provozní kontinuita a zotavení po havárii
 
@@ -239,7 +239,7 @@ Operátor centra Azure Stack (nebo správce) zodpovídá za údržbu instancí c
 - [Obnovení z katastrofické ztráty dat](/azure-stack/operator/azure-stack-backup-recover-data)
 - [Osvědčené postupy pro službu Infrastructure Backup](/azure-stack/operator/azure-stack-backup-best-practices)
 
-Azure Stack hub je platforma a prostředky infrastruktury, na kterých budou nasazené aplikace Kubernetes. Vlastníkem aplikace pro aplikaci Kubernetes bude uživatel centra Azure Stack s přístupem uděleným k nasazení infrastruktury aplikace potřebné pro řešení. Aplikační infrastruktura v tomto případě znamená cluster Kubernetes nasazený pomocí modulu AKS a okolní služby. Tyto součásti budou nasazeny do centra Azure Stack s omezením nabídky centra Azure Stack. Ujistěte se, že nabídka přijatá vlastníkem aplikace Kubernetes má dostatečnou kapacitu (vyjádřená v kvótách centra Azure Stack) pro nasazení celého řešení. Jak je doporučeno v předchozí části, nasazení aplikace by mělo být automatizované pomocí kanálů pro nasazení infrastruktury jako kódu a nasazení, jako je Azure DevOps Azure Pipelines.
+Azure Stack hub je platforma a prostředky infrastruktury, na kterých budou nasazené aplikace Kubernetes. Vlastníkem aplikace pro aplikaci Kubernetes bude uživatel centra Azure Stack s přístupem uděleným k nasazení infrastruktury aplikace potřebné pro řešení. Aplikační infrastruktura v tomto případě znamená cluster Kubernetes nasazený pomocí modulu AKS a okolní služby. Tyto součásti budou nasazeny do centra Azure Stack s omezením nabídky centra Azure Stack. Ujistěte se, že nabídka přijatá vlastníkem aplikace Kubernetes má dostatečnou kapacitu (vyjádřená v kvótách centra Azure Stack) pro nasazení celého řešení. jak je doporučeno v předchozí části, nasazení aplikace by mělo být automatizováno pomocí kanálů s infrastrukturou jako kódu a nasazení, jako je Azure DevOps Azure Pipelines.
 
 Další informace o nabídkách a kvótách centra Azure Stack najdete v tématu [Přehled služeb, plánů, nabídek a předplatných centra Azure Stack](/azure-stack/operator/service-plan-offer-subscription-overview) .
 
@@ -247,7 +247,7 @@ Je důležité bezpečně uložit a uložit konfiguraci modulu AKS, včetně jeh
 
 **Dostupnost aplikace**
 
-Aplikace by neměla spoléhat na zálohy nasazené instance. Jako standardní postup si aplikaci znovu nasaďte úplně podle vzorů infrastruktury jako kódu. Můžete například znovu nasadit pomocí Azure DevOps Azure Pipelines. Postup BCDR by měl zahrnovat opětovné nasazení aplikace do stejného nebo jiného clusteru Kubernetes.
+Aplikace by neměla spoléhat na zálohy nasazené instance. Jako standardní postup si aplikaci znovu nasaďte úplně podle vzorů infrastruktury jako kódu. můžete například znovu nasadit pomocí Azure DevOps Azure Pipelines. Postup BCDR by měl zahrnovat opětovné nasazení aplikace do stejného nebo jiného clusteru Kubernetes.
 
 **Data aplikací**
 
@@ -266,13 +266,13 @@ Kubernetes na rozbočovači Azure Stack nasazeném prostřednictvím modulu AKS 
 
 Infrastruktura centra Azure Stack je už odolná vůči selháním a poskytuje možnosti, jako jsou skupiny dostupnosti k distribuci komponent napříč více [doménami selhání a aktualizačními doménami](/azure-stack/user/azure-stack-vm-considerations#high-availability). Ale základní technologie (Clustering s podporou převzetí služeb při selhání) stále při selhání hardwaru u virtuálních počítačů na ovlivněném fyzickém serveru způsobí nějaké výpadky.
 
-Je dobrým zvykem nasadit cluster produkčního prostředí Kubernetes i zatížení na dva (nebo víc) clustery. Tyto clustery by se měly hostovat v různých umístěních nebo datových centrech a využívat technologie, jako je Azure Traffic Manager, ke směrování uživatelů na základě doby odezvy clusteru nebo na základě geografického prostředí.
+Je dobrým zvykem nasadit cluster produkčního prostředí Kubernetes i zatížení na dva (nebo víc) clustery. tyto clustery by se měly hostovat v různých umístěních nebo datových centrech a využívat technologie, jako je Azure Traffic Manager, ke směrování uživatelů na základě doby odezvy clusteru nebo na základě geografické oblasti.
 
-![Řízení toků provozu pomocí Traffic Manager](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager.png)
+![řízení toků provozu pomocí Traffic Manager](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager.png)
 
-Zákazníci, kteří mají jeden cluster Kubernetes, se obvykle připojují k IP adrese služby nebo názvu DNS dané aplikace. V nasazení s více clustery by se zákazníci měli připojit k Traffic Manager názvu DNS, který odkazuje na služby a příchozí přenosy na jednotlivých clusterech Kubernetes.
+Zákazníci, kteří mají jeden cluster Kubernetes, se obvykle připojují k IP adrese služby nebo názvu DNS dané aplikace. v nasazení s více clustery by se zákazníci měli připojit k Traffic Manager názvu DNS, který odkazuje na služby a příchozí přenosy na jednotlivých clusterech Kubernetes.
 
-![Použití Traffic Manager ke směrování do místního clusteru](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager-on-premises.png)
+![použití Traffic Manager ke směrování do místního clusteru](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager-on-premises.png)
 
 > [!NOTE]
 > Tento model je také [osvědčeným postupem pro (spravované) clustery AKS v Azure](/azure/aks/operator-best-practices-multi-region#plan-for-multiregion-deployment).
@@ -339,23 +339,23 @@ Mechanismus [bezobslužného upgradu](https://wiki.debian.org/UnattendedUpgrades
 
 Centrum Azure a Azure Stack zveřejňují stejná Azure Resource Manager rozhraní REST API. Tato rozhraní API jsou řešena jako jakýkoli jiný cloud Azure (Azure, Azure Čína 21Vianet, Azure Government). Mezi cloudy můžou být rozdíly ve verzích rozhraní API a služba Azure Stack hub poskytuje jenom podmnožinu služeb. Identifikátor URI koncového bodu správy se také liší pro každý Cloud a každou instanci centra Azure Stack.
 
-Kromě uvedených drobných rozdílů nabízí Azure Resource Manager rozhraní REST API konzistentní způsob, jak pracovat s centrem Azure i Azure Stack. Tady se dá použít stejná sada nástrojů, jak by se používala s jakýmkoli jiným cloudem Azure. K nasazení a orchestraci služeb pro Azure Stack Hub můžete použít Azure DevOps, nástroje jako Jenkinse nebo PowerShell.
+Kromě uvedených drobných rozdílů nabízí Azure Resource Manager rozhraní REST API konzistentní způsob, jak pracovat s centrem Azure i Azure Stack. Tady se dá použít stejná sada nástrojů, jak by se používala s jakýmkoli jiným cloudem Azure. k nasazení a orchestraci služeb pro Azure Stack Hub můžete použít Azure DevOps, nástroje jako jenkinse nebo PowerShell.
 
 **Důležité informace**
 
 Jedním z hlavních rozdílů v případě, že je Azure Stack nasazení centra, je otázka dostupnosti Internetu. Přístupnost internetu určuje, jestli se má pro úlohy CI/CD vybrat agent sestavení hostovaná Microsoftem nebo místním hostem.
 
-Samoobslužný Agent může běžet na Azure Stackovém centru (jako virtuální počítač IaaS) nebo v podsíti sítě, která má přístup k centru Azure Stack. Další informace o rozdílech najdete v části [agenti Azure Pipelines](/azure/devops/pipelines/agents/agents) .
+Samoobslužný Agent může běžet na Azure Stackovém centru (jako virtuální počítač IaaS) nebo v podsíti sítě, která má přístup k centru Azure Stack. další informace o rozdílech najdete v části [agenti Azure Pipelines](/azure/devops/pipelines/agents/agents) .
 
 Následující obrázek vám pomůže rozhodnout se, jestli potřebujete agenta sestavení hostovaného v místním prostředí nebo Microsoft hosta:
 
 ![Agenti sestavení v místním prostředí – Ano nebo ne](media/pattern-highly-available-kubernetes/aks-on-stack-self-hosted-build-agents-yes-or-no.png)
 
 - Mají přístup k koncovým bodům správy centra Azure Stack přes Internet?
-  - Ano: k připojení k centru Azure Stack můžete použít Azure Pipelines s agenty hostovanými Microsoftem.
+  - ano: k připojení k centru Azure Stack můžete použít Azure Pipelines s agenty hostovanými microsoftem.
   - Ne: potřebujeme samoobslužné agenty, kteří se můžou připojit k koncovým bodům správy centra Azure Stack.
 - Je náš cluster Kubernetes přístupný prostřednictvím Internetu?
-  - Ano: k přímé interakci s koncovým bodem rozhraní Kubernetes API můžeme použít Azure Pipelines s agenty hostovanými Microsoftem.
+  - ano: k přímé interakci s koncovým bodem rozhraní Kubernetes API můžeme použít Azure Pipelines s agenty hostovanými microsoftem.
   - Ne: potřebujeme samoobslužné agenty, kteří se můžou připojit ke koncovému bodu rozhraní API clusteru Kubernetes.
 
 Ve scénářích, kdy jsou koncové body správy centra Azure Stack a rozhraní Kubernetes API přístupné prostřednictvím Internetu, může nasazení použít agenta hostovaného Microsoftem. Toto nasazení bude mít za následek architekturu aplikace následujícím způsobem:
@@ -367,15 +367,15 @@ Pokud Azure Resource Manager koncovým bodům, rozhraní Kubernetes API nebo obo
 [![Přehled architektury on-Prem](media/pattern-highly-available-kubernetes/aks-azure-stack-app-pattern-self-hosted.png)](media/pattern-highly-available-kubernetes/aks-azure-stack-app-pattern-self-hosted.png#lightbox)
 
 > [!NOTE]
-> **Jaké jsou informace o odpojených scénářích?** Ve scénářích, kdy Azure Stack hub nebo Kubernetes nebo oba nemají koncové body správy, je stále možné využít Azure DevOps pro vaše nasazení. Můžete buď použít samoobslužný fond agentů (což je DevOps agent, který je spuštěný místně, nebo Azure Stack v samotném rozbočovači), nebo zcela místně hostovaný Azure DevOps Server. Samoobslužný agent potřebuje jenom odchozí připojení HTTPS (TCP/443) k Internetu.
+> **Jaké jsou informace o odpojených scénářích?** ve scénářích, kdy Azure Stack Hub nebo Kubernetes nebo oba nemají koncové body správy, je stále možné používat Azure DevOps pro vaše nasazení. můžete buď použít samoobslužný fond agentů (což je DevOps agenta spuštěného místně nebo v Azure Stackm centru), nebo zcela místně hostovaného Azure DevOps Server místního prostředí. Samoobslužný agent potřebuje jenom odchozí připojení HTTPS (TCP/443) k Internetu.
 
-Vzor může používat cluster Kubernetes (nasazený a orchestrující modul AKS) v každé instanci centra Azure Stack. Zahrnuje aplikaci, která se skládá z front-endové služby back-endu (například MongoDB) a řadiče příchozího přenosu založeného na Nginx. Místo používání databáze hostované v clusteru K8s můžete využít "externí úložiště dat". Mezi možnosti databáze patří MySQL, SQL Server nebo jakýkoli druh databáze hostovaný mimo centrum Azure Stack nebo v IaaS. Zde uvedené konfigurace nejsou v oboru.
+Vzor může používat cluster Kubernetes (nasazený a orchestrující modul AKS) v každé instanci centra Azure Stack. Zahrnuje aplikaci, která se skládá z front-endové služby back-endu (například MongoDB) a řadiče příchozího přenosu založeného na Nginx. Místo používání databáze hostované v clusteru K8s můžete využít "externí úložiště dat". mezi možnosti databáze patří MySQL, SQL Server nebo jakýkoli druh databáze hostovaný mimo centrum Azure Stack nebo v IaaS. Zde uvedené konfigurace nejsou v oboru.
 
 ## <a name="partner-solutions"></a>Partnerská řešení
 
 Existují Partnerská řešení Microsoftu, která můžou roztáhnout možnosti centra Azure Stack. Tato řešení byla užitečná při nasazení aplikací spuštěných v clusterech Kubernetes.  
 
-## <a name="storage-and-data-solutions"></a>Řešení úložiště a dat
+## <a name="storage-and-data-solutions"></a>Storage a datová řešení
 
 Jak je popsáno v tématu [požadavky na data a úložiště](#data-and-storage-considerations), Azure Stack hub aktuálně nemá nativní řešení pro replikaci úložiště mezi několika instancemi. Na rozdíl od Azure neexistuje schopnost replikace úložiště napříč několika oblastmi. V Azure Stackovém centru je každá instance svým vlastním jedinečným cloudem. Ale řešení jsou dostupná od partnerů Microsoftu, která umožňují replikaci úložiště napříč Azure Stackmi rozbočovači a Azure. 
 
@@ -394,4 +394,4 @@ Další informace o konceptech představených v tomto článku:
 - [Škálování mezi cloudy](pattern-cross-cloud-scale.md) a [geograficky distribuované aplikace](pattern-geo-distributed.md) v centru Azure Stack.
 - [Architektura mikroslužeb ve službě Azure Kubernetes (AKS)](/azure/architecture/reference-architectures/microservices/aks).
 
-Až budete připraveni otestovat příklad řešení, pokračujte pomocí [Průvodce nasazením clusteru s vysokou dostupností Kubernetes](solution-deployment-guide-highly-available-kubernetes.md). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent.
+Až budete připraveni otestovat příklad řešení, pokračujte pomocí [Průvodce nasazením clusteru s vysokou dostupností Kubernetes](/azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes). Průvodce nasazením poskytuje podrobné pokyny pro nasazení a testování jeho komponent.
